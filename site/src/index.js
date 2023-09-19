@@ -11,6 +11,7 @@ import AdmCentral from './pages/adm/adm-central';
 import AdmLogin from './pages/adm/adm-login';
 import Cartoes from './pages/site/cartoes/cartoes';
 import AdmPedidosConcluidos from './pages/adm/adm-pedidos-concluidos';
+import AdmPedidosAndamento from './pages/adm/adm-pedidos-andamentoi';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path='/' element={<PaginaLanding />} />
         <Route path='/adm/central' element={<AdmCentral />} />
         <Route path='/adm/pedidos-concluidos' element={<AdmPedidosConcluidos />} />
+        <Route path='/adm/pedidos-andamento' element={<AdmPedidosAndamento />} />
         <Route path='/adm' element={<AdmLogin />} />
         <Route path='/cartoes' element={<Cartoes/>} />
       </Routes>

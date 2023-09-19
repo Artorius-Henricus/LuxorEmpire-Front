@@ -2,14 +2,14 @@ import './index.scss';
 
 import CompMenuBar from '../../../components/adm/menubar';
 
-export default function AdmPedidosConcluidos() {
+export default function AdmPedidosAndamento() {
 
     return(
     <div className="adm-pagina-pedidos-concluidos">
         <CompMenuBar />
 
         <section className='corp'>
-            <h1>Pedidos Concluídos</h1>
+            <h1>Pedidos Em Andamento</h1>
 
             <article id='search'>
                 <select>
@@ -20,7 +20,7 @@ export default function AdmPedidosConcluidos() {
             </article>
 
             <article id='tabela'>
-                <h1>Pedidos Concluídos</h1>
+                <h1>Pedidos</h1>
                 <table>
                     <thead className='tablehead'>
                         <tr>
@@ -30,7 +30,9 @@ export default function AdmPedidosConcluidos() {
                             <th>Total</th>
                             <th>Quant</th>
                             <th>Data Compra</th>
+                            <th>Previsão Entrega</th>
                             <th>Status</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody className='tablebody'>
@@ -41,7 +43,9 @@ export default function AdmPedidosConcluidos() {
                             <td>54</td>
                             <td>1</td>
                             <td>12390/*123/123</td>
+                            <td>12390/*123/123</td>
                             <td>Vendido</td>
+                            <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -50,7 +54,9 @@ export default function AdmPedidosConcluidos() {
                             <td>54</td>
                             <td>1</td>
                             <td>12390/*123/123</td>
+                            <td>12390/*123/123</td>
                             <td>Vendido</td>
+                            <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
                         </tr>
                         
                     </tbody>
