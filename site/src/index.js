@@ -9,7 +9,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PaginaLanding from './pages/site/landing';
 import AdmCentral from './pages/adm/adm-central';
 import AdmLogin from './pages/adm/adm-login';
-import Cartoes from './pages/site/cartoes/cartoes';
+import Cartoes from './pages/site/cartoespag/cartoes';
 import AdmPedidosConcluidos from './pages/adm/adm-pedidos-concluidos';
 import AdmPedidosAndamento from './pages/adm/adm-pedidos-andamentoi';
 
