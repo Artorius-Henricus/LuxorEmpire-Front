@@ -9,6 +9,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PaginaLanding from './pages/site/landing';
 import AdmCentral from './pages/adm/adm-central';
 import AdmLogin from './pages/adm/adm-login';
+import Cartoes from './pages/site/Cartoes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path='/' element={<PaginaLanding />} />
         <Route path='/adm/central' element={<AdmCentral />} />
         <Route path='/adm' element={<AdmLogin />} />
+        <Route path='/site/Cartoes' element={<Cartoes/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
