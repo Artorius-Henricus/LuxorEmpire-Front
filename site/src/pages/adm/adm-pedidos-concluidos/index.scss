@@ -17,6 +17,44 @@
     #search {
         display: flex;
         flex-direction: row;
+        width: 948px;
         height: 40px;
+        border: 1px solid #000;
+        border-radius: 5px 5px 0px 0px;
+        margin-top: 30px;
+    }
+
+    #search select{
+        text-align: center;
+        width: 150px;
+        border: none;
+        border-right: 1px solid #000000;
+        outline: none;
+        background-color: #F0F0F0;
+        font: 16px "Bebas Neue";
+        border-radius: 5px 0px 0px 0px;
+    }
+
+    #search input {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        padding: 0px 10px;
+        font: 16px "Inter";
+        color: #3D3D3D;
+    }
+
+    #search button {
+        width: 40px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-radius: 0px 5px 0px 0px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    #search button:active {
+        transform: translateY(-1px);
     }
 }
