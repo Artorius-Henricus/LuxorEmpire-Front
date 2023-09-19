@@ -1,4 +1,22 @@
 .adm-pagina-pedidos-concluidos {
     display: flex;
     flex-direction: row;
+
+    .corp {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 50px;
+    }
+
+    .corp > h1 {
+        font: 32px "Bebas Neue";
+        color: #3D3D3D;
+    }
+
+    #search {
+        display: flex;
+        flex-direction: row;
+        height: 40px;
+    }
 }

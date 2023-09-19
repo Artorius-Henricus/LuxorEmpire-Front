@@ -8,7 +8,17 @@ export default function AdmPedidosConcluidos() {
     <div className="adm-pagina-pedidos-concluidos">
         <CompMenuBar />
 
-        <h1>aaa</h1>
+        <section className='corp'>
+            <h1>Pedidos Concluídos</h1>
+
+            <article id='search'>
+                <select>
+                    <option>Selecione o Filtro</option>
+                </select>
+                <input type='text' />
+                <button><img src="/assets/images/adm/1617460.svg" alt="" /></button>
+            </article>
+        </section>
     </div>
     )
 }

@@ -9,6 +9,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PaginaLanding from './pages/site/landing';
 import AdmCentral from './pages/adm/adm-central';
 import AdmLogin from './pages/adm/adm-login';
+import AdmPedidosConcluidos from './pages/adm/adm-pedidos-concluidos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
       <Routes>
         <Route path='/' element={<PaginaLanding />} />
         <Route path='/adm/central' element={<AdmCentral />} />
+        <Route path='/adm/pedidos-concluidos' element={<AdmPedidosConcluidos />} />
         <Route path='/adm' element={<AdmLogin />} />
       </Routes>
     </BrowserRouter>
