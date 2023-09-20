@@ -52,6 +52,30 @@
         margin: 10px 0px;
     }
 
+    .btsec {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        justify-content: center;
+        text-decoration: none;
+        font: 32px "Bebas Neue";
+        color: #000;
+        margin: 10px 0px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .btsec > span {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .btsec img {
+        margin-right: 20px;
+        height: 42px;
+    }
+
     .btmn:hover {
         text-decoration: underline;
     }
@@ -59,5 +83,40 @@
     .btmn img {
         margin-right: 20px;
         height: 42px;
+    }
+
+    .off {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: width 0.3s ease, height 0.3s ease, opacity 0.5s ease;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .show {
+        height: 80px;
+        opacity: 1;
+    }
+
+    .btextra {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        text-align: end;
+        align-items: center;
+        text-decoration: none;
+        font: 17px "Bebas Neue";
+        color: #000;
+        margin: 10px 0px;
+        transition: 0.3s;
+    }
+
+    .btextra:hover {
+        transform: translateY(-2px);
+        font: 20px "Bebas Neue";
+        text-decoration: underline;
     }
 }
