@@ -5,7 +5,7 @@ import CompMenuBar from '../../../components/adm/menubar';
 export default function AdmPedidosAndamento() {
 
     return(
-    <div className="adm-pagina-pedidos-concluidos">
+    <div className="adm-pagina-pedidos-andamento">
         <CompMenuBar />
 
         <section className='corp'>
