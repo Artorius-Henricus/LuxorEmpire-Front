@@ -1,8 +1,23 @@
 import './index.scss';
 
 import CompMenuBar from '../../../components/adm/menubar';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function AdmPedidosConcluidos() {
+    const [produtos, setProdutos] = useState([]);
+    
+    async function BuscarProdutos() {
+        let url = 'http://localhost:5000/produtos'
+        let resp = await axios.get(url)
+
+        setProdutos([...resp.data])
+    }
+
+    useEffect(() => {
+        BuscarProdutos()
+        return () => {};
+      }, []);
 
     return(
     <div className="adm-pagina-pedidos-concluidos">
@@ -34,25 +49,17 @@ export default function AdmPedidosConcluidos() {
                         </tr>
                     </thead>
                     <tbody className='tablebody'>
+                        {produtos.map(item => 
                         <tr>
-                            <td>1</td>
-                            <td>Brincos de Cristal</td>
-                            <td>54</td>
-                            <td>54</td>
-                            <td>1</td>
-                            <td>12390/*123/123</td>
-                            <td>Vendido</td>
+                            <td>{item.id_produto}</td>
+                            <td>{item.nm_produto}</td>
+                            <td>{item.nr_preco}</td>
+                            <td>"total"</td>
+                            <td>"quantidade"</td>
+                            <td>"A caminho"</td>
+                            <td>"Status"</td>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Brincos de Cristal</td>
-                            <td>54</td>
-                            <td>54</td>
-                            <td>1</td>
-                            <td>12390/*123/123</td>
-                            <td>Vendido</td>
-                        </tr>
-                        
+                        )}
                     </tbody>
                 </table>
             </article>
