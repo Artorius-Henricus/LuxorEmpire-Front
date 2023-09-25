@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function AdmPedidosConcluidos() {
-    const [produtos, setProdutos] = useState([]);
+    const [produtos, setProduto] = useState([]);
     
     async function BuscarProdutos() {
         let url = 'http://localhost:5000/produtos'
         let resp = await axios.get(url)
 
-        setProdutos([...resp.data])
+        setProduto([...resp.data])
     }
 
     useEffect(() => {
