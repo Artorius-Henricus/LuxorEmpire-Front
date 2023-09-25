@@ -1,0 +1,119 @@
+.pagina-tela-usuario {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+    .corp {
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    .usermenusprofile {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    #sideleft {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 20px;
+    }
+    
+    #sideleft > h1 {
+        font: 36px "Inter";
+        color: #000;
+        margin-bottom: 30px;
+    }
+
+    #sideleft button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font: 20px "Inter";
+        color: #000;
+        width: 228px;
+        height: 43px;
+        background-color: transparent;
+        border: 1px solid #000;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        align-self: center;
+        border-radius: 3px;
+        margin-top: 40px;
+        cursor: pointer;
+    }
+
+    #blocks {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #blocks div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 0px 10px;
+        gap: 20px;
+    }
+
+    #sideleft p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font: 24px "Inter";
+        font-weight: 500;
+        color: #383838;
+        height: 43px;
+    }
+
+    #sideleft input {
+        width: 394px;
+        height: 43px;
+        border: 1px solid #000;
+        background-color: transparent;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        outline: none;
+        font: 20px "Inter";
+        color: #383838;
+        padding: 0px 10px;
+    }
+
+    #sideright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 15px;
+    }
+
+    #sideright img {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        border: 1px solid #000;
+    }
+
+    #sideright button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font: 20px "Inter";
+        color: #000;
+        width: 238px;
+        height: 43px;
+        background-color: transparent;
+        border: 1px solid #000;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        align-self: center;
+        border-radius: 3px;
+        margin-top: 40px;
+        cursor: pointer;
+    }
+}

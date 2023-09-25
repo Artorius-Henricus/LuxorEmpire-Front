@@ -9,10 +9,10 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PaginaLanding from './pages/site/landing';
 import AdmCentral from './pages/adm/adm-central';
 import AdmLogin from './pages/adm/adm-login';
-import Cartoes from './pages/site/cartoespag/cartoes';
 import AdmPedidosConcluidos from './pages/adm/adm-pedidos-concluidos';
 import AdmPedidosAndamento from './pages/adm/adm-pedidos-andamento';
 import AdmCadastroProduto from './pages/adm/adm-cadastro-produto';
+import PaginaTelaUsuario from './pages/site/telausuario';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,7 +25,7 @@ root.render(
         <Route path='/adm/pedidos-andamento' element={<AdmPedidosAndamento />} />
         <Route path='/adm/cadastrar-produto' element={<AdmCadastroProduto />} />
         <Route path='/adm' element={<AdmLogin />} />
-        <Route path='/cartoes' element={<Cartoes/>} />
+        <Route path='/perfil' element={<PaginaTelaUsuario />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
