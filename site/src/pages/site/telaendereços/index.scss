@@ -1,0 +1,115 @@
+.pagina-enderecos {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+    .corp {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #bodycenter {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        margin-top: 40px;
+        padding: 20px;
+    }
+
+    #leftside {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #bodycenter > h1 {
+        font: 36px "Inter";
+        color: #000;
+    }
+
+    #bodycenter > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #btadd {
+        width: 234px;
+        height: 39px;
+        border-radius: 2px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border: 1px solid #000;
+        font: 20px "Inter";
+        color: #000;
+        margin-right: 10px;
+    }
+
+    #leftside div {
+        display: flex;
+        flex-direction: column;
+        max-width: 320px;
+        max-height: 220px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 5px 10px;
+        border-left: 13px solid #404040;
+        margin: 10px 5px;
+    }
+
+    #leftside h1 {
+        font: 20px "Inter";
+        font-weight: 400;
+        margin: 5px 0px;
+        color: #000;
+    }
+
+    #leftside p {
+        font: 14px "Inter";
+        font-weight: 400;
+        margin: 5px 0px;
+        color: #383838;
+    }
+
+    #leftside button {
+        width: 17px;
+        height: 17px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        align-self: flex-end;
+        transition: 0.3s;
+    }
+
+    #leftside button:hover {
+        animation: shake 1s ease-in-out infinite;
+    }
+
+    #leftside button:active {
+        animation: up 1s ease-in-out 1;
+     }
+
+    @keyframes shake {
+        0% { transform: rotateZ(0); }
+        20% { transform: rotateZ(-5deg); }
+        40% { transform: rotateZ(5deg); }
+        60% { transform: rotateZ(-5deg); }
+        80% { transform: rotateZ(5deg); }
+        100% { transform: rotateZ(0); }
+    }
+    @keyframes up {
+        0% { transform: translateY(0); }
+        20% { transform: translateY(-5px); }
+        40% { transform: translateY(5px); }
+
+    }
+
+    #leftside img {
+        width: 17px;
+        height: 17px;
+    }
+}

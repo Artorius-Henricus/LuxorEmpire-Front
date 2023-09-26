@@ -17,16 +17,16 @@ export default function CompUserMenu(){
                     </button>
                 </div>
             </div>
-
+            
             <article id='selectbox' onMouseEnter={() => {setShow(true)}} onMouseLeave={() => {setShow(false)}}>
                 <div id='select'>
                     <img src="/assets/images/cartoes/IconMconta.png" alt="UserIcon" />
                     <h1>Minha Conta</h1>
                 </div>
                 <div className={`off ${show ? 'show' : ''}`}>
-                    <Link to='/'>Perfil</Link>
-                    <Link to='/'>Cartões</Link>
-                    <Link to='/'>Endereços</Link>
+                    <Link to='/perfil'>Perfil</Link>
+                    <Link to='/cartoes'>Cartões</Link>
+                    <Link to='/enderecos'>Endereços</Link>
                 </div>
             </article>  
 

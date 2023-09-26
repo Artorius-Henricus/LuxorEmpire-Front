@@ -12,7 +12,7 @@
     .usermenusprofile {
         display: flex;
         flex-direction: row;
-        width: 100%;
+        flex-grow: 1;
         margin-top: 40px;
         padding: 20px;
         justify-content: center;
