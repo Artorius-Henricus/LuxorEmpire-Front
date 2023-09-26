@@ -15,6 +15,7 @@ import AdmCadastroProduto from './pages/adm/adm-cadastro-produto';
 import PaginaTelaUsuario from './pages/site/telausuario';
 import PaginaEnderecos from './pages/site/telaendereços';
 import PaginaCartoes from './pages/site/telacartoes';
+import CadastrarEndereco from './pages/site/cadastrarendereco';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,7 @@ root.render(
         <Route path='/perfil' element={<PaginaTelaUsuario />} />
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />
+        <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

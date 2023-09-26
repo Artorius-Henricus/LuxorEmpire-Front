@@ -4,6 +4,7 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 
 import CompUserMenu from '../../../components/site/usermenu';
+import {Link} from 'react-router-dom'
 
 export default function PaginaCartoes() {
 
@@ -15,7 +16,7 @@ export default function PaginaCartoes() {
                 <article id='bodycenter'>
                     <div>
                         <h1>Endereços</h1>
-                        <button id='btadd'>Adicionar Cartão</button>
+                        <Link to='' id='btadd'>Adicionar Cartão</Link>
                     </div>
                     <section id='leftside'>
 

@@ -1,0 +1,11 @@
+.pagina-cadastrar-endereco {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+    .corp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

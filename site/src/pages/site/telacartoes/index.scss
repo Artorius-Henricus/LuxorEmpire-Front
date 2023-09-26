@@ -36,6 +36,11 @@
     }
 
     #btadd {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
         width: 234px;
         height: 39px;
         border-radius: 2px;

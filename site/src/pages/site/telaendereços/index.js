@@ -4,7 +4,7 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 
 import CompUserMenu from '../../../components/site/usermenu';
-import { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 export default function PaginaEnderecos() {
 
@@ -16,7 +16,7 @@ export default function PaginaEnderecos() {
                 <article id='bodycenter'>
                     <div>
                         <h1>Endereços</h1>
-                        <button id='btadd'>Adicionar Endereço</button>
+                        <Link to='/enderecos/cadastro' id='btadd'>Adicionar Endereço</Link>
                     </div>
                     <section id='leftside'>
 
