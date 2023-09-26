@@ -4,29 +4,29 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 
 import CompUserMenu from '../../../components/site/usermenu';
-import { useState } from 'react';
 
-export default function PaginaEnderecos() {
+export default function PaginaCartoes() {
 
     return(
-        <div className='pagina-enderecos'>
+        <div className='pagina-cartoes'>
             <CompCabecalho />
             <div className='corp'>
                 <CompUserMenu />
                 <article id='bodycenter'>
                     <div>
                         <h1>Endereços</h1>
-                        <button id='btadd'>Adicionar Endereço</button>
+                        <button id='btadd'>Adicionar Cartão</button>
                     </div>
                     <section id='leftside'>
 
-                        <div>
-                            <h1>Endereço do Thur</h1>
-                            <p>ArthurZera</p>
-                            <p>Rua Barrinha</p>
-                            <p>Conjunto Habitacional Brigadeiro Faria Lima</p>
-                            <p>São Paulo</p>
-                            <p>CEP</p>
+                        <div className='cartaoblock'>
+                            <div>
+                                <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
+                                <div>
+                                    <h1>Nome Cartão</h1>
+                                    <h3>Cartão Terminado Em</h3>
+                                </div>
+                            </div>
                             <button><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
                         </div>
                     </section>

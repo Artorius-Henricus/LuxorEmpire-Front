@@ -1,4 +1,4 @@
-.pagina-enderecos {
+.pagina-cartoes {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -17,6 +17,7 @@
     }
 
     #leftside {
+        position: relative;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -48,18 +49,6 @@
         margin-right: 10px;
     }
 
-    #leftside div {
-        display: flex;
-        flex-direction: column;
-        max-width: 320px;
-        max-height: 220px;
-        border: 1px solid #000;
-        border-radius: 5px;
-        padding: 5px 10px;
-        border-left: 13px solid #404040;
-        margin: 10px 5px;
-    }
-
     #leftside h1 {
         font: 20px "Inter";
         font-weight: 400;
@@ -67,14 +56,44 @@
         color: #000;
     }
 
-    #leftside p {
+    .cartaoblock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 403px;
+        height: 145px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 5px 10px;
+        border-left: 13px solid #404040;
+        margin: 10px 5px;
+    }
+
+    .cartaoblock h1 {
+        font: 20px "Inter";
+        color: #000;
+    }
+
+    .cartaoblock h3 {
         font: 14px "Inter";
-        font-weight: 400;
-        margin: 3px 0px;
         color: #383838;
     }
 
+    #cartaoimg {
+        width: 149px !important;
+        height: 94px !important;
+        border-radius: 5px;
+        margin: 10px 20px 10px 10px;
+    }
+    
+    .cartaoblock > div {
+        display: flex;
+        flex-direction: row;
+    }
+
     #leftside button {
+        position: absolute;
         width: 17px;
         height: 17px;
         background-color: transparent;
@@ -83,6 +102,7 @@
         cursor: pointer;
         align-self: flex-end;
         transition: 0.3s;
+        bottom: 20px;
     }
 
     #leftside button:hover {
