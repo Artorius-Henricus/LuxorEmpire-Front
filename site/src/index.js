@@ -17,7 +17,7 @@ import PaginaEnderecos from './pages/site/telaendereços';
 import PaginaCartoes from './pages/site/telacartoes';
 import CadastrarEndereco from './pages/site/cadastrarendereco';
 import Carrinho from './pages/site/carrinho';
-import Paginaproduto from './pages/site/tela-produtos';
+import Paginaproduto from './pages/site/tela-produto';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
