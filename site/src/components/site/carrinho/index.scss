@@ -1,0 +1,38 @@
+.produto{
+    margin: 50px 0px;
+    width: 100vw;
+    padding: 25px ;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #imgtotal{
+        display: flex;
+        align-items: center;
+    }
+
+    #img{
+        padding: 50px;
+        border: 1px solid black;
+        margin: 0px;
+
+    }
+
+    .quant {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .quant *{
+        padding: 0px 4px;
+        border: 1px solid black;
+        background-color: rgb(241, 241, 241);
+    }
+
+    .exclusao{
+        background-color: white;
+        border: 0px;
+    }
+    
+}
