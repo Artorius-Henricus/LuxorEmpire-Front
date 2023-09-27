@@ -2,7 +2,7 @@ import './index.scss';
 import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 import { Link } from 'react-router-dom';
-import Produto from '../../../components/compras-carrinho';
+import Produto from '../../../components/site/compras-carrinho';
 
 export default function Carrinho() {
 
