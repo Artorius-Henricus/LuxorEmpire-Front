@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
+    height: 100vh;
 
     .corp {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         flex-grow: 1;
         padding: 40px;
     }
@@ -47,32 +49,6 @@
         padding: 0px 10px;
     }
 
-    .unaltera {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 496px;
-        height: 34px;
-        border-radius: 5px;
-        background-color: #C3C3C3 !important;
-        border: 1px solid #404040;
-        background-color: transparent;
-        font: 15px "Inter";
-        outline: none;
-        padding: 0px 10px;
-    }
-
-    .inputs select {
-        width: 496px;
-        height: 34px;
-        border-radius: 5px;
-        border: 1px solid #404040;
-        background-color: transparent;
-        font: 15px "Inter";
-        outline: none;
-        padding: 0px 10px;
-    }
-
     .inputs button {
         width: 149px;
         height: 44px;
@@ -95,6 +71,16 @@
         display: flex;
         flex-direction: row !important;
         justify-content: space-between;
+    }
+    
+    .doubleinpt {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .doubleinpt input {
+        width: 235px  !important;
     }
 
     #btreturn {
