@@ -16,7 +16,9 @@ import PaginaTelaUsuario from './pages/site/telausuario';
 import PaginaEnderecos from './pages/site/telaendereços';
 import PaginaCartoes from './pages/site/telacartoes';
 import CadastrarEndereco from './pages/site/cadastrarendereco';
-import Paginaproduto from './pages/site/tela-produto';
+import Carrinho from './pages/site/carrinho';
+import Paginaproduto from './pages/site/tela-produtos';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,6 +31,7 @@ root.render(
         <Route path='/adm/pedidos-andamento' element={<AdmPedidosAndamento />} />
         <Route path='/adm/cadastrar-produto' element={<AdmCadastroProduto />} />
         <Route path='/adm' element={<AdmLogin />} />
+        <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/perfil' element={<PaginaTelaUsuario />} />
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />

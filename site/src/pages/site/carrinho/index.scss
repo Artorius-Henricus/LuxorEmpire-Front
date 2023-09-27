@@ -1,0 +1,163 @@
+.pag-carrinho{
+    
+    .conteiner{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0px;
+
+        .left_pag{
+            width: 62vw;
+            margin-left: 20px;
+
+            #h3{
+                padding-left: 10px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+
+            }
+
+            .endereco{
+                margin-top: 90px;
+                padding: 35px;
+                padding-top: 15px;
+                padding-left: 10px;
+                border: 1px solid black;
+                display: flex;
+                width: 63vw;
+                justify-content: space-between;
+
+                
+                #texto{
+                    font-size: 16px;
+                    font-weight: 200;
+                    font-style: inherit;
+                };
+                
+                #botao{
+                    color: rgb(0, 133, 255);
+                    font-size: 20px;
+                    font-style: inherit;
+                }
+            }
+
+            .metodo{
+                display: flex;
+                width: 63vw;
+                justify-content: space-between;
+                margin-top: 40px;
+                padding: 35px;
+                padding-top: 15px;
+                padding-left: 10px;
+                border: 1px solid black;
+
+                .cart{
+                    display: flex;
+                }
+
+                #texto{
+                    font-size: 16px;
+                    font-weight: 200;
+                    font-style: inherit;
+                };
+
+                #botao{
+                    color: rgb(0, 133, 255);
+                    font-size: 20px;
+                    font-style: inherit;
+                }
+            }
+
+            .Produtos{
+                margin: 15px;
+                display: flex;
+                align-items: center;
+                width: 60vw;
+                padding: 20px;
+                border-radius: 5px;
+                border: 1px solid black;
+            }
+
+            .finalizar{
+                display: flex;
+                width: 60vw;
+                padding: 50px;
+                margin: 30px 15px;
+                border: 1px solid black;
+                align-items: center;
+                border-radius: 15px;
+
+                h3{
+                    padding: 0px 20px;
+                }
+
+                #finalizacao{
+                    display: flex;
+                    padding: 8px 15px;
+                    text-decoration: none;
+                    color: black;
+                    font-size: 20px;
+                    border: 1px solid black;
+                    border-radius: 15px;
+                }
+            }
+        }
+
+        .right_pag{
+
+            .total{
+                display: flex;
+                flex-direction: column;
+                border: 1px solid black;
+                margin-top: 90px;
+                width: 30vw;
+                border-radius: 15px;
+                margin: 90px 20px;
+
+
+                .finalizar{
+                    display: flex;
+                    margin: 15px;
+                    align-self: center;
+                    border-radius: 15px;
+    
+                    h3{
+                        padding: 0px 20px;
+                    }
+    
+                    #finalizacao{
+                        display: flex;
+                        padding: 8px 15px;
+                        text-decoration: none;
+                        color: black;
+                        font-size: 20px;
+                        border: 1px solid black;
+                        border-radius: 15px;
+                    }
+                }
+    
+
+
+                #resumo{
+                    border-top: 2px solid black;
+                    padding: 10px;
+                    border-bottom: 2px solid black;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 30px;
+                }
+
+                #dinheiro{
+                    display: flex;
+                    margin: 10px 0px;
+                    justify-content: space-between;
+                }
+
+                #total{
+                    margin: 30px;
+
+                }
+            }
+        }
+    }
+}
