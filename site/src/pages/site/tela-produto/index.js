@@ -10,19 +10,19 @@ export default function Paginaproduto() {
                 <div className='esq'>
                    
                     <div className='esq-imgs'>
-                    <div></div>
+                        <div></div>
                     </div>
 
                     <div className='esq-imgs'>
-                    <div></div>
+                        <div></div>
                     </div>
 
                     <div className='esq-imgs'>
-                    <div></div>
+                        <div></div>
                     </div>
 
                     <div className='esq-imgs'>
-                    <div></div>
+                        <div></div>
                     </div>
                 </div>
                 <div className='mid'>
