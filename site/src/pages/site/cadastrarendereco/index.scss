@@ -84,5 +84,39 @@
         font: 16px "Inter";
         margin-top: 30px;
         cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .inputs button:hover {
+        background-color: #808080;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+
+    #btreturn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 120px;
+        height: 44px;
+        border-radius: 5px;
+        background-color: #404040;
+        color: #fff;
+        border: none;
+        outline: none;
+        font: 16px "Inter";
+        margin-top: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #btreturn:hover {
+        background-color: #808080;
     }
 }
