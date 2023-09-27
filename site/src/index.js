@@ -17,6 +17,8 @@ import PaginaEnderecos from './pages/site/telaendereços';
 import PaginaCartoes from './pages/site/telacartoes';
 import CadastrarEndereco from './pages/site/cadastrarendereco';
 import Carrinho from './pages/site/carrinho';
+import Paginaproduto from './pages/site/tela-produtos';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -34,7 +36,8 @@ root.render(
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />
         <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />
-      </Routes>
+        <Route path='/produtos' element={<Paginaproduto />} />      
+        </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
