@@ -23,7 +23,7 @@ export default function CadastrarCartao() {
                         <input type='text' />
                     </div>
 
-                    <section>
+                    <section className='doubleinpt'>
                         <div>
                             <label>Endereço</label>
                             <input type='text' />
@@ -36,7 +36,7 @@ export default function CadastrarCartao() {
                     </section>
                     <div className='buttons'>
                         <button>Salvar Endereço</button>
-                        <Link to='/enderecos' id='btreturn'>Retornar</Link>
+                        <Link to='/cartoes' id='btreturn'>Retornar</Link>
                     </div>  
                 </article>
             </div>

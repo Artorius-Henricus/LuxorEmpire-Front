@@ -16,7 +16,7 @@ export default function PaginaCartoes() {
                 <article id='bodycenter'>
                     <div>
                         <h1>Endereços</h1>
-                        <Link to='' id='btadd'>Adicionar Cartão</Link>
+                        <Link to='/cartoes/cadastro' id='btadd'>Adicionar Cartão</Link>
                     </div>
                     <section id='leftside'>
 
