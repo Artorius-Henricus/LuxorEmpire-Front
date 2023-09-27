@@ -2,6 +2,7 @@ import './index.scss';
 
 import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
+import {Link} from 'react-router-dom'
 
 export default function CadastrarEndereco() {
 
@@ -53,8 +54,11 @@ export default function CadastrarEndereco() {
                         <label>Estado</label>
                         <input type='text' placeholder={'Insira o CEP acima para preencher o estado'} className='unaltera' readOnly/>
                     </div>
-
-                    <button>Salvar Endereço</button>
+                    
+                    <div className='buttons'>
+                        <button>Salvar Endereço</button>
+                        <Link to='/enderecos' id='btreturn'>Retornar</Link>
+                    </div>
                 </article>
             </div>
             <CompRodape />

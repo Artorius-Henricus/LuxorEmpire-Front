@@ -1,0 +1,19 @@
+.produto{
+    display: flex;
+    width: 57vw;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 5px;
+    img{
+        padding: 70px;
+        border: 1px solid rgb(206, 206, 206);
+    }
+
+    .prod{
+        *{
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+
+}
