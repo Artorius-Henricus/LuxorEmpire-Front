@@ -61,7 +61,7 @@
         font-weight: 400;
     }
 
-    .dir-linha2 {
+    .dir-linha-button {
         display: flex;
         gap: 23px;
     }
@@ -88,4 +88,19 @@
         background-color: #fff;
         font-size:14px
     }
+
+    .dir-linha-img {
+        display: flex;
+        gap: 7.5px;
+        margin-top: 10px;
+    }
+
+    .dir-linha-img p {
+        font: 16px "Inter";
+    }
+
+    #txt-light {
+        color: #8e8e8e;
+    }
+
 }
