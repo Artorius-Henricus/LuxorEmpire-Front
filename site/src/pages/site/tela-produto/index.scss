@@ -1,5 +1,4 @@
 .pagina-produto {
-
     .sec1{
         display: flex;
         flex-direction: row;
@@ -28,6 +27,80 @@
         height:451px;
         border: 1px solid #3d3d3d;
         border-radius: 5px;
+    }
+
+    .dir {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+    }
+
+    .separador {
+        height: 132px;
+    }
+
+    .dir > h2 {
+        font: 32px "Bebas Neue";
+        font-weight: 400;
+        line-height: 38.4px;
+        height: 29px;
+    }
+
+    .dir-linha {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dir-linha img {
+        width: 29px;
+        height: 29px;
+    }
+
+    .dir-linha h2{
+        font: 24px "Bebas Neue";
+        font-weight: 400;
+    }
+
+    .dir-linha-button {
+        display: flex;
+        gap: 23px;
+    }
+    .dir-linha-main{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 50px;
+        font-size: 20px;
+    }
+    .dir-linha-main button {
+        width: 30px;
+        height: 1px;
+        font-size: 30px;
+        border: none;
+        outline: none;
+    }
+
+    #but-dir {
+        width: 177px;
+        height: 38px;
+        border-radius:5px;
+        border: 1px solid #959595;
+        background-color: #fff;
+        font-size:14px
+    }
+
+    .dir-linha-img {
+        display: flex;
+        gap: 7.5px;
+        margin-top: 10px;
+    }
+
+    .dir-linha-img p {
+        font: 16px "Inter";
+    }
+
+    #txt-light {
+        color: #8e8e8e;
     }
 
 }

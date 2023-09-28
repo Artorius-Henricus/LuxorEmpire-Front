@@ -15,6 +15,7 @@ import AdmCadastroProduto from './pages/adm/adm-cadastro-produto';
 import PaginaTelaUsuario from './pages/site/telausuario';
 import PaginaEnderecos from './pages/site/telaendereços';
 import PaginaCartoes from './pages/site/telacartoes';
+import CadastrarCartao from './pages/site/cadastrarcartao';
 import CadastrarEndereco from './pages/site/cadastrarendereco';
 import Pagamento from './pages/site/pagamento';
 import Paginaproduto from './pages/site/tela-produto';
@@ -37,6 +38,7 @@ root.render(
         <Route path='/cartoes' element={<PaginaCartoes />} />
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />
+        <Route path='/cartoes/cadastro' element={<CadastrarCartao />} />
         <Route path='/produtos' element={<Paginaproduto />} />      
         </Routes>
     </BrowserRouter>
