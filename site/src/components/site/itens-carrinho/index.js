@@ -4,11 +4,12 @@ export default function CompCarrinho() {
     return (
         <div className='produto'>
             <div id='imgtotal'>
-            <div id='img'></div>
+                <div id='img'></div>
 
-            <p>Nome Produto</p> </div>
+                <p>Nome Produto</p>
+            </div>
 
-            <p>R$ 000,000</p>
+                <p>R$ 000,00</p>
 
             <div className='quant'>
                 <div> + </div>
@@ -16,7 +17,7 @@ export default function CompCarrinho() {
                 <div> - </div>
             </div>
 
-            <p>R$ 000,000</p>
+            <p>R$ 000,00</p>
 
             <button className='exclusao'>Excluir</button>
         </div>
