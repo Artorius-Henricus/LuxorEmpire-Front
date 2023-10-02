@@ -9,7 +9,7 @@ export default function CompCarrinho() {
                 <p>Nome Produto</p>
             </div>
 
-                <p>R$ 000,00</p>
+                <p id='number'>R$ 000,00</p>
 
             <div className='quant'>
                 <div> + </div>
@@ -17,7 +17,7 @@ export default function CompCarrinho() {
                 <div> - </div>
             </div>
 
-            <p>R$ 000,00</p>
+            <p id='number'>R$ 000,00</p>
 
             <button className='exclusao'>Excluir</button>
         </div>
