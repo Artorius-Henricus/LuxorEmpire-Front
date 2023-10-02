@@ -38,8 +38,8 @@ export default function Carrinho(){
                     <p id='grande'>Selecionar Tudo</p>
                 </div>
 
-                <div>
-                    <div className='right'>
+                <div className='right'>
+                    <div id='right'>
                         <p>Total (0 Item):</p>
                         <p id='grande'>R$ 000,00</p>
                     </div>

@@ -42,7 +42,8 @@ export default function CompCabecalho() {
                     </button>
 
                     <button>
-                        <img src="/assets/images/cabecalho/Compras.svg" alt="ComprasIcon" />
+                        <Link to='/carrinho'>
+                        <img src="/assets/images/cabecalho/Compras.svg" alt="ComprasIcon" /></Link>
                         Meu Carrinho
                     </button>
 
