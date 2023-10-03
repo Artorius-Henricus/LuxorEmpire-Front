@@ -56,7 +56,7 @@
     #leftside div {
         display: flex;
         flex-direction: column;
-        max-width: 320px;
+        width: 350px;
         max-height: 220px;
         border: 1px solid #000;
         border-radius: 5px;
@@ -71,10 +71,17 @@
         margin: 5px 0px;
         color: #000;
     }
+    
+    #leftside h2 {
+        font: 14px "Inter";
+        font-weight: 600;
+        margin: 5px 0px;
+        color: #000;
+    }
 
     #leftside p {
         font: 14px "Inter";
-        font-weight: 400;
+        font-weight: 600;
         margin: 3px 0px;
         color: #383838;
     }

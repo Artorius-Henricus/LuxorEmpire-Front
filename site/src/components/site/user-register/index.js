@@ -11,6 +11,7 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
       }, [isOpen]);
 
     return(
+        <>
         <div className={`register-user ${isOpen ? 'active' : ''}`}>
             <div className='left-side'>
                 <img src="/assets/images/cabecalho/01LogoBranca1.svg" alt="" />
@@ -47,5 +48,8 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
                 <button>Cadastrar</button>
             </div>
         </div>
+
+        <div className={`${isOpen ? 'active shadow' : ''} `} onClick={onClose}></div>
+        </>
     )
 }
