@@ -47,7 +47,7 @@ root.render(
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/produtos' element={<Paginaproduto />} />      
-        </Routes>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

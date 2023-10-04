@@ -20,7 +20,7 @@ export default function PaginaCartoes() {
                         <div className='cartaoblock'>
                             <div>
                                 <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
-                                <div>
+                                <div id='textbox'>
                                     <h1>Nome Cartão</h1>
                                     <h3>Cartão Terminado Em</h3>
                                 </div>
@@ -29,18 +29,16 @@ export default function PaginaCartoes() {
                         </div>
                     </section>
 
-                    <section>
+                    <section className='rightside'>
                         <button>Adicionar Cartão</button>
 
                         <div className='cartaoblock'>
+                            <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
                             <div>
-                                <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
-                                <div>
-                                    <h1>Nome Cartão</h1>
-                                    <h3>Cartão Terminado Em</h3>
-                                </div>
+                                <h1>Nome Cartão</h1>
+                                <h3>Cartão Terminado Em</h3>
+                                <button>Editar</button>
                             </div>
-                            <button><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
                         </div>
                     </section>
                 </article>

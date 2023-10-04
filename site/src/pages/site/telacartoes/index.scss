@@ -19,6 +19,7 @@
     .leftside {
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
     }
 
     .leftside > h1 {
@@ -42,6 +43,42 @@
         flex-direction: row;
     }
 
+    #textbox {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+
+    .cartaoblock h1 {
+        font: 20px "Inter";
+    }
+
+    .cartaoblock h3 {
+        font: 14px "Inter";
+    }
+
+    .cartaoblock button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 17px;
+        height: 17px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+    .cartaoblock button:hover {
+        animation: shake 1s ease-in-out infinite;
+    }
+
+    .cartaoblock button:active {
+        animation: up 0.3s ease-in-out 1;
+    }
+
     @keyframes shake {
         0% { transform: rotateZ(0); }
         20% { transform: rotateZ(-5deg); }
@@ -54,11 +91,25 @@
         0% { transform: translateY(0); }
         20% { transform: translateY(-5px); }
         40% { transform: translateY(5px); }
-
     }
 
-    #leftside img {
-        width: 17px;
-        height: 17px;
+    .rightside {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    .rightside > button {
+        width: 295px;
+        height: 43px;
+        border-radius: 3px;
+        background-color: transparent;
+        font: 24px "Inter";
+        color: #383838;
+        border: 1px solid #383838;
+        outline: none;
+        margin: 0px 0px 20px 0px;
+        cursor: pointer;
     }
 }
