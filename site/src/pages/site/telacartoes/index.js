@@ -21,8 +21,8 @@ export default function PaginaCartoes() {
                             <div>
                                 <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
                                 <div id='textbox'>
-                                    <h1>Nome Cartão</h1>
-                                    <h3>Cartão Terminado Em</h3>
+                                    <h1>Itaucard Mastercard Default</h1>
+                                    <h3>Cartão de crédito terminando em •••• 0000</h3>
                                 </div>
                             </div>
                             <button><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
@@ -30,13 +30,13 @@ export default function PaginaCartoes() {
                     </section>
 
                     <section className='rightside'>
-                        <button>Adicionar Cartão</button>
+                        <Link to='/cartoes/cadastro'>Adicionar Cartão</Link>
 
-                        <div className='cartaoblock'>
+                        <div className='cartaoselected'>
                             <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
                             <div>
-                                <h1>Nome Cartão</h1>
-                                <h3>Cartão Terminado Em</h3>
+                                <h1>Itaucard Mastercard Default</h1>
+                                <h3>Cartão de crédito terminando em •••• 0000</h3>
                                 <button>Editar</button>
                             </div>
                         </div>

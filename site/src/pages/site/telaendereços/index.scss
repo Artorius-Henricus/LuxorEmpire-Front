@@ -8,85 +8,47 @@
         flex-direction: row;
     }
 
-    #bodycenter {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        margin-top: 40px;
-        padding: 20px;
-    }
-
-    #leftside {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    #bodycenter > h1 {
-        font: 36px "Inter";
-        color: #000;
-    }
-
-    #bodycenter > div {
+    .corp > article {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        padding: 20px 40px;
+        flex-grow: 1;
     }
 
-    #btadd {
+    .leftside {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: 598px;
+        padding: 0px 10px 0px 0px;
+    }
+
+    .leftside::-webkit-scrollbar {
+        width: 5px;
+    }
+      
+    .leftside::-webkit-scrollbar-track {
+        background: transparent;
+    }
+      
+    .leftside::-webkit-scrollbar-thumb {
+        background-color: rgb(88, 88, 88);
+        border-radius: 20px;
+        border: none;
+    }
+
+    .leftside > h1 {
+        font: 30px "Inter";
+        font-weight: regular;
+        margin: 0px 0px 20px 0px;
+    }
+
+    .cartaoblock button {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        text-decoration: none;
-        width: 234px;
-        height: 39px;
-        border-radius: 2px;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        border: 1px solid #000;
-        font: 20px "Inter";
-        color: #000;
-        margin-right: 10px;
-    }
-
-    #leftside div {
-        display: flex;
-        flex-direction: column;
-        width: 350px;
-        max-height: 220px;
-        border: 1px solid #000;
-        border-radius: 5px;
-        padding: 5px 10px;
-        border-left: 13px solid #404040;
-        margin: 10px 5px;
-    }
-
-    #leftside h1 {
-        font: 20px "Inter";
-        font-weight: 400;
-        margin: 5px 0px;
-        color: #000;
-    }
-    
-    #leftside h2 {
-        font: 14px "Inter";
-        font-weight: 600;
-        margin: 5px 0px;
-        color: #000;
-    }
-
-    #leftside p {
-        font: 14px "Inter";
-        font-weight: 600;
-        margin: 3px 0px;
-        color: #383838;
-    }
-
-    #leftside button {
         width: 17px;
         height: 17px;
         background-color: transparent;
@@ -94,14 +56,13 @@
         outline: none;
         cursor: pointer;
         align-self: flex-end;
-        transition: 0.3s;
     }
 
-    #leftside button:hover {
+    .cartaoblock button:hover {
         animation: shake 1s ease-in-out infinite;
     }
 
-    #leftside button:active {
+    .cartaoblock button:active {
         animation: up 0.3s ease-in-out 1;
     }
 
@@ -117,11 +78,81 @@
         0% { transform: translateY(0); }
         20% { transform: translateY(-5px); }
         40% { transform: translateY(5px); }
-
     }
 
-    #leftside img {
-        width: 17px;
-        height: 17px;
+    .rightside {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .rightside > a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 230px;
+        height: 40px;
+        border-radius: 3px;
+        background-color: transparent;
+        font: 20px "Inter";
+        color: #383838;
+        border: 1px solid #383838;
+        outline: none;
+        margin: 0px 0px 20px 0px;
+        cursor: pointer;
+    }
+
+    .cartaoselected  {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cartaoselected > img {
+        width: 262px;
+        height: 165px;
+        border-radius: 13px;
+        border: none;
+        box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25);
+        margin-right: 10px;
+    }
+    .cartaoselected div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .cartaoselected h1 {
+        font: 20px "Inter";
+        width: 236px;
+    }
+
+    .cartaoselected h3 {
+        font: 14px "Inter";
+        width: 236px;
+    }
+
+    .cartaoselected button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 18px;
+        background-color: transparent;
+        color: #4584FF;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .cartaoselected button:hover {
+        text-decoration: underline;
     }
 }

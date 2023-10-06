@@ -42,7 +42,7 @@ export default function CadastrarEndereco() {
 
                     <div>
                         <label>Bairro</label>
-                        <input type='text' />
+                        <input type='text' placeholder={'Insira o CEP acima para preencher o bairro'} className='unaltera' readOnly/>
                     </div>
                     
                     <div>
