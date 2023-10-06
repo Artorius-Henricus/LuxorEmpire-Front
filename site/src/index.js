@@ -21,26 +21,33 @@ import Pagamento from './pages/site/pagamento';
 import Paginaproduto from './pages/site/tela-produto';
 import Carrinho from './pages/site/carrinho';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<PaginaLanding />} />
+
+        {/* Páginas do ADMIN */}
+        <Route path='/adm' element={<AdmLogin />} />
         <Route path='/adm/central' element={<AdmCentral />} />
         <Route path='/adm/pedidos-concluidos' element={<AdmPedidosConcluidos />} />
         <Route path='/adm/pedidos-andamento' element={<AdmPedidosAndamento />} />
         <Route path='/adm/cadastrar-produto' element={<AdmCadastroProduto />} />
-        <Route path='/adm' element={<AdmLogin />} />
-        <Route path='/pagamento' element={<Pagamento />} />
+
+        {/* Perfil do USUÁRIO */}
         <Route path='/perfil' element={<PaginaTelaUsuario />} />
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />
-        <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />
         <Route path='/cartoes/cadastro' element={<CadastrarCartao />} />
+
+        {/* Página do Mercado */}
+        <Route path='/carrinho' element={<Carrinho />} />
+        <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/produtos' element={<Paginaproduto />} />      
-        </Routes>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

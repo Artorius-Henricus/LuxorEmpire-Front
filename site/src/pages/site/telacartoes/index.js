@@ -13,22 +13,32 @@ export default function PaginaCartoes() {
             <CompCabecalho />
             <div className='corp'>
                 <CompUserMenu />
-                <article id='bodycenter'>
-                    <div>
-                        <h1>Endereços</h1>
-                        <Link to='/cartoes/cadastro' id='btadd'>Adicionar Cartão</Link>
-                    </div>
-                    <section id='leftside'>
+                <article>
+                    <section className='leftside'>
+                        <h1>Seus Cartões</h1>
 
                         <div className='cartaoblock'>
                             <div>
                                 <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
-                                <div>
+                                <div id='textbox'>
                                     <h1>Nome Cartão</h1>
                                     <h3>Cartão Terminado Em</h3>
                                 </div>
                             </div>
                             <button><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
+                        </div>
+                    </section>
+
+                    <section className='rightside'>
+                        <button>Adicionar Cartão</button>
+
+                        <div className='cartaoblock'>
+                            <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
+                            <div>
+                                <h1>Nome Cartão</h1>
+                                <h3>Cartão Terminado Em</h3>
+                                <button>Editar</button>
+                            </div>
                         </div>
                     </section>
                 </article>

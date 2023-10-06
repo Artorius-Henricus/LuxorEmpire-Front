@@ -130,3 +130,15 @@
 .janela-open {
     overflow: hidden; /* Impede a rolagem da página de fundo quando o modal está aberto */
 }
+
+.shadow {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: #686868c4;
+    z-index: 999;
+    cursor: pointer;
+}

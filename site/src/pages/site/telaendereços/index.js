@@ -22,7 +22,7 @@ export default function PaginaEnderecos() {
 
                         <div>
                             <h1>Endereço do Thur</h1>
-                            <p>ArthurZera</p>
+                            <h2>ArthurZera</h2>
                             <p>Rua Barrinha</p>
                             <p>Conjunto Habitacional Brigadeiro Faria Lima</p>
                             <p>São Paulo</p>

@@ -50,20 +50,35 @@ export default function Paginaproduto() {
                     <div className='dir-linha-img'>
                         <img src='/assets/images/produtos/Caixa 1.svg'/>
                         <p>Prazo de produção:</p>
-                        <p id='txt-light'>2 dias úteis</p>
+                        <p className='txt-light'>2 dias úteis</p>
                     </div>
 
-                    {/* <div className='dir-linha-segurança'>
+                    <div className='dir-linha-seguranca'>
                         <img src='/assets/images/produtos/check-mark-icon-vector-removebg-preview 1.svg' />
                         <div className='txt-column'>
                             <p>Certificado de Garantia e Autenticidade</p>
-                            <p>Todas as Joias acompanham certificado de garantia e autenticidade do Ouro 18k, Diamantes e Pedras Preciosas.</p>
-
-                        </div>
-                    </div> */}
-
+                            <p className='txt-light'>Todas as Joias acompanham certificado <br/>de garantia e autenticidade do Ouro 18k, <br/> Diamantes e Pedras Preciosas.</p>
+                        </div>  
+                    </div>
                 </div>
             </section>
+            <div className='sec-mid'>
+                <div className='descrição'>
+                    <div id='linha'></div>
+                    <p>Descrição</p>
+                    <div id='linha'></div>
+                </div>
+                <div className='topicos'>
+                    <ol>
+                        <li>Material:</li>
+                        <li>Gema:</li>
+                        <li>Categoria:</li>
+                        <li>Gênero:</li>
+                    </ol>
+                </div>
+               
+            </div>
         </div>
     )
 }
+

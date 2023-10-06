@@ -11,6 +11,7 @@ export default function LoginUser({ isOpen, onClose, trocar}){
       }, [isOpen]);
 
     return(
+        <>
         <div className={`login-user ${isOpen ? 'active' : ''}`}>
             <div className='left-side'>
                 <img src="/assets/images/cabecalho/01LogoBranca1.svg" alt="" />
@@ -41,5 +42,8 @@ export default function LoginUser({ isOpen, onClose, trocar}){
                 <button>Fazer Login</button>
             </div>
         </div>
+
+        <div className={`${isOpen ? 'active shadow' : ''} `} onClick={onClose}></div>
+        </>
     )
 }
