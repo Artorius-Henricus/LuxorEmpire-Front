@@ -109,6 +109,7 @@
         flex-direction: column;
         flex-grow: 1;
         align-items: center;
+        margin-left: 20px;
     }
 
     .rightside > a {
@@ -129,54 +130,53 @@
         cursor: pointer;
     }
 
-
-    .endblock {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #383838;
-        background-color: transparent;
-        padding: 5px 10px;
-        border-radius: 5px;
-        width: 320px;
-        max-height: 200px;
-        margin-bottom: 20px;
-    }
-
-    .selecendblock {
-        display: flex;
-        flex-direction: column;
-        border: 2px solid #383838;
-        background-color: transparent;
-        padding: 5px 10px;
-        border-radius: 7px;
-    }
-
-    .selecendblock h1 {
-        font: 25px "Inter";
-        font-weight: 500;
-    }
-
-    .selecendblock h3 {
-        font: 20px "Inter";
-        font-weight: 500;
-        color: #383838;
-        margin: 2px 0px;
-    }
-
-    .selecendblock button {
+    .cartaoselected  {
         display: flex;
         flex-direction: row;
-        background-color: transparent;
-        border: none;
-        text-decoration: none;
-        color: #4584FF;
-        width: 20px;
-        font: 15px "Inter";
-        cursor: pointer;
-        margin-top: 10px;
     }
 
-    .selecendblock button:hover {
+    .cartaoselected > img {
+        width: 262px;
+        height: 165px;
+        border-radius: 13px;
+        border: none;
+        box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25);
+        margin-right: 10px;
+    }
+    .cartaoselected div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .cartaoselected h1 {
+        font: 20px "Inter";
+        width: 236px;
+    }
+
+    .cartaoselected h3 {
+        font: 14px "Inter";
+        width: 236px;
+    }
+
+    .cartaoselected button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 18px;
+        background-color: transparent;
+        color: #4584FF;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .cartaoselected button:hover {
         text-decoration: underline;
     }
 }
