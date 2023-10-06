@@ -1,5 +1,7 @@
 import './index.scss';
 import CompCabecalho from '../../../components/site/cabecalho';
+import CompRodape from '../../../components/site/rodape';
+import CompIndicacoes from '../../../components/site/indicacoes-produto';
 
 export default function Paginaproduto() {
 
@@ -69,15 +71,27 @@ export default function Paginaproduto() {
                     <div id='linha'></div>
                 </div>
                 <div className='topicos'>
-                    <ol>
-                        <li>Material:</li>
-                        <li>Gema:</li>
-                        <li>Categoria:</li>
-                        <li>Gênero:</li>
-                    </ol>
+                    <b>・Material:</b>
+                    <b>・Gema:</b>
+                    <b>・Categoria:</b>
+                    <b>・Gênero:</b>
                 </div>
                
             </div>
+
+            <div className='sec-mid-bottom'>
+                <div className='separador'>
+                    <div id='linha'></div>
+                    <p>Você Pode Gostar</p>
+                    <div id='linha'></div> 
+                </div>
+            </div>
+
+            <div className='sec-bottom'>
+                <CompIndicacoes />
+            </div>
+
+            {/* <CompRodape /> */}
         </div>
     )
 }
