@@ -44,7 +44,7 @@ export default function Carrinho(){
                         <p id='grande'>R$ 000,00</p>
                     </div>
 
-                    <p id='bottom'>Continuar</p>
+                    <button id='bottom'>Continuar</button>
                 </div>
             </div>
 
