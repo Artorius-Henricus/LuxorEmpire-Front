@@ -33,7 +33,7 @@ export default function Carrinho(){
 
             <div className='total'>
                 <div className='left'>
-                    <div className='img'></div>
+                    <input type="checkbox" className='img'/>
 
                     <p id='grande'>Selecionar Tudo</p>
                 </div>
