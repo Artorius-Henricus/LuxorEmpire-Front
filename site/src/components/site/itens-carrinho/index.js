@@ -4,9 +4,13 @@ export default function CompCarrinho() {
     return (
         <div className='produto'>
             <div id='imgtotal'>
+
+                {/* <input type="checkbox" id='im'/> */}
+
                 <div id='img'></div>
 
                 <p>Nome Produto</p>
+
             </div>
 
                 <p id='number'>R$ 000,00</p>
