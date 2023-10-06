@@ -31,13 +31,14 @@ export default function PaginaCartoes() {
                     <section className='rightside'>
                         <Link to='/enderecos/cadastro'>Adicionar Endereço</Link >
 
-                        <div className='cartaoselected'>
-                            <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
-                            <div>
-                                <h1>Itaucard Mastercard Default</h1>
-                                <h3>Cartão de crédito terminando em •••• 0000</h3>
-                                <button>Editar</button>
-                            </div>
+                        <div className='selecendblock'>
+                            <h1>Arthur Silva Alves</h1>
+                            <h3>Brasil</h3>
+                            <h3>04840-650</h3>
+                            <h3>Rua Pontes Gestal, 93</h3>
+                            <h3>Conjunto Habitacional Brigadeiro Faria Lima</h3>
+                            <h3>São Paulo, SP</h3>
+                            <button>Editar</button>
                         </div>
                     </section>
                 </article>
