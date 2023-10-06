@@ -1,0 +1,58 @@
+@import 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;400&display=swap';
+
+.comp-rodape {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+    background-color: #CCCCCC;
+    height: 167px;
+    padding: 10px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    h1 {
+        font: 24px 'Bebas Neue';
+        color: #3D3D3D;
+    }
+
+    a {
+        text-decoration: none;
+        font: 20px "Bebas Neue";
+        color: #3D3D3D;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        color: #666666;
+    }
+
+    #ltblock {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ltblock div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ltblock p {
+        color: #3D3D3D;
+        font: 24px "Bebas Neue";
+    }
+
+    #ltblock > img {
+        height: 100px;
+    }
+
+    #logordp {
+        height: 16px;
+    }
+}

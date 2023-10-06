@@ -1,0 +1,150 @@
+.pagina-adm-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../../../public/assets/images/adm/BackGround1.svg);
+    background-size: cover;
+
+    article {
+        display: flex;
+        flex-direction: row;
+        width: 760px;
+        height: 496px;
+        background-color: #fff;
+    }
+
+    .leftside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        flex-grow: 1;
+    }
+
+    .leftside h1 {
+        font: 36px 'Inter';
+        font-weight: 400;
+        color: #686868;
+    }
+
+    .leftside img {
+        height: 396px;
+    }
+
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        width: 329px;
+        height: 100%;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .right-side h1 {
+        position: relative;
+        top: -43px;
+        font: 36px "Inter";
+        font-weight: 400;
+        color: #505050;
+    }
+
+    .right-side label {
+        font: 16px "Inter";
+        font-weight: 400;
+        color: #737373;
+    }
+
+    .right-side div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .right-side input {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #ABABAB;
+        background-color: transparent;
+        font: 16px "Inter";
+        padding: 0px 10px;
+        outline: none;
+        color: #7a7a7a;
+    }
+
+    .right-side > button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: 213px;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #ABABAB;
+        background-color: #525252;
+        font: 16px "Inter";
+        padding: 0px 10px;
+        outline: none;
+        color: #FFF;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: 0.5s;
+    }
+
+    .right-side > button:hover {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .right-side > button:active {
+        transition: 0s;
+        background-color: #0f0f0f;
+        color: #fff;
+    }
+
+    .btlg {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btlg div {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #ABABAB;
+        background-color: transparent;
+        border-radius: 5px;
+        height: 40px;
+    }
+
+    .btlg input {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: transparent;
+        font: 16px "Inter";
+        padding: 0px 10px;
+        outline: none;
+        color: #7a7a7a;
+    }
+
+    .btlg button {
+        align-self: center;
+        margin-right: 5px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        width: 23px;
+        transition: 0.3s;
+        height: 23px;
+        cursor: pointer;
+    }
+
+    .btlg button:active {
+        transform: translateY(-1.5px);
+    }
+}

@@ -1,0 +1,144 @@
+.register-user{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    position: fixed;
+    top: 100px;
+    width: 899px;
+    height: 528px;
+    background-color: #000;
+    z-index: 1000;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    box-shadow: 0px 0px 8px 0px #404040b7;
+    
+    .left-side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 354px;
+        background-color: #404040;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .left-side img {
+        height: 144px;
+        margin: 30px 0px;
+    }
+
+    .left-side h1 {
+        font: 32px "Bebas neue";
+        color: #fff;
+        margin: 10px 0px;
+    }
+
+    .left-side h4 {
+        font: 16px "Bebas neue";
+        color: #fff;
+        text-align: center;
+    }
+
+    .left-side button {
+        width: 183px;
+        height: 37px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        font: 20px 'Inter';
+        font-weight: 200;
+        color: #fff;
+        margin: 20px 0px;
+        cursor: pointer;
+    }
+
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 40px 0px;
+        flex-grow: 1;
+        background-color: #fff;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .right-side h1 {
+        font: 36px "Inter";
+        font-weight: 800;
+        color: #3B3B3B;
+    }
+
+    .right-side input {
+        width: 238px;
+        height: 37px;
+        background-color: transparent;
+        border: 1px solid #404040;
+        border-radius: 5px;
+        margin: 10px 10px;
+        font: 14px "Inter";
+        font-weight: 400;
+        padding: 0px 20px;
+        outline: none;
+        color: #404040;
+    }
+
+    .right-side button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        font: 16px "Inter";
+        font-weight: 200;
+        color: #404040;
+        border: 1px solid #404040;
+        border-radius: 10px;
+        width: 130px;
+        height: 37px;
+        cursor: pointer;
+    }
+
+    #btfechar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font: 16px "Inter";
+        font-weight: 200;
+        color: #404040;
+        border: 1px solid #4040409f;
+        border-radius: 10px;
+        width: auto;
+        height: auto;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+}
+
+.register-user.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.janela-open {
+    overflow: hidden; /* Impede a rolagem da página de fundo quando o modal está aberto */
+}
+
+.shadow {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: #686868c4;
+    z-index: 999;
+    cursor: pointer;
+}

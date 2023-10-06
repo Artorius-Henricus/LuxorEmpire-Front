@@ -1,0 +1,124 @@
+@import 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;400&display=swap';
+
+.comp-menu-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 269px;
+    box-shadow: 6px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+
+    #adm-profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #adm-profile img {
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    #adm-profile h1 {
+        font: 24px 'Inter';
+    }
+
+    #adm-profile button {
+        background-color: transparent;
+        font: 16px "Inter";
+        color: #5E5E5E;
+        background-color: transparent;
+        border: none;  
+    }
+    
+    #adm-profile button:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #logoadm {
+        height: 150px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .btmn {
+        display: flex;
+        flex-direction: row;
+        width: 200px;
+        align-items: center;
+        text-decoration: none;
+        font: 32px "Bebas Neue";
+        color: #000;
+        margin: 10px 0px;
+    }
+
+    .btsec {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        justify-content: center;
+        text-decoration: none;
+        font: 32px "Bebas Neue";
+        color: #000;
+        margin: 10px 0px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .btsec > span {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .btsec img {
+        margin-right: 20px;
+        height: 42px;
+    }
+
+    .btmn:hover {
+        text-decoration: underline;
+    }
+
+    .btmn img {
+        margin-right: 20px;
+        height: 42px;
+    }
+
+    .off {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: width 0.3s ease, height 0.3s ease, opacity 1s ease;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .show {
+        height: 80px;
+        opacity: 1;
+    }
+
+    .btextra {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        text-align: end;
+        align-items: center;
+        text-decoration: none;
+        font: 17px "Bebas Neue";
+        color: #000;
+        margin: 10px 0px;
+        transition: 0.3s;
+    }
+
+    .btextra:hover {
+        transform: translateY(-2px);
+        font: 20px "Bebas Neue";
+        text-decoration: underline;
+    }
+}
