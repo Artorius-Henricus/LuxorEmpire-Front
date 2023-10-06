@@ -17,8 +17,13 @@ export default function PaginaCartoes() {
                     <section className='leftside'>
                         <h1>Seus Endereços</h1>
 
-                        <div className=''>
-                            <h1>Casa do Thur</h1>
+                        <div className='endblock'>
+                            <h1>Arthur Silva Alves</h1>
+                            <h3>Brasil</h3>
+                            <h3>04840-650</h3>
+                            <h3>Rua Pontes Gestal, 93</h3>
+                            <h3>Conjunto Habitacional Brigadeiro Faria Lima</h3>
+                            <h3>São Paulo, SP</h3>
                             <button><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
                         </div>
                     </section>

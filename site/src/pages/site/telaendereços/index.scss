@@ -44,7 +44,31 @@
         margin: 0px 0px 20px 0px;
     }
 
-    .cartaoblock button {
+    .endblock {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #383838;
+        background-color: transparent;
+        padding: 5px 10px;
+        border-radius: 5px;
+        width: 320px;
+        max-height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .endblock h1 {
+        font: 20px "Inter";
+        font-weight: 500;
+    }
+
+    .endblock h3 {
+        font: 14px "Inter";
+        font-weight: 500;
+        color: #383838;
+        margin: 2px 0px;
+    }
+
+    .endblock button {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -58,11 +82,11 @@
         align-self: flex-end;
     }
 
-    .cartaoblock button:hover {
+    .endblock button:hover {
         animation: shake 1s ease-in-out infinite;
     }
 
-    .cartaoblock button:active {
+    .endblock button:active {
         animation: up 0.3s ease-in-out 1;
     }
 
