@@ -25,9 +25,9 @@ export default function Carrinho(){
 
             <div className='itens'>
                 <CompCarrinho />
-                {/* <CompCarrinho />
                 <CompCarrinho />
-                <CompCarrinho /> */}
+                <CompCarrinho />
+                <CompCarrinho />
 
             </div>
 
