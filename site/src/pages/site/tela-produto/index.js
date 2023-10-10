@@ -91,7 +91,7 @@ export default function Paginaproduto() {
                 <CompIndicacoes />
             </div>
 
-            {/* <CompRodape /> */}
+            <CompRodape />
         </div>
     )
 }
