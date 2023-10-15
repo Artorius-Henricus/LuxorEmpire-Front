@@ -4,6 +4,8 @@
     width: 215px;
     height: 304px;
     border: 1px solid #6c6c6c;
+    padding: 12px 0px 0px 0px;
+    
 }
 
 .sub {
@@ -11,8 +13,14 @@
     height: 188px;
     border: 1px solid #d9d9d9;
     align-self: center;
+
+
 }
 
+#height {
+    height: 35px;
+}
+ 
 .main p {
     margin-left: 12px;
 }

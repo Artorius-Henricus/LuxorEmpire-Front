@@ -20,6 +20,7 @@ import CadastrarEndereco from './pages/site/cadastrarendereco';
 import Pagamento from './pages/site/pagamento';
 import Paginaproduto from './pages/site/tela-produto';
 import Carrinho from './pages/site/carrinho';
+import Paginamarket from './pages/site/market';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -46,7 +47,8 @@ root.render(
         {/* Página do Mercado */}
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/pagamento' element={<Pagamento />} />
-        <Route path='/produtos' element={<Paginaproduto />} />      
+        <Route path='/produtos' element={<Paginaproduto />} />   
+        <Route path='/market' element={<Paginamarket/>} />   
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

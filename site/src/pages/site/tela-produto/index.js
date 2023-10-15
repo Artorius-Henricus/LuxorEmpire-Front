@@ -89,9 +89,14 @@ export default function Paginaproduto() {
 
             <div className='sec-bottom'>
                 <CompIndicacoes />
+                <CompIndicacoes />
+                <CompIndicacoes />
+                <CompIndicacoes />
+                <CompIndicacoes />
             </div>
 
             <CompRodape />
+            
         </div>
     )
 }
