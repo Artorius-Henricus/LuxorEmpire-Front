@@ -1,4 +1,18 @@
 .pagina-market {
     display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    height: 10vh;    
+}
+
+.esq {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox {
+    display: flex;
     flex-direction: row;
 }
