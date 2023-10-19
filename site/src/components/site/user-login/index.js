@@ -30,12 +30,12 @@ export default function LoginUser({ isOpen, onClose, trocar}){
                 <article>
                     <div>
                         <input type="text" placeholder='E-mail'/>
-                        <input type="text" placeholder='Nome Completo'/>
+                        <input type="number" placeholder='CPF'/>
                     </div>
 
                     <div>
+                        <input type="text" placeholder='Nome Completo'/>
                         <input type="number" placeholder='Senha'/>
-                        <input type="text" placeholder='CPF'/>
                     </div>
                 </article>
 
