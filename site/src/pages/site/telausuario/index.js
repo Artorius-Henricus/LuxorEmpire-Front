@@ -5,7 +5,23 @@ import CompRodape from '../../../components/site/rodape';
 
 import CompUserMenu from '../../../components/site/usermenu';
 
+import storage from "local-storage"
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 export default function PaginaTelaUsuario(){
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+    }, [])
+
+    function Deslogar() {
+        storage.remove('user-info');
+        navigate('/');
+    }
 
     return(
         <div className='pagina-tela-usuario'>
@@ -35,7 +51,10 @@ export default function PaginaTelaUsuario(){
                                 <input type='date'/>
                             </div>
                         </div>
-                        <button>Salvar Alterações</button>
+                        <div id='btsvsc'>
+                            <button>Salvar Alterações</button>
+                            <button id='sairbt' onClick={Deslogar}>Sair da Conta</button>
+                        </div>
                     </section>
 
                     <section id='sideright'>

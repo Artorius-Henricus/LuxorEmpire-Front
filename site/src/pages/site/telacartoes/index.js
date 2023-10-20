@@ -4,9 +4,21 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 
 import CompUserMenu from '../../../components/site/usermenu';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+
+import storage from "local-storage"
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function PaginaCartoes() {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+    }, [])
 
     return(
         <div className='pagina-cartoes'>

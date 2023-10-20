@@ -4,8 +4,20 @@ import CompRodape from '../../../components/site/rodape';
 import { Link } from 'react-router-dom';
 import CompCarrinho from '../../../components/site/itens-carrinho';
 
+import storage from "local-storage"
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 export default function Carrinho(){
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+    }, [])
 
     return(
         <div className='pag-carrinho'>

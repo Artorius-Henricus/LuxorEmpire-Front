@@ -4,7 +4,19 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 import {Link} from 'react-router-dom'
 
+import storage from "local-storage"
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 export default function CadastrarEndereco() {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+    }, [])
 
     return(
         <div className='pagina-cadastrar-endereco'>

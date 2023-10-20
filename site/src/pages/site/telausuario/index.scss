@@ -127,4 +127,16 @@
     #sideright button:hover {
         transform: translateY(-3px);
     }
+
+    #btsvsc {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        gap: 20px;
+    }
+
+    #sairbt {
+        width: 150px !important;
+        font: 18px "Inter" !important;
+    }
 }

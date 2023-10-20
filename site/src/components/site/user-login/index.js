@@ -2,6 +2,7 @@ import './index.scss';
 import { useEffect, useState, useRef} from 'react';
 import { useNavigate} from 'react-router-dom'
 import axios from 'axios';
+import storage from 'local-storage'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar';
@@ -40,6 +41,7 @@ export default function LoginUser({ isOpen, onClose, trocar}){
         .then(response => {
             toast.success("Login Realizado!");
             ref.current.continuousStart()
+            storage('user-info', response.data);
 
             setTimeout(() => {
                 navigate('/perfil')
