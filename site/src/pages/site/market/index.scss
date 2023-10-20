@@ -3,16 +3,82 @@
     flex-direction: column;
 }
 
-.banner {
-    height: 10vh;    
+.tudo {
+    display: flex;
+    flex-direction: row;
 }
 
 .esq {
     display: flex;
     flex-direction: column;
+    position: relative;
+    left: 25px;
+    top: 100px;
 }
 
-.checkbox {
+.esq h2 {
+    font: 24px "Inter";
+}
+
+.types {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
+
+.types input {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #000000;
+}
+
+.types p {
+    margin-left: 3px;
+    font: 16px "Inter";
+}
+
+.agrupamento {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 325px;
+}
+
+.section-mid {
+    display: flex;
+    flex-direction: column;
+}
+
+.mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1600px;
+    height: 1150px;
+    gap: 40px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    position: relative;
+    top: 145px;
+}
+
+.botão {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    height: 120px;
+}
+
+#button {
+    width: 203px;
+    height: 50px;
+    align-self: center;
+    border: 1px solid #959595;
+    border-radius: 5px;
+    font: 20px "Inter";
+}
+
