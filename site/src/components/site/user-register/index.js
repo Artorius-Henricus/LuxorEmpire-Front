@@ -1,6 +1,8 @@
 import './index.scss';
 import { useEffect, useState} from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function RegisterUser({ isOpen, onClose, trocar}){
     useEffect(() => {
@@ -17,6 +19,9 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
     const [emailUser, setEmailUser] = useState('');
     const [senhaUser, setSenhaUser] = useState('');
     const [nasciUser, setNasciUser] = useState('');
+
+
+    const [showPass, setShowPass] = useState(false);
 
     function inverterData(data) {
         const partes = data.split('-'); // Divide a data em partes usando o traço como separador
@@ -37,23 +42,33 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
     async function CadastrarUsuario(){
         setNasciUser(inverterData(nasciUser))
         let info = {
-            nome: nomeUser,
-            cpf: cpfUser,
-            telefone: telefoneUser,
-            email: emailUser.toLowerCase(),
-            senha: senhaUser,
-            nascimento: nasciUser
+            nome: nomeUser.trim(),
+            cpf: cpfUser.trim(),
+            telefone: telefoneUser.trim(),
+            email: emailUser.toLowerCase().trim(),
+            senha: senhaUser.trim(),
+            nascimento: nasciUser.trim()
         };
         const url = "http://localhost:5000/usuario/registrar";
         const command = await axios.post(url, info)
-        
-        console.log(`Envio Realizado!
-| Resposta do Servidor: 
-  ${command.data}`)
+
+        .then(response => {
+            toast.success("Registro Finalizado!");
+        })
+  
+        .catch(error => {
+            if (error.response.data.erro == "Incorrect date value: 'Formato de data inválido' for column 'dt_nascimento' at row 1"){
+                toast.error("A Data Do Nascimento é Obrigatório!");
+            }
+            else {
+                toast.error(""+error.response.data.erro);
+            }
+        });
     }
 
     return(
         <>
+        <ToastContainer />
         <div className={`register-user ${isOpen ? 'active' : ''}`}>
             <div className='left-side'>
                 <img src="/assets/images/cabecalho/01LogoBranca1.svg" alt="" />
@@ -82,9 +97,12 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
 
                     <div>
                         <input type="text" placeholder='Nome Completo' value={nomeUser} onChange={e => setNomeUser(e.target.value)}/>
-                        <input type="number" placeholder='Senha' value={senhaUser} onChange={e => setSenhaUser(e.target.value)}/>
+                        <input type={`${showPass ? 'number' : 'password'}`} placeholder='Senha' value={senhaUser} onChange={e => setSenhaUser(e.target.value)}/>
                     </div>
-
+                    <div id='passwordbox'>
+                        <input type="checkbox" onClick={() => setShowPass(!showPass)}/>
+                        <label>Mostrar Senha</label>
+                    </div>
                 </article>
 
                 <button onClick={CadastrarUsuario}>Cadastrar</button>
@@ -92,6 +110,7 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
         </div>
 
         <div className={`${isOpen ? 'active shadow' : ''} `} onClick={onClose}></div>
+        
         </>
     )
 }

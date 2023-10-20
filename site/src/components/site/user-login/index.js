@@ -1,5 +1,10 @@
 import './index.scss';
-    import { useEffect} from 'react';
+import { useEffect, useState, useRef} from 'react';
+import { useNavigate} from 'react-router-dom'
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoadingBar from 'react-top-loading-bar';
 
 export default function LoginUser({ isOpen, onClose, trocar}){
     useEffect(() => {
@@ -8,10 +13,55 @@ export default function LoginUser({ isOpen, onClose, trocar}){
         } else {
           document.body.classList.remove('janela-open'); // Remova a classe quando o modal for fechado
         }
-      }, [isOpen]);
+    }, [isOpen]);
+
+    const [nomeUser, setNomeUser] = useState('');
+    const [cpfUser, setCpfUser] = useState('');
+    const [emailUser, setEmailUser] = useState('');
+    const [senhaUser, setSenhaUser] = useState('');
+
+    const [showPass, setShowPass] = useState(false);
+    const [loading, setLoading] = useState(false)
+
+    const navigate = useNavigate();
+    const ref = useRef();
+
+    async function Logar() {
+        setLoading(true)
+        let credenciais = {
+            email: emailUser, 
+            senha: senhaUser, 
+            cpf: cpfUser, 
+            nome: nomeUser
+        }
+        const url = "http://localhost:5000/usuario/logar";
+        const resposta = await axios.post(url, credenciais)
+
+        .then(response => {
+            toast.success("Login Realizado!");
+            ref.current.continuousStart()
+
+            setTimeout(() => {
+                navigate('/perfil')
+            }, 3000)
+        })
+  
+        .catch(error => {
+            setLoading(false)
+            if (error.response.data.erro == "Incorrect date value: 'Formato de data inválido' for column 'dt_nascimento' at row 1"){
+                toast.error("A Data Do Nascimento é Obrigatório!");
+            }
+            else {
+                toast.error(""+error.response.data.erro);
+                ref.current.complete();
+            }
+        });
+    }
 
     return(
         <>
+        <ToastContainer />
+        <LoadingBar color='#ff0000' ref={ref} />
         <div className={`login-user ${isOpen ? 'active' : ''}`}>
             <div className='left-side'>
                 <img src="/assets/images/cabecalho/01LogoBranca1.svg" alt="" />
@@ -29,21 +79,26 @@ export default function LoginUser({ isOpen, onClose, trocar}){
 
                 <article>
                     <div>
-                        <input type="text" placeholder='E-mail'/>
-                        <input type="number" placeholder='CPF'/>
+                        <input type="text" placeholder='E-mail' value={emailUser} onChange={e => setEmailUser(e.target.value)}/>
+                        <input type="number" placeholder='CPF' value={cpfUser} onChange={e => setCpfUser(e.target.value)}/>
                     </div>
 
                     <div>
-                        <input type="text" placeholder='Nome Completo'/>
-                        <input type="number" placeholder='Senha'/>
+                        <input type="text" placeholder='Nome Completo' value={nomeUser} onChange={e => setNomeUser(e.target.value)}/>
+                        <input type={`${showPass ? 'number' : 'password'}`} placeholder='Senha' value={senhaUser} onChange={e => setSenhaUser(e.target.value)}/>
+                    </div>
+
+                    <div id='passwordbox'>
+                        <input type="checkbox" onClick={() => setShowPass(!showPass)}/>
+                        <label>Mostrar Senha</label>
                     </div>
                 </article>
 
-                <button>Fazer Login</button>
+                <button onClick={Logar} disabled={loading}>Fazer Login</button>
             </div>
         </div>
 
-        <div className={`${isOpen ? 'active shadow' : ''} `} onClick={onClose}></div>
+        <div className={`${isOpen ? 'active shadow' : ''}`} onClick={onClose}></div>
         </>
     )
 }
