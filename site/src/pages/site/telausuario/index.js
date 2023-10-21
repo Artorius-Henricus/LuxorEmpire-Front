@@ -6,17 +6,10 @@ import CompRodape from '../../../components/site/rodape';
 import CompUserMenu from '../../../components/site/usermenu';
 
 import storage from "local-storage"
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function PaginaTelaUsuario(){
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (!storage('user-info')) {
-            navigate('/')
-        }
-    }, [])
 
     function Deslogar() {
         storage.remove('user-info');
@@ -37,18 +30,16 @@ export default function PaginaTelaUsuario(){
                             <div>
                                 <p>Nome de Usuário</p>
                                 <p>CPF</p>
-                                <p>Nome</p>
                                 <p>Email</p>
                                 <p>Número de Telefone</p>
                                 <p>Data de Nascimento</p>
                             </div>
                             <div>
-                                <input type='text'/>
-                                <input type='text'/>
-                                <input type='text'/>
-                                <input type='text'/>
-                                <input type='text'/>
-                                <input type='date'/>
+                                <input type='text' value={infoUser.nome}/>
+                                <input type='text' value={infoUser.cpf}/>
+                                <input type='text' value={infoUser.email}/>
+                                <input type='text' value={infoUser.telefone}/>
+                                <input type='date' value={infoUser.nascimento}/>
                             </div>
                         </div>
                         <div id='btsvsc'>

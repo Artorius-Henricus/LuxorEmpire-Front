@@ -1,23 +1,15 @@
 import './index.scss';
 
 import CompMenuBar from '../../../components/adm/menubar';
+import storage from "local-storage"
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function AdmPedidosConcluidos() {
+
     const [produtos, setProduto] = useState([]);
-    
-    async function BuscarProdutos() {
-        let url = 'http://localhost:5000/produtos'
-        let resp = await axios.get(url)
 
-        setProduto([...resp.data])
-    }
-
-    useEffect(() => {
-        BuscarProdutos()
-        return () => {};
-      }, []);
 
     return(
     <div className="adm-pagina-pedidos-concluidos">
