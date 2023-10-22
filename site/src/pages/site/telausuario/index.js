@@ -8,17 +8,29 @@ import CompUserMenu from '../../../components/site/usermenu';
 import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 export default function PaginaTelaUsuario(){
     const navigate = useNavigate();
-    const [infoUser, setInfoUser] = useState('')
+    const [infoUser, setInfoUser] = useState('');
+    const [perfilImg, setPerfilImg] = useState('');
+    const [slnImg, setSlnImg] = useState('');
 
     useEffect(() => {
         if (!storage('user-info')) {
             navigate('/')
         }
         else {
-            setInfoUser(storage('user-info'))
+            setInfoUser(storage('user-info'));
+
+            if(!storage('user-info')) {
+                setPerfilImg('');
+            }
+            else {
+                setPerfilImg("http://localhost:5000/"+storage('user-info').img);
+            }
         }
     }, [])
 
@@ -27,8 +39,45 @@ export default function PaginaTelaUsuario(){
         navigate('/');
     }
 
+    function escolherFoto(){
+        document.getElementById('inputfoto').click();
+    }
+
+    async function imageSelecionada(e) {
+        const selectedFile = e.target.files[0];
+        setSlnImg(selectedFile);
+        if (selectedFile) {
+            const fileUrl = URL.createObjectURL(selectedFile);
+            setPerfilImg(fileUrl);
+        }
+    }
+
+    async function enviarPerfilIMG() {
+        try {
+            const formData = new FormData();
+            formData.append('perfilimg', slnImg);
+
+            const user = storage('user-info').id;
+            const command = await axios.put(`http://localhost:5000/usuario/${user}/imagem`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                },
+            });
+            const imgdata = await axios.get(`http://localhost:5000/usuario/info/${user}`)
+            const data = storage('user-info')
+            data.img = imgdata.data.img;
+            storage('user-info', data)
+
+            toast.success("Imagem Cadastrada");
+        }
+        catch (err) {
+            toast.error(err.response.data.erro)
+        }
+    }
+
     return(
         <div className='pagina-tela-usuario'>
+            <ToastContainer />
             <CompCabecalho />
 
             <section className='corp'>
@@ -54,14 +103,29 @@ export default function PaginaTelaUsuario(){
                             </div>
                         </div>
                         <div id='btsvsc'>
-                            <button>Salvar Alterações</button>
+                            <button onClick={enviarPerfilIMG}>Salvar Alterações</button>
                             <button id='sairbt' onClick={Deslogar}>Sair da Conta</button>
                         </div>
                     </section>
 
                     <section id='sideright'>
-                        <img src="" alt="UserIcon" />
-                        <button>Selecionar uma Imagem</button>
+                        {!perfilImg &&
+                            <img src='assets/images/cabecalho/Usuario.svg' alt=""/>
+                        }
+                        {perfilImg &&
+                            <img src={perfilImg} alt=""/>
+                        }
+                        <span id='tamanhorecom'>Tamanho Recomendado: 500x500</span>
+                        
+                        <div onClick={escolherFoto}>
+                        {!perfilImg &&
+                            <button>Selecionar uma Imagem</button>
+                        }
+                        {perfilImg &&
+                            <button>Alterar Imagem</button>
+                        }
+                            <input type="file" id='inputfoto' onChange={imageSelecionada}/>
+                        </div>
                     </section>
                 </article>
             </section>

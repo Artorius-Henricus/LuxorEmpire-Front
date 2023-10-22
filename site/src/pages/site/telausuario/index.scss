@@ -105,6 +105,18 @@
         border: 1px solid #000;
     }
 
+    #sideright span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        border: 1px solid #000;
+        font: 30px 'Inter';
+    }
+
     #sideright button {
         display: flex;
         flex-direction: row;
@@ -138,5 +150,19 @@
     #sairbt {
         width: 150px !important;
         font: 18px "Inter" !important;
+    }
+
+    #inputfoto {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    #tamanhorecom {
+        border: none !important;
+        outline: none !important;
+        width: auto !important;
+        height: auto !important;
+        font: 15px "Inter" !important;
+        margin-top: 10px;
     }
 }

@@ -6,6 +6,7 @@ import RegisterUser from '../user-register';
 import {Link} from 'react-router-dom'
 import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function CompCabecalho() {
     const [mostrarComponente1, setMostrarComponente1] = useState(true);
@@ -16,6 +17,7 @@ export default function CompCabecalho() {
 
     const navigate = useNavigate();
     const [logged, setLogged] = useState(false)
+    const [perfilImg, setPerfilImg] = useState('');
 
     function nav() {
         navigate('/perfil')
@@ -24,6 +26,12 @@ export default function CompCabecalho() {
     useEffect(() => {
         if (storage('user-info')) {
             setLogged(true)
+            if(!storage('user-info')) {
+                setPerfilImg('');
+            }
+            else {
+                setPerfilImg("http://localhost:5000/"+storage('user-info').img);
+            }
         }
         else {
             setLogged(false)
@@ -55,7 +63,12 @@ export default function CompCabecalho() {
 
                 <div id='buttons-menu'>
                     <button onClick={logged ? nav : abrirReg}>
-                        <img src="/assets/images/cabecalho/Usuario.svg" alt="UserIcon" />
+                        {!perfilImg &&
+                         <img src="/assets/images/cabecalho/Usuario.svg" alt="UserIcon" />
+                        }
+                        {perfilImg &&
+                         <img src={perfilImg} alt="UserIcon" id='ftuser' />
+                        }
                         Minha Conta
                     </button>
 
