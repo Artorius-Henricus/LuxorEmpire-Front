@@ -26,8 +26,8 @@ export default function CompCabecalho() {
     useEffect(() => {
         if (storage('user-info')) {
             setLogged(true)
-            if(!storage('user-info')) {
-                setPerfilImg('');
+            if(!storage('user-info').img) {
+                setPerfilImg(null);
             }
             else {
                 setPerfilImg("http://localhost:5000/"+storage('user-info').img);

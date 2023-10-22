@@ -25,7 +25,7 @@ export default function PaginaTelaUsuario(){
         else {
             setInfoUser(storage('user-info'));
 
-            if(!storage('user-info')) {
+            if(!storage('user-info').img) {
                 setPerfilImg('');
             }
             else {
