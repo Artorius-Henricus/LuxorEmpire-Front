@@ -31,7 +31,7 @@
     }
 
     .blockdiv select {
-        width: 145px;
+        width: 184px;
         height: 35px;
         border-radius: 3px;
         background-color: transparent;
@@ -52,7 +52,7 @@
         background-color: transparent;
         border: 1px solid #9B9B9B;
         outline: none;
-        font: 14px "Inter";
+        font: 20px "bebas neue";
         padding: 0px 15px;
     }
 
@@ -65,14 +65,14 @@
     }
 
     #btimg {
-        width: 189px;
+        width: auto;
         height: 45px;
-        border: 1px solid #9B9B9B;
+        border: none;
         border-radius: 3px;
         background-color: transparent;
         color: #545454;
         margin: 30px 0px;
-        font: 24px "Bebas Neue";
+        font: 15px "Bebas Neue";
         cursor: pointer;
     }
 
@@ -87,7 +87,7 @@
         align-self: center;
     }
     
-    #imagens div {
+    #imagens img {
         width: 88px;
         height: 88px;
         border: 1px solid;

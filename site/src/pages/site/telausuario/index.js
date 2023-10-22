@@ -6,10 +6,21 @@ import CompRodape from '../../../components/site/rodape';
 import CompUserMenu from '../../../components/site/usermenu';
 
 import storage from "local-storage"
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 export default function PaginaTelaUsuario(){
+    const navigate = useNavigate();
+    const [infoUser, setInfoUser] = useState('')
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+        else {
+            setInfoUser(storage('user-info'))
+        }
+    }, [])
 
     function Deslogar() {
         storage.remove('user-info');
