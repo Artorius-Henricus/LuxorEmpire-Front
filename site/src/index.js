@@ -21,6 +21,7 @@ import Pagamento from './pages/site/pagamento';
 import Paginaproduto from './pages/site/tela-produto';
 import Carrinho from './pages/site/carrinho';
 import Paginamarket from './pages/site/market';
+import PaginaPedidos from './pages/site/meuspedidos';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -39,6 +40,7 @@ root.render(
 
         {/* Perfil do USUÁRIO */}
         <Route path='/perfil' element={<PaginaTelaUsuario />} />
+        <Route path='/pedidos' element={<PaginaPedidos />} />
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />
         <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />

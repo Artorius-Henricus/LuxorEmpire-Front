@@ -1,0 +1,64 @@
+.pagina-pedidos {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+    .corp {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+    }
+
+    .corp > section {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 0px 0px 40px;
+    }
+
+    .pedidosbox {
+        display: flex;
+        flex-direction: row;
+        min-width: 800px;
+        min-height: 124px;
+        background-color: transparent;
+        justify-content: space-around;
+        border: 1px solid #3D3D3D;
+        border-radius: 3px;
+        padding: 10px 20px;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .pedidosbox img {
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+
+    .pedidosbox h2 {
+        font: 15px "Inter";
+        color: #000;
+        font-weight: 500;
+    }
+
+    .pedidosbox p {
+        font: 12px "Inter";
+        color: #000;
+        max-width: 134px;
+        font-weight: 500;
+    }
+
+    .pedidosbox a {
+        font: 12px "Inter";
+        color: #00C2FF;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .pedidosbox a:hover {
+        text-decoration: underline;
+    }
+}

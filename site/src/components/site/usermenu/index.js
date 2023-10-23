@@ -27,9 +27,7 @@ export default function CompUserMenu(){
                 {perfilImg &&
                  <img src={perfilImg} alt=""/>
                 }
-                <div>
-                    <h1>{infoUser.nome}</h1>
-                </div>
+                <h1>{storage('user-info').nome}</h1>
             </div>
             
             <article id='selectbox' onMouseEnter={() => {setShow(true)}} onMouseLeave={() => {setShow(false)}}>
@@ -44,7 +42,7 @@ export default function CompUserMenu(){
                 </div>
             </article>  
 
-            <Link to='' className='bttt'>
+            <Link to='/pedidos' className='bttt'>
                 <img src="/assets/images/cartoes/Compras.png" alt="Imagem Sacola" />
                 Meus Pedidos
             </Link>
