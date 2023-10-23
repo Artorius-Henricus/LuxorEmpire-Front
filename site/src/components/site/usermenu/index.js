@@ -1,20 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
+import storage from "local-storage"
 
 export default function CompUserMenu(){
     const [show, setShow] = useState(false);
+    const [perfilImg, setPerfilImg] = useState('');
+    const [infoUser, setInfoUser] = useState('');
+
+    useEffect(() => {
+        if(!storage('user-info').img) {
+            setPerfilImg(null);
+        }
+        else {
+            setInfoUser(storage('user-info'))
+            setPerfilImg("http://localhost:5000/"+storage('user-info').img);
+        }
+    }, [])
 
     return(
         <div className='comp-user-menu'>
             <div id='usericonchange'>
-                <img src="" alt="Imagem do Usuário" />
+                {!perfilImg &&
+                    <img src='assets/images/cabecalho/Usuario.svg' alt=""/>
+                }
+                {perfilImg &&
+                 <img src={perfilImg} alt=""/>
+                }
                 <div>
-                    <h1>Nome de Usuário!</h1>
-                    <button>
-                        <img src="/assets/images/cartoes/lapis.svg" alt="Imagem Alterar" />
-                        Alterar Perfil
-                    </button>
+                    <h1>{infoUser.nome}</h1>
                 </div>
             </div>
             

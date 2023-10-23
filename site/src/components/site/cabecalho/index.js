@@ -6,7 +6,6 @@ import RegisterUser from '../user-register';
 import {Link} from 'react-router-dom'
 import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 export default function CompCabecalho() {
     const [mostrarComponente1, setMostrarComponente1] = useState(true);

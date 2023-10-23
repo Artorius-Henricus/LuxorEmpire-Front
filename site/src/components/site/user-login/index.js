@@ -6,6 +6,7 @@ import storage from 'local-storage'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar';
+import InputMask from 'react-input-mask';
 
 export default function LoginUser({ isOpen, onClose, trocar}){
     useEffect(() => {
@@ -26,6 +27,8 @@ export default function LoginUser({ isOpen, onClose, trocar}){
 
     const navigate = useNavigate();
     const ref = useRef();
+
+    const onlyNumbers = (str) => str.replace(/[^0-9]/g, "")
 
     async function Logar() {
         setLoading(true)
@@ -82,7 +85,7 @@ export default function LoginUser({ isOpen, onClose, trocar}){
                 <article>
                     <div>
                         <input type="text" placeholder='E-mail' value={emailUser} onChange={e => setEmailUser(e.target.value)}/>
-                        <input type="number" placeholder='CPF' value={cpfUser} onChange={e => setCpfUser(e.target.value)}/>
+                        <InputMask mask='999.999.999-99' placeholder='CPF' value={cpfUser} onChange={e => setCpfUser(onlyNumbers(e.target.value))}/>
                     </div>
 
                     <div>

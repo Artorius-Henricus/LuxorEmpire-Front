@@ -3,6 +3,7 @@ import { useEffect, useState} from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import InputMask from 'react-input-mask';
 
 export default function RegisterUser({ isOpen, onClose, trocar}){
     useEffect(() => {
@@ -22,6 +23,8 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
 
 
     const [showPass, setShowPass] = useState(false);
+
+    const onlyNumbers = (str) => str.replace(/[^0-9]/g, "")
 
     function inverterData(data) {
         const partes = data.split('-'); // Divide a data em partes usando o traço como separador
@@ -91,12 +94,12 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
                     </div>
 
                     <div>
-                        <input type="number" placeholder='CPF' value={cpfUser} onChange={e => setCpfUser(e.target.value)}/>
-                        <input type="number" placeholder='Telefone' value={telefoneUser} onChange={e => setTelefoneUser(e.target.value)}/>
+                        <InputMask mask='999.999.999-99' placeholder='CPF' value={cpfUser} onChange={e => setCpfUser(onlyNumbers(e.target.value))}/>
+                        <InputMask mask='(99) 99999-9999' placeholder='Número de Telefone' value={telefoneUser} onChange={e => setTelefoneUser(onlyNumbers(e.target.value))}/>
                     </div>
 
                     <div>
-                        <input type="text" placeholder='Nome Completo' value={nomeUser} onChange={e => setNomeUser(e.target.value)}/>
+                        <input type="text" placeholder='Nome de Usuário' value={nomeUser} onChange={e => setNomeUser(e.target.value)}/>
                         <input type={`${showPass ? 'number' : 'password'}`} placeholder='Senha' value={senhaUser} onChange={e => setSenhaUser(e.target.value)}/>
                     </div>
                     <div id='passwordbox'>
