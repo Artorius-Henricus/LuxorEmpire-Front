@@ -110,7 +110,6 @@ export default function Paginamarket () {
                         <CompIndicacoes/>
                         <CompIndicacoes/>
                         <CompIndicacoes/>
-                        <CompIndicacoes/>
                     </div>
 
                     <div className='content'>
@@ -118,11 +117,9 @@ export default function Paginamarket () {
                         <CompIndicacoes/>
                         <CompIndicacoes/>
                         <CompIndicacoes/>
-                        <CompIndicacoes/>
                     </div>
 
                     <div className='content'>
-                        <CompIndicacoes/>
                         <CompIndicacoes/>
                         <CompIndicacoes/>
                         <CompIndicacoes/>
