@@ -147,15 +147,21 @@
                     margin: 30px;
                 }
 
-                #dinheiro{
+                #resumo h3 {
+                    font: 20px "Inter";
+                }
+
+                .dinheiro{
                     display: flex;
                     margin: 10px 0px;
                     justify-content: space-between;
+                    color: #3D3D3D;
+                    font: 16px "Inter";
                 }
 
                 #total{
                     margin: 30px;
-
+                    font: 16px "Inter";
                 }
             }
         }

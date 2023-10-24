@@ -62,11 +62,11 @@ export default function Pagamento() {
 
                     <div id='resumo'>
                         <h3><b>Resumo do Pedido</b></h3>
-                        <div id='dinheiro'>
+                        <div className='dinheiro'>
                             <p>Itens:</p>
                             <p>R$ 0,00</p>
                         </div>
-                        <div id='dinheiro'>
+                        <div className='dinheiro'>
                             <p>Frete:</p>
                             <p>R$ 0,00</p>
                         </div>
