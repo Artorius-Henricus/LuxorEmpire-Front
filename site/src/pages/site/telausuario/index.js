@@ -43,7 +43,7 @@ export default function PaginaTelaUsuario(){
         document.getElementById('inputfoto').click();
     }
 
-    async function imageSelecionada(e) {
+    function imageSelecionada(e) {
         const selectedFile = e.target.files[0];
         setSlnImg(selectedFile);
         if (selectedFile) {
