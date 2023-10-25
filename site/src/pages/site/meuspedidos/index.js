@@ -4,9 +4,30 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 import CompUserMenu from '../../../components/site/usermenu';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import storage from "local-storage"
+import { useState, useEffect } from 'react';
 
 export default function PaginaPedidos() {
+    const navigate = useNavigate();
+    const [infoUser, setInfoUser] = useState('');
+    const [perfilImg, setPerfilImg] = useState('');
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+        else {
+            setInfoUser(storage('user-info'));
+
+            if(!storage('user-info').img) {
+                setPerfilImg('');
+            }
+            else {
+                setPerfilImg("http://localhost:5000/"+storage('user-info').img);
+            }
+        }
+    }, [])
 
     return(
         <div className='pagina-pedidos'>

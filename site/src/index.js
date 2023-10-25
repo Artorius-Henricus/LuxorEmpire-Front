@@ -22,6 +22,7 @@ import Paginaproduto from './pages/site/tela-produto';
 import Carrinho from './pages/site/carrinho';
 import Paginamarket from './pages/site/market';
 import PaginaPedidos from './pages/site/meuspedidos';
+import PaginaPedidoConcluido from './pages/site/pedidoconcluido';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -49,6 +50,7 @@ root.render(
         {/* Página do Mercado */}
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/pagamento' element={<Pagamento />} />
+        <Route path='/pedido/concluido' element={<PaginaPedidoConcluido />} />
         <Route path='/produtos' element={<Paginaproduto />} />   
         <Route path='/market' element={<Paginamarket/>} />   
       </Routes>
