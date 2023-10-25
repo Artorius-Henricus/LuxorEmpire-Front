@@ -87,7 +87,31 @@
         width: 49px;
         height: 49px;
         margin-bottom: 5px;
+
+        
     }
+
+    .menu img{
+        width: 49px;
+        background-color: transparent !important;
+        border: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font: 16px 'bebas neue';
+        color: #3B3B3B;
+        background-color: transparent !important;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    
 
     #navegation-bar {
         display: flex;
@@ -103,6 +127,7 @@
         color: #3D3D3D;
         text-decoration: none;
         transition: 0.2s;
+        margin-left: 55px;
     }
 
     #navegation-bar a:hover {
@@ -116,4 +141,24 @@
         margin-bottom: 5px;
         border: 1px solid #2b2b2b;
     }
+
+    #menu  img{
+        display: none;
+    }
+
+    @media ( max-width: 1258px )  {
+        .menu  img {
+        display: block;
+        }
+        #buttons-menu {
+            display: none;
+        }
+
+        #navegation-bar {
+            display: none;
+        }
+    }
+
+      
 }
+

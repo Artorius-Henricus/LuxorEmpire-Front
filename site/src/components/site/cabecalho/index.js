@@ -61,9 +61,10 @@ export default function CompCabecalho() {
                 <Link to='/'><img src="/assets/images/cabecalho/Logo.svg" alt="Logo" /></Link>
 
                 <div id='buttons-menu'>
+                   
                     <button onClick={logged ? nav : abrirReg}>
                         {!perfilImg &&
-                         <img src="/assets/images/cabecalho/Usuario.svg" alt="UserIcon" />
+                         <img  src="/assets/images/cabecalho/Usuario.svg" alt="UserIcon" />
                         }
                         {perfilImg &&
                          <img src={perfilImg} alt="UserIcon" id='ftuser' />
@@ -82,6 +83,9 @@ export default function CompCabecalho() {
                         Suporte
                     </button>
                 </div>
+                <button className='menu'>
+                        <img src="/assets/images/cabecalho/7216128-removebg-preview.png"/>
+                    </button>
             </div>  
             <nav id='navegation-bar'>
                 <Link to='/'>PACOTES PREMIUM</Link>
