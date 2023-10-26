@@ -184,4 +184,21 @@
     .cartaoselected button:hover {
         text-decoration: underline;
     }
+
+    
+
+    @media (max-width: 1920px) {
+        .reponsive{
+            display: none;
+        }
+    }
+
+    @media (max-width: 1258px) {
+        .reponsive{
+            display: none;
+        }
+        .reponsive{
+            display: block;
+        }
+    }
 }

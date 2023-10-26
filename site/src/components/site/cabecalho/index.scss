@@ -143,14 +143,17 @@
     }
 
     .menu {
-        display: none !important;
+        display: none;
     }
 
     .menu img {
-        display: none !important;
+        display: none;
     }
 
     @media ( max-width: 1258px )  {
+        .menu  {
+        display: block;
+        }
         .menu  img {
         display: block;
         }
