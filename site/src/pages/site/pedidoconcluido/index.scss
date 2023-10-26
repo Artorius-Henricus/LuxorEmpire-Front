@@ -1,6 +1,76 @@
 .pagina-pedido-concluido {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100vw;
     height: 100vh;
+
+    > h1 {
+        font: 32px "Inter";
+        margin-top: 50px;
+    }
+
+    > img {
+        width: 296px;
+        height: 296px;
+    }
+
+    .pedido-infos {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0px;
+    }
+
+    .pedido-infos > h2 {
+        font: 24px "Inter";
+    }
+
+    .pedido-infos article {
+        display: flex;
+        flex-direction: column;
+        min-width: 653px;
+        min-height: 222px;
+        border: 1px solid #646464;
+        border-radius: 3px;
+        padding: 20px;
+    }
+
+    .pedido-infos section {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin: 10px 0px;
+    }
+
+    .pedido-infos h3 {
+        font: 15px "Inter";
+    }
+
+    .pedido-infos p {
+        font: 12px "Inter";
+        color: #383838;
+        width: 134px;
+    }
+
+    .pedido-infos div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pedido-infos a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 30px;
+        border-radius: 3px;
+        border: 1px solid #3D3D3D;
+        font: 14px "Inter";
+        color: #3D3D3D;
+        font-weight: 600;
+        text-decoration: none;
+        align-self: end;
+        margin-top: 30px;
+    }
 }
