@@ -8,6 +8,13 @@ import storage from "local-storage"
 import { useState, useEffect } from 'react';
 
 export default function PaginaPedidoConcluido() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+    }, [])
 
     return (
         <div className="pagina-pedido-concluido">
@@ -52,7 +59,7 @@ export default function PaginaPedidoConcluido() {
                                 <p>R$ 20.000,00</p>
                             </div>
                         </section>
-                        <Link to=''>Ver Tudo</Link>
+                        <Link to='/pedidos'>Ver Tudo</Link>
                     </article>
                 </article>
             <CompRodape />
