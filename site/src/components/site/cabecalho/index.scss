@@ -142,8 +142,12 @@
         border: 1px solid #2b2b2b;
     }
 
-    #menu  img{
-        display: none;
+    .menu {
+        display: none !important;
+    }
+
+    .menu img {
+        display: none !important;
     }
 
     @media ( max-width: 1258px )  {

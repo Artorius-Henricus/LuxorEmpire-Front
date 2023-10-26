@@ -85,7 +85,7 @@ export default function CompCabecalho() {
                 </div>
                 <button className='menu'>
                         <img src="/assets/images/cabecalho/7216128-removebg-preview.png"/>
-                    </button>
+                </button>
             </div>  
             <nav id='navegation-bar'>
                 <Link to='/'>PACOTES PREMIUM</Link>
