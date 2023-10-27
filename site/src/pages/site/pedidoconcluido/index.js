@@ -29,7 +29,7 @@ export default function PaginaPedidoConcluido() {
                     <article>
                         <section>
                             <div>
-                                <h3>Pedido Realizado:</h3>
+                                <h3>Pedido Realizado Em:</h3>
                                 <p>25 de Novembro de 2015</p>
                             </div>
                             <div>
