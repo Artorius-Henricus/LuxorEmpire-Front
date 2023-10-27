@@ -38,7 +38,7 @@ export default function LoginUser({ isOpen, onClose, trocar}){
             cpf: cpfUser, 
             nome: nomeUser
         }
-        const url = "http://localhost:5000/usuario/logar";
+        const url = "http://129.148.42.252:5019/usuario/logar";
         const resposta = await axios.post(url, credenciais)
 
         .then(response => {

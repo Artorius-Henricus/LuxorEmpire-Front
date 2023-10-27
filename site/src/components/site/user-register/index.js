@@ -52,7 +52,7 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
             senha: senhaUser.trim(),
             nascimento: nasciUser.trim()
         };
-        const url = "http://localhost:5000/usuario/registrar";
+        const url = "http://129.148.42.252:5019/usuario/registrar";
         const command = await axios.post(url, info)
 
         .then(response => {
