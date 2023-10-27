@@ -85,7 +85,7 @@ export default function PaginaTelaUsuario(){
 
                 <article className='usermenusprofile'>
                     <section id='sideleft'>
-                        <h1>Meu Perfil</h1>
+                        <h1>Meu Perfil s2</h1>
                         <div id='blocks'>
                             <div>
                                 <p>Nome de Usuário</p>
