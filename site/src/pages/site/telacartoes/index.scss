@@ -187,18 +187,35 @@
 
     
 
-    @media (max-width: 1920px) {
+    @media (max-width: 2020px) {
         .reponsive{
             display: none;
+        }
+
+        .corp{
+            #resp{
+                display: none;
+            }
         }
     }
 
     @media (max-width: 1258px) {
-        .reponsive{
-            display: none;
-        }
         .corp{
-            display: none;
+            
+            article{
+                display: flex;
+                flex-direction: column;
+            }
+
+            #sume {
+                display: none;
+            }
+            #resp{
+                display: block;
+            }
+            .cartaoselected{
+                display: none;
+            }
         }
     }
 }
