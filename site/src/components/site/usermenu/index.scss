@@ -117,4 +117,12 @@
         height: 55px;
         margin-right: 10px;
     }
+
+    @media (max-width: 320px) {
+        .bttt{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
 }
