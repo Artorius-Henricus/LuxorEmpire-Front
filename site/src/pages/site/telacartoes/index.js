@@ -42,7 +42,7 @@ export default function PaginaCartoes() {
                     </section>
 
                     <section className='rightside'>
-                        <Link to='/cartoes/cadastro'>Adicionar Cartão</Link>
+                        <Link id='sume' to='/cartoes/cadastro'>Adicionar Cartão</Link>
 
                         <div className='cartaoselected'>
                             <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
@@ -52,39 +52,7 @@ export default function PaginaCartoes() {
                                 <button>Editar</button>
                             </div>
                         </div>
-                    </section>
-                </article>
-            </div>
-            <div className='responsive'>
-                
-                <article>
-                    <section className='leftside-responsive'>
-                        <h1>Seus Cartões</h1>
-
-                        <div className='cartaoblock-responsive'>
-                            <div>
-                                <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
-                                <div id='textbox-responsive'>
-                                    <h1>Itaucard Mastercard Default</h1>
-                                    <h3>Cartão de crédito terminando em •••• 0000</h3>
-                                </div>
-                            </div>
-                            <button><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
-                        </div>
-                    </section>
-
-                    <section className='rightside-responsive'>
-                    
-
-                        <div className='cartaoselected-responsive'>
-                            <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
-                            <div>
-                                <h1>Itaucard Mastercard Default</h1>
-                                <h3>Cartão de crédito terminando em •••• 0000</h3>
-                                <button>Editar</button>
-                            </div>
-                        </div>
-                        <Link to='/cartoes/cadastro'>Adicionar Cartão</Link>
+                        <Link id='resp' to='/cartoes/cadastro'>Adicionar Cartão</Link>
                     </section>
                 </article>
             </div>
