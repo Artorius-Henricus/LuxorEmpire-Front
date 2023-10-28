@@ -29,7 +29,7 @@ export default function CompCabecalho() {
                 setPerfilImg(null);
             }
             else {
-                setPerfilImg("http://129.148.42.252:5019/"+storage('user-info').img);
+                setPerfilImg("http://localhost:5000/"+storage('user-info').img);
             }
         }
         else {

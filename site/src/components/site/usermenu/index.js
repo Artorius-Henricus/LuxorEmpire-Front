@@ -14,7 +14,7 @@ export default function CompUserMenu(){
         }
         else {
             setInfoUser(storage('user-info'))
-            setPerfilImg("http://129.148.42.252:5019/"+storage('user-info').img);
+            setPerfilImg("http://localhost:5000/"+storage('user-info').img);
         }
     }, [])
 
