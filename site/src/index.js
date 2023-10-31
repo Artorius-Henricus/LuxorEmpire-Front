@@ -24,6 +24,7 @@ import Paginamarket from './pages/site/market';
 import PaginaPedidos from './pages/site/meuspedidos';
 import PaginaPedidoConcluido from './pages/site/pedidoconcluido';
 import PedidoProduto from './pages/site/pedidoproduto';
+import CompUserMenuResp from './components/site/resp-usermenu';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -32,6 +33,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<PaginaLanding />} />
+
+        <Route path='/respuser' element={<CompUserMenuResp />} />
 
         {/* Páginas do ADMIN */}
         <Route path='/adm' element={<AdmLogin />} />
