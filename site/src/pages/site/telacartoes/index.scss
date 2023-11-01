@@ -196,6 +196,10 @@
             #resp{
                 display: none;
             }
+
+            .comp-user-menu-resp{
+                display: none;
+            }
         }
     }
 
@@ -209,7 +213,11 @@
             #resp{
                 display: none;
             }
+            .comp-user-menu-resp{
+                display: none;
+            }
         }
+        
     }
 
     @media (max-width: 1258px) {
@@ -229,6 +237,23 @@
             .cartaoselected{
                 display: none;
             }
+
         }
     }
+
+    @media (max-width: 820px){
+      
+      .corp{
+
+        flex-direction: column;
+        align-items: center;
+
+        .comp-user-menu{
+            display: none;
+        }
+        .comp-user-menu-resp{
+            display: block;
+        }
+    }
+}
 }

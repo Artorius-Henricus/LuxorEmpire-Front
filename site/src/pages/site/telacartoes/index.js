@@ -4,6 +4,7 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 
 import CompUserMenu from '../../../components/site/usermenu';
+import CompUserMenuResp from '../../../components/site/resp-usermenu';
 import {Link} from 'react-router-dom';
 
 import storage from "local-storage"
@@ -25,7 +26,10 @@ export default function PaginaCartoes() {
             <CompCabecalho />
             <div className='corp'>
                 <CompUserMenu />
+                <CompUserMenuResp/>
+
                 <article>
+                    
                     <section className='leftside'>
                         <h1>Seus Cartões</h1>
 
