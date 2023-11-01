@@ -39,7 +39,7 @@
     }
 
     .inputs input {
-        width: 496px;
+        width: 50vw;
         height: 34px;
         border-radius: 5px;
         border: 1px solid #404040;
@@ -80,7 +80,7 @@
     }
 
     .doubleinpt input {
-        width: 235px  !important;
+        width: 20vw  !important;
     }
 
     #btreturn {
@@ -106,10 +106,24 @@
         background-color: #808080;
     }
 
-    @media (max-width: 320px) {
-        .doubleinp{
+    @media (max-width: 600px) {
+
+        .doubleinpt {
             display: flex;
             flex-direction: column;
         }
+
+        .doubleinpt input {
+            width: 50vw  !important;
+        }
+            
     }
+
+    @media (max-width: 400px) {
+        .corp{
+            display: flex;
+            align-items: center;
+        }
+    }
+
 }
