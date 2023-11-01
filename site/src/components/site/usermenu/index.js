@@ -39,7 +39,7 @@ export default function CompUserMenu(){
                     <Link to='/perfil'>Perfil</Link>
                     <Link to='/cartoes'>Cartões</Link>
                     <Link to='/enderecos'>Endereços</Link>
-                </div>
+                </div>  
             </article>  
 
             <Link to='/pedidos' className='bttt'>
