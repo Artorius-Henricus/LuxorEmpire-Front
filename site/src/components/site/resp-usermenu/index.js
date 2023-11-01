@@ -3,7 +3,7 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import storage from "local-storage"
 
-export default function CompUserMenu(){
+export default function CompUserMenuResp(){
     const [show, setShow] = useState(false);
     const [perfilImg, setPerfilImg] = useState('');
     const [infoUser, setInfoUser] = useState('');
@@ -19,7 +19,7 @@ export default function CompUserMenu(){
     }, [])
 
     return(
-        <div className='comp-user-menu'>
+        <div className='comp-user-menu-resp'>
             <div id='usericonchange'>
                 {!perfilImg &&
                     <img src='assets/images/cabecalho/Usuario.svg' alt=""/>
@@ -30,9 +30,9 @@ export default function CompUserMenu(){
                 <h1>{storage('user-info').nome}</h1>
             </div>
             
+            <div className='opcoes'>
             <article id='selectbox' onMouseEnter={() => {setShow(true)}} onMouseLeave={() => {setShow(false)}}>
                 <div id='select'>
-                    <img src="/assets/images/cartoes/IconMconta.png" alt="UserIcon" />
                     <h1>Minha Conta</h1>
                 </div>
                 <div className={`off ${show ? 'show' : ''}`}>
@@ -43,14 +43,14 @@ export default function CompUserMenu(){
             </article>  
 
             <Link to='/pedidos' className='bttt'>
-                <img src="/assets/images/cartoes/Compras.png" alt="Imagem Sacola" />
                 Meus Pedidos
             </Link>
 
             <Link to='' className='bttt'>
-                <img src="/assets/images/cartoes/Sino.png" alt="Imagem Notificações" />
                 Notificações
             </Link>
+            </div>
         </div>
+
     )
 }

@@ -105,4 +105,11 @@
     #btreturn:hover {
         background-color: #808080;
     }
+
+    @media (max-width: 320px) {
+        .doubleinp{
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }

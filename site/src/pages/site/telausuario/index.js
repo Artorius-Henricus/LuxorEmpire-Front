@@ -29,7 +29,7 @@ export default function PaginaTelaUsuario(){
                 setPerfilImg('');
             }
             else {
-                setPerfilImg("http://129.148.42.252:5019/"+storage('user-info').img);
+                setPerfilImg("http://localhost:5000/"+storage('user-info').img);
             }
         }
     }, [])
@@ -58,12 +58,12 @@ export default function PaginaTelaUsuario(){
             formData.append('perfilimg', slnImg);
 
             const user = storage('user-info').id;
-            const command = await axios.put(`http://129.148.42.252:5019/usuario/${user}/imagem`, formData, {
+            const command = await axios.put(`http://localhost:5000/usuario/${user}/imagem`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },
             });
-            const imgdata = await axios.get(`http://129.148.42.252:5019/usuario/info/${user}`)
+            const imgdata = await axios.get(`http://localhost:5000/usuario/info/${user}`)
             const data = storage('user-info')
             data.img = imgdata.data.img;
             storage('user-info', data)
@@ -85,7 +85,7 @@ export default function PaginaTelaUsuario(){
 
                 <article className='usermenusprofile'>
                     <section id='sideleft'>
-                        <h1>Meu Perfil s2</h1>
+                        <h1>Meu Perfil</h1>
                         <div id='blocks'>
                             <div>
                                 <p>Nome de Usuário</p>
