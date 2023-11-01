@@ -187,6 +187,19 @@
 
     
 
+    @media (min-width: 2020px) {
+        .reponsive{
+            display: none;
+        }
+
+        .corp{
+            #resp{
+                display: none;
+            }
+        }
+    }
+
+
     @media (max-width: 2020px) {
         .reponsive{
             display: none;
