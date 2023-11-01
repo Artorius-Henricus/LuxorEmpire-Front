@@ -20,7 +20,26 @@ export default function PaginaPedidoConcluido() {
                     <h2>Informações do Pedido:</h2>
 
                     <section>
-                        
+                        <section>
+                            <div>
+                                <h3>Pedido Realizado:</h3>
+                                <p>25 de Novembro de 2015</p>
+                            </div>
+
+                            <div>
+                                <h3>Enviar Para:</h3>
+                                <p>Conjunto Habitacional Brigadeiro Faria Lima</p>
+                            </div>
+
+                            <div>
+                                
+                                <h3>Status do Pedido/:</h3>
+                                <p>25 de Novembro de 2015</p>
+                            </div>
+                        </section>
+                        <section>
+
+                        </section>
                     </section>
                 </article>
             <CompRodape />
