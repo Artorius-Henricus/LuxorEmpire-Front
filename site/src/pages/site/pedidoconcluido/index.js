@@ -26,39 +26,16 @@ export default function PaginaPedidoConcluido() {
                 <article className='pedido-infos'>
                     <h2>Informações do Pedido:</h2>
 
-<<<<<<< HEAD
-                    <section>
-                        <section>
-                            <div>
-                                <h3>Pedido Realizado:</h3>
-                                <p>25 de Novembro de 2015</p>
-                            </div>
-
-=======
                     <article>
                         <section>
                             <div>
                                 <h3>Pedido Realizado Em:</h3>
                                 <p>25 de Novembro de 2015</p>
                             </div>
->>>>>>> aedf29d68e3f3de109e32ea3380b4e137eb9a0b3
                             <div>
                                 <h3>Enviar Para:</h3>
                                 <p>Conjunto Habitacional Brigadeiro Faria Lima</p>
                             </div>
-<<<<<<< HEAD
-
-                            <div>
-                                
-                                <h3>Status do Pedido/:</h3>
-                                <p>25 de Novembro de 2015</p>
-                            </div>
-                        </section>
-                        <section>
-
-                        </section>
-                    </section>
-=======
                             <div>
                                 <h3>Status do Pedido:</h3>
                                 <p>Aguardando Confirmação</p>
@@ -84,7 +61,6 @@ export default function PaginaPedidoConcluido() {
                         </section>
                         <Link to='/pedidos'>Ver Tudo</Link>
                     </article>
->>>>>>> aedf29d68e3f3de109e32ea3380b4e137eb9a0b3
                 </article>
             <CompRodape />
         </div>

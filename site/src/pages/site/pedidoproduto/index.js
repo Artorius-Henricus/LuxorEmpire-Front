@@ -5,8 +5,8 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 
 export default function PedidoProduto() {
-    const [payment, setPayment] = useState(true);
-    const [confirmed, setConfirmed] = useState(true);
+    const [payment, setPayment] = useState(false);
+    const [confirmed, setConfirmed] = useState(false);
     const [shipped, setShipped] = useState(false);
     const [delivered, setDelivered] = useState(false);
 
@@ -64,10 +64,11 @@ export default function PedidoProduto() {
                                     <div>
                                         <img src="/assets/images/produtos/cartao-de-credito1.svg" alt="Cartão de Crédito" />
                                         {payment &&
-                                            <span className={`ball ${payment ? 'green' : 'gray'}`}></span>
+                                            
+                                            <img src="/assets/images/produtos/confirm.svg" alt="" id='img_confirm'/>
                                         }
                                         {!payment &&
-                                            <img src="/images/produtos/confirm.svg" alt="" className='img' />
+                                            <span className={`ball ${payment ? 'green' : 'gray'}`}></span>
                                         }
                                         <h1>Pagamento Efetuado</h1>
                                     </div>
@@ -76,7 +77,13 @@ export default function PedidoProduto() {
 
                                     <div>
                                         <img src="/assets/images/produtos/compras.svg" alt="Sacola" />
-                                        <span className={`ball ${confirmed ? 'green' : 'gray'}`}></span>
+                                        {confirmed &&
+                                            
+                                            <img src="/assets/images/produtos/confirm.svg" alt="" id='img_confirm'/>
+                                        }
+                                        {!confirmed &&
+                                            <span className={`ball ${confirmed ? 'green' : 'gray'}`}></span>
+                                        }
                                         <h1>Pedido Confirmado</h1>
                                     </div>
 
@@ -84,7 +91,13 @@ export default function PedidoProduto() {
 
                                     <div>
                                         <img src="/assets/images/produtos/caixa.svg" alt="Caixa" />
-                                        <span className={`ball ${shipped ? 'green' : 'gray'}`}></span>
+                                        {shipped &&
+                                            
+                                            <img src="/assets/images/produtos/confirm.svg" alt="" id='img_confirm'/>
+                                        }
+                                        {!shipped &&
+                                            <span className={`ball ${shipped ? 'green' : 'gray'}`}></span>
+                                        }
                                         <h1>Pedido Enviado</h1>
                                     </div>
 
@@ -92,7 +105,13 @@ export default function PedidoProduto() {
                                     
                                     <div>
                                         <img src="/assets/images/produtos/casa.svg" alt="Casa" />
-                                        <span className={`ball ${delivered ? 'green' : 'gray'}`}></span>
+                                        {delivered &&
+                                            
+                                            <img src="/assets/images/produtos/confirm.svg" alt="" id='img_confirm'/>
+                                        }
+                                        {!delivered &&
+                                            <span className={`ball ${delivered ? 'green' : 'gray'}`}></span>
+                                        }
                                         <h1>Pedido Entregue</h1>
                                     </div>
                             </section>
