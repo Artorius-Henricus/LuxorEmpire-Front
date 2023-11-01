@@ -8,17 +8,25 @@ import storage from "local-storage"
 import { useState, useEffect } from 'react';
 
 export default function PaginaPedidoConcluido() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+    }, [])
 
     return (
         <div className="pagina-pedido-concluido">
             <CompCabecalho />
                 <h1>Compra Realizada!</h1>
                 <img src="/assets/images/produtos/ProdutoConc.svg" alt="" />
-                <h1>Pedido N°: 4183hasd325ha</h1>
+                <h1>Código do Pedido: 4183hasd325ha</h1>
 
-                <article>
+                <article className='pedido-infos'>
                     <h2>Informações do Pedido:</h2>
 
+<<<<<<< HEAD
                     <section>
                         <section>
                             <div>
@@ -26,10 +34,19 @@ export default function PaginaPedidoConcluido() {
                                 <p>25 de Novembro de 2015</p>
                             </div>
 
+=======
+                    <article>
+                        <section>
+                            <div>
+                                <h3>Pedido Realizado Em:</h3>
+                                <p>25 de Novembro de 2015</p>
+                            </div>
+>>>>>>> aedf29d68e3f3de109e32ea3380b4e137eb9a0b3
                             <div>
                                 <h3>Enviar Para:</h3>
                                 <p>Conjunto Habitacional Brigadeiro Faria Lima</p>
                             </div>
+<<<<<<< HEAD
 
                             <div>
                                 
@@ -41,6 +58,33 @@ export default function PaginaPedidoConcluido() {
 
                         </section>
                     </section>
+=======
+                            <div>
+                                <h3>Status do Pedido:</h3>
+                                <p>Aguardando Confirmação</p>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <h3>Nome do Produto:</h3>
+                                <p>Colar de Cristal</p>
+                            </div>
+                            <div>
+                                <h3>Preço Unitário:</h3>
+                                <p>R$ 5000,00</p>
+                            </div>
+                            <div>
+                                <h3>Quantidade:</h3>
+                                <p>5 Unidades</p>
+                            </div>
+                            <div>
+                                <h3>Preço Total:</h3>
+                                <p>R$ 20.000,00</p>
+                            </div>
+                        </section>
+                        <Link to='/pedidos'>Ver Tudo</Link>
+                    </article>
+>>>>>>> aedf29d68e3f3de109e32ea3380b4e137eb9a0b3
                 </article>
             <CompRodape />
         </div>

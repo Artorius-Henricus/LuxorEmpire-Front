@@ -42,7 +42,7 @@ export default function PaginaCartoes() {
                     </section>
 
                     <section className='rightside'>
-                        <Link to='/cartoes/cadastro'>Adicionar Cartão</Link>
+                        <Link id='sume' to='/cartoes/cadastro'>Adicionar Cartão</Link>
 
                         <div className='cartaoselected'>
                             <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
@@ -52,6 +52,7 @@ export default function PaginaCartoes() {
                                 <button>Editar</button>
                             </div>
                         </div>
+                        <Link id='resp' to='/cartoes/cadastro'>Adicionar Cartão</Link>
                     </section>
                 </article>
             </div>

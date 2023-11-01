@@ -1,0 +1,151 @@
+.pagina-produto-pedido {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+    .corpo {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .corpo > h1 {
+        font: 36px "Inter";
+        color: #646464;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    #infoglobal {
+        font: 20px "Inter";
+        font-weight: 200;
+        color: #000;
+        margin: 20px 0px;
+    }
+
+    .groupinfo {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .groupinfo > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prodinfo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-width: 653px;
+        height: 246px;
+        border: 1px solid #646464;
+        padding: 20px;
+    }
+
+    .prodinfo img {
+        width: 140px;
+        height: 140px;
+        border: 1px solid #3D3D3D;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .infostext {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .infostext section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 10px 0px;
+    }
+
+    .infostext div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .infostext h3 {
+        font: 15px "Inter";
+        color: #000;
+    }
+
+    .infostext p {
+        font: 12px "Inter";
+        color: #383838;
+        font-weight: 200;
+        width: 134px;
+    }
+
+    .infoentrega {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 577px;
+        height: 246px;
+        border-radius: 4px;
+        border: 1px solid #000;
+        margin: 30px 0px;
+        padding: 30px;
+    }
+
+    .infoentrega div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .infoentrega img {
+        height: 70px;
+    }
+
+    .infoentrega h1 {
+        font: 20px "Inter";
+        font-weight: 200;
+    }
+
+    .ball {
+        width: 34px;
+        height: 34px;
+        background-color: #D9D9D9;
+        border-radius: 100%; 
+        margin: 10px 0px;
+        border: none;
+    }
+      
+    .green {
+        background-color: #14BD12;
+        border: 1px solid #14BD12;
+    }
+
+    .gray {
+        background-color: #D9D9D9;
+        border: 1px solid #D9D9D9;
+    }
+      
+    .line {
+        height: 2px;
+        width: 120px;
+        background-color: #D9D9D9;
+        margin: 0px;
+    }
+      
+    .green + .line {
+        background-color: #14BD12;
+    }
+      
+    .green + .ball {
+        background-color: #14BD12;
+    }
+}

@@ -23,6 +23,8 @@ import Carrinho from './pages/site/carrinho';
 import Paginamarket from './pages/site/market';
 import PaginaPedidos from './pages/site/meuspedidos';
 import PaginaPedidoConcluido from './pages/site/pedidoconcluido';
+import PedidoProduto from './pages/site/pedidoproduto';
+import CompUserMenuResp from './components/site/resp-usermenu';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -31,6 +33,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<PaginaLanding />} />
+
+        <Route path='/respuser' element={<CompUserMenuResp />} />
 
         {/* Páginas do ADMIN */}
         <Route path='/adm' element={<AdmLogin />} />
@@ -44,13 +48,14 @@ root.render(
         <Route path='/pedidos' element={<PaginaPedidos />} />
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />
+        <Route path='/pedido/id' element={<PedidoProduto />} />
         <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />
         <Route path='/cartoes/cadastro' element={<CadastrarCartao />} />
 
         {/* Página do Mercado */}
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/pagamento' element={<Pagamento />} />
-        <Route path='/pedido/concluido' element={<PaginaPedidoConcluido />} />
+        <Route path='/pedido' element={<PaginaPedidoConcluido />} />
         <Route path='/produtos' element={<Paginaproduto />} />   
         <Route path='/market' element={<Paginamarket/>} />   
       </Routes>
