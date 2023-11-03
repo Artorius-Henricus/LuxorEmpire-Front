@@ -104,11 +104,11 @@ export default function PaginaTelaUsuario(){
                                 <p>Data de Nascimento</p>
                             </div>
                             <div>
-                                <input type='text' value={userName}/>
-                                <input type='text' value={userCpf}/>
-                                <input type='text' value={userEmail}/>
-                                <input type='text' value={userTelefone}/>
-                                <input type='date' value={userNascimento}/>
+                                <input type='text' value={userName} onChange={e => setUserName(e.target.value)}/>
+                                <input type='text' value={userCpf} onChange={e => setUserCpf(e.target.value)}/>
+                                <input type='text' value={userEmail} onChange={e => setUserEmail(e.target.value)}/>
+                                <input type='text' value={userTelefone} onChange={e => setUserTelefone(e.target.value)}/>
+                                <input type='date' value={userNascimento} onChange={e => setUserNascimento(e.target.value)}/>
                             </div>
                         </div>
                         <div id='btsvsc'>
