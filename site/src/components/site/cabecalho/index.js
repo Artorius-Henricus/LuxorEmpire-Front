@@ -52,7 +52,7 @@ export default function CompCabecalho() {
     return(
         <div className="comp-cabecalho">
 
-            <div>
+            <div className='sombra'>
                 <div id='search'>
                     <button><img src="/assets/images/cabecalho/Lupa.svg" alt="BtPesquisar" /></button>
                     <input type='text' />
