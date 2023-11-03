@@ -79,8 +79,8 @@ export default function CompCabecalho() {
                     </button>
 
                     <button>
-                        <img src="/assets/images/cabecalho/Suporte.svg" alt="SupportIcon" />
-                        Suporte
+                        <img src="/assets/images/cartoes/Sino.png" alt="Imagem Notificações" />
+                        Notificações
                     </button>
                 </div>
                 <button className='menu'>

@@ -14,16 +14,25 @@ import axios from 'axios';
 
 export default function PaginaTelaUsuario(){
     const navigate = useNavigate();
-    const [infoUser, setInfoUser] = useState('');
     const [perfilImg, setPerfilImg] = useState('');
     const [slnImg, setSlnImg] = useState('');
+
+    const [userName, setUserName] = useState('');
+    const [userCpf, setUserCpf] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [userTelefone, setUserTelefone] = useState('');
+    const [userNascimento, setUserNascimento] = useState('');
 
     useEffect(() => {
         if (!storage('user-info')) {
             navigate('/')
         }
         else {
-            setInfoUser(storage('user-info'));
+            setUserName(storage('user-info').nome)
+            setUserCpf(storage('user-info').cpf)
+            setUserEmail(storage('user-info').email)
+            setUserTelefone(storage('user-info').telefone)
+            setUserNascimento(storage('user-info').nascimento)
 
             if(!storage('user-info').img) {
                 setPerfilImg('');
@@ -85,7 +94,7 @@ export default function PaginaTelaUsuario(){
 
                 <article className='usermenusprofile'>
                     <section id='sideleft'>
-                        <h1>Meu Perfil s2</h1>
+                        <h1>Meu Perfil</h1>
                         <div id='blocks'>
                             <div>
                                 <p>Nome de Usuário</p>
@@ -95,11 +104,11 @@ export default function PaginaTelaUsuario(){
                                 <p>Data de Nascimento</p>
                             </div>
                             <div>
-                                <input type='text' value={infoUser.nome}/>
-                                <input type='text' value={infoUser.cpf}/>
-                                <input type='text' value={infoUser.email}/>
-                                <input type='text' value={infoUser.telefone}/>
-                                <input type='date' value={infoUser.nascimento}/>
+                                <input type='text' value={userName}/>
+                                <input type='text' value={userCpf}/>
+                                <input type='text' value={userEmail}/>
+                                <input type='text' value={userTelefone}/>
+                                <input type='date' value={userNascimento}/>
                             </div>
                         </div>
                         <div id='btsvsc'>
