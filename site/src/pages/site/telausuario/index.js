@@ -31,7 +31,7 @@ export default function PaginaTelaUsuario(){
             setUserName(storage('user-info').nome)
             setUserCpf(storage('user-info').cpf)
             setUserEmail(storage('user-info').email)
-            setUserTelefone(storage('user-info').telefone)
+            setUserTelefone(storage('user-info').telefonee)
             setUserNascimento(storage('user-info').nascimento)
 
             if(!storage('user-info').img) {
