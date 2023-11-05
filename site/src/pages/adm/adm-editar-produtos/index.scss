@@ -116,13 +116,25 @@
     }
 
     .rightside img {
-        width: 88px;
+        width: auto;
         height: 88px;
         border: 1px solid #545454;
+        border-radius: 5px;
     }
 
     #capa1 {
-        width: 404px;
+        width: auto;
         height: 171px;
+    }
+
+    .rightside button {
+        width: 189px;
+        height: 45px;
+        border: 1px solid #9B9B9B;
+        background-color: #F8F8F8;
+        font: 24px "bebas neue";
+        color: #545454;
+        border-radius: 3px;
+        cursor: pointer;
     }
 }

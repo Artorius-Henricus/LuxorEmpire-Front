@@ -3,6 +3,7 @@ import "./index.scss";
 import CompMenuBar from '../../../components/adm/menubar';
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function AdmListarProdutos() {
     const [aneis, setAneis] = useState([]);
@@ -50,7 +51,7 @@ export default function AdmListarProdutos() {
                                         <td>{item.Nome}</td>
                                         <td>{item.Material}</td>
                                         <td>{item.Gema}</td>
-                                        <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
+                                        <td><Link to={`/adm/produtos/editar/${item.Id}`}><img src="/assets/images/adm/Pencil.svg" alt="" /></Link></td>
                                     </tr>
                                     )}
                                 </tbody>
@@ -75,7 +76,7 @@ export default function AdmListarProdutos() {
                                         <td>{item.Nome}</td>
                                         <td>{item.Material}</td>
                                         <td>{item.Gema}</td>
-                                        <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
+                                        <td><Link to={`/adm/produtos/editar/${item.Id}`}><img src="/assets/images/adm/Pencil.svg" alt="" /></Link></td>
                                     </tr>
                                     )}
                                 </tbody>
@@ -99,7 +100,7 @@ export default function AdmListarProdutos() {
                                         <td>{item.Nome}</td>
                                         <td>{item.Material}</td>
                                         <td>{item.Gema}</td>
-                                        <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
+                                        <td><Link to={`/adm/produtos/editar/${item.Id}`}><img src="/assets/images/adm/Pencil.svg" alt="" /></Link></td>
                                     </tr>
                                     )}
                                 </tbody>
@@ -124,7 +125,7 @@ export default function AdmListarProdutos() {
                                         <td>{item.Nome}</td>
                                         <td>{item.Material}</td>
                                         <td>{item.Gema}</td>
-                                        <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
+                                        <td><Link to={`/adm/produtos/editar/${item.Id}`}><img src="/assets/images/adm/Pencil.svg" alt="" /></Link></td>
                                     </tr>
                                     )}
                                 </tbody>
@@ -148,7 +149,7 @@ export default function AdmListarProdutos() {
                                         <td>{item.Nome}</td>
                                         <td>{item.Material}</td>
                                         <td>{item.Gema}</td>
-                                        <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
+                                        <td><Link to={`/adm/produtos/editar/${item.Id}`}><img src="/assets/images/adm/Pencil.svg" alt="" /></Link></td>
                                     </tr>
                                     )}
                                 </tbody>
@@ -172,7 +173,7 @@ export default function AdmListarProdutos() {
                                         <td>{item.Nome}</td>
                                         <td>{item.Material}</td>
                                         <td>{item.Gema}</td>
-                                        <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
+                                        <td><Link to={`/adm/produtos/editar/${item.Id}`}><img src="/assets/images/adm/Pencil.svg" alt="" /></Link></td>
                                     </tr>
                                     )}
                                 </tbody>

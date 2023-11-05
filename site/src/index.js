@@ -45,14 +45,14 @@ root.render(
         <Route path='/adm/pedidos-andamento' element={<AdmPedidosAndamento />} />
         <Route path='/adm/produtos/cadastrar' element={<AdmCadastroProduto />} />
         <Route path='/adm/produtos/listar' element={<AdmListarProdutos />} />
-        <Route path='/adm/produtos/editar' element={<AdmEditarProduto />} />
+        <Route path='/adm/produtos/editar/:id' element={<AdmEditarProduto />} />
 
         {/* Perfil do USUÁRIO */}
         <Route path='/perfil' element={<PaginaTelaUsuario />} />
         <Route path='/pedidos' element={<PaginaPedidos />} />
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />
-        <Route path='/pedido/id' element={<PedidoProduto />} />
+        <Route path='/pedido/' element={<PedidoProduto />} />
         <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />
         <Route path='/cartoes/cadastro' element={<CadastrarCartao />} />
 
