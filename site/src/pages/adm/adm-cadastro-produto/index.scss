@@ -69,35 +69,63 @@
         padding: 10px;
     }
 
-    #btimg {
-        width: auto;
-        height: 45px;
-        border: none;
-        border-radius: 3px;
-        background-color: transparent;
-        color: #545454;
-        margin: 30px 0px;
-        font: 15px "Bebas Neue";
-        cursor: pointer;
-    }
-
     #container-imagens {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         width: 400px;
+        height: 200px;
         overflow-x: scroll;
-      }
+    }
 
     #imagens {
         display: flex;
         flex-direction: row;
         align-self: center;
     }
+
+    #imagens div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 5px;
+        width: 110px;
+        min-height: 110px;
+    }
+
+    #imagens input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
     
     #imagens img {
         width: 88px;
         height: 88px;
         border: 1px solid;
-        margin: 0px 5px;
+        margin: 10px 0px;
+        cursor: pointer;
     }
+
+    #imagens label {
+        font: 15px "Inter";
+        color: #3D3D3D;
+        font-weight: 700;
+    }
+
+    #imagens button {
+        background-color: transparent;
+        border: 1px solid #545454;
+        padding: 5px;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        font: 15px "Inter";
+        color: #3D3D3D;
+        font-weight: 500;
+    }
+
 
     #btcadastr {
         width: 165px;

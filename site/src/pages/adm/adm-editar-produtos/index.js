@@ -14,6 +14,12 @@ export default function AdmEditarProduto() {
     const [precoProduto, setPrecoProduto] = useState("");
     const [descricaoProduto, setDescricaoProduto] = useState("");
 
+    const [capaProduto, setCapaProduto] = useState("");
+    const [produtoImagem1, setProdutoImagem1] = useState("");
+    const [produtoImagem2, setProdutoImagem2] = useState("");
+    const [produtoImagem3, setProdutoImagem3] = useState("");
+    const [produtoImagem4, setProdutoImagem4] = useState("");
+
     const { id } = useParams();
 
     async function Consultar(idprod) {
@@ -26,36 +32,26 @@ export default function AdmEditarProduto() {
         setPrecoProduto(command.data.Preço)
         setDescricaoProduto(command.data.Descrição)
 
-    }
+        const imagens = command.data;
 
-    const [capaProduto, setCapaProduto] = useState("");
-    const [produtoImagem1, setProdutoImagem1] = useState("");
-    const [produtoImagem2, setProdutoImagem2] = useState("");
-    const [produtoImagem3, setProdutoImagem3] = useState("");
-    const [produtoImagem4, setProdutoImagem4] = useState("");
-
-    async function ConsultarImagens(idimg) {
-        const command = await axios.get(`http://localhost:5000/produto/imagem/${idimg}`);
-        const imagens = command.data
-        if (!command.data) {
-            setCapaProduto(null)
-            setProdutoImagem1(null)
-            setProdutoImagem2(null)
-            setProdutoImagem3(null)
-            setProdutoImagem4(null)
-        }
-        else {
-            setCapaProduto(imagens[0]?.URL || null);
-            setProdutoImagem1(imagens[1]?.URL || null);
-            setProdutoImagem2(imagens[2]?.URL || null);
-            setProdutoImagem3(imagens[3]?.URL || null);
-            setProdutoImagem4(imagens[4]?.URL || null);
+        if (imagens || imagens.data) {
+            setCapaProduto("http://localhost:5000/"+imagens.Capa);
+            setProdutoImagem1("http://localhost:5000/"+imagens.Imagem1);
+            setProdutoImagem2("http://localhost:5000/"+imagens.Imagem2);
+            setProdutoImagem3("http://localhost:5000/"+imagens.Imagem3);
+            setProdutoImagem4("http://localhost:5000/"+imagens.Imagem4);
+            console.log(imagens)
+        } else {
+            setCapaProduto(null);
+            setProdutoImagem1(null);
+            setProdutoImagem2(null);
+            setProdutoImagem3(null);
+            setProdutoImagem4(null);
         }
     }
 
     useEffect(() => {
         Consultar(id)
-        ConsultarImagens(id)
     }, []);
 
     return(
@@ -136,12 +132,12 @@ export default function AdmEditarProduto() {
                     </section>
 
                     <section className="rightside">
-                        <img src={"http://localhost:5000/"+capaProduto} alt="Capa" id='capa1' />
+                        <img src={capaProduto} alt="Capa" id='capa1' />
                         <div>
-                            <img src={"http://localhost:5000/"+produtoImagem1} alt="Img1" />
-                            <img src={"http://localhost:5000/"+produtoImagem2} alt="Img2" />
-                            <img src={"http://localhost:5000/"+produtoImagem3} alt="Img3" />
-                            <img src={"http://localhost:5000/"+produtoImagem4} alt="Img4" />
+                            <img src={produtoImagem1} alt="Img1" />
+                            <img src={produtoImagem2} alt="Img2" />
+                            <img src={produtoImagem3} alt="Img3" />
+                            <img src={produtoImagem4} alt="Img4" />
                         </div>
                         <button>Enviar Imagens</button>
                     </section>

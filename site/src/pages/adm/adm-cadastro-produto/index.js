@@ -9,7 +9,22 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function AdmCadastroProduto() {
     const [selectedImages, setSelectedImages] = useState([]); // Para armazenar as imagens selecionadas
-    const [imagePreviews, setImagePreviews] = useState([]); // Para armazenar as URLs das imagens
+
+
+    const [capaProduto, setCapaProduto] = useState("");
+    const [capaPreview, setCapaPreview] = useState("");
+
+    const [produtoImagem1, setProdutoImagem1] = useState("");
+    const [previewImagem1, setPreviewImagem1] = useState("");
+
+    const [produtoImagem2, setProdutoImagem2] = useState("");
+    const [previewImagem2, setPreviewImagem2] = useState("");
+
+    const [produtoImagem3, setProdutoImagem3] = useState("");
+    const [previewImagem3, setPreviewImagem3] = useState("");
+
+    const [produtoImagem4, setProdutoImagem4] = useState("");
+    const [previewImagem4, setPreviewImagem4] = useState("");
 
     // Selects:
     const [tipoProduto, setTipoProduto] = useState("");
@@ -20,23 +35,28 @@ export default function AdmCadastroProduto() {
     const [precoProduto, setPrecoProduto] = useState("");
     const [descricaoProduto, setDescricaoProduto] = useState("");
 
-    const handleImageChange = (e) => {
-        const files = e.target.files;
+    function escolherFoto(identificador){
+        document.getElementById(identificador).click();
+    }
 
-        // Converter os File objetos em URLs
-        const imageUrls = Array.from(files).map((file) => URL.createObjectURL(file));
+    function imageSelecionada(e, identificador, imagemraiz) {
+        const selectedFile = e.target.files[0];
+        imagemraiz(selectedFile)
+        if (selectedFile) {
+            const fileUrl = URL.createObjectURL(selectedFile);
+            identificador(fileUrl);
+        }
+    }
 
-        setSelectedImages([...selectedImages, ...files]);
-        setImagePreviews([...imagePreviews, ...imageUrls]);
-    };
-
-    const removeImage = (index) => {
-        const newSelectedImages = [...selectedImages];
-        const newImagePreviews = [...imagePreviews];
-        newSelectedImages.splice(index, 1);
-        newImagePreviews.splice(index, 1);
-        setSelectedImages(newSelectedImages);
-        setImagePreviews(newImagePreviews);
+    function limparImagem(identificador, imagemraiz, idinpt) {
+        identificador('');
+        imagemraiz('');
+        const novoInput = document.createElement('input');
+        novoInput.type = 'file';
+        novoInput.id = idinpt; // Defina o mesmo ID ou atributos necessários
+        novoInput.addEventListener('change', (e) => imageSelecionada(e, identificador, imagemraiz));
+        const inputAntigo = document.getElementById(idinpt); // Substitua 'capa' pelo ID correto
+        inputAntigo.parentNode.replaceChild(novoInput, inputAntigo);
     };
 
     async function CadastrarProduto(){
@@ -51,8 +71,14 @@ export default function AdmCadastroProduto() {
                 descricao: descricaoProduto.trim()
             };
             const command = await axios.post("http://localhost:5000/produto/registrar", produto);
-            const imgsend = enviarImagensProduto(command.data.id)
-            console.log(command.data.id)
+            toast.success("Produto Cadastrado");
+
+            const idp = command.data;
+            const imgsendcapa = enviarImagensProduto(idp.id, capaProduto, "Capa do Produto", 'ds_capa');
+            const imgsend1 = enviarImagensProduto(idp.id, produtoImagem1, "Imagem 1", 'ds_imagem1');
+            const imgsend2 = enviarImagensProduto(idp.id, produtoImagem2, "Imagem 2", 'ds_imagem2');
+            const imgsend3 = enviarImagensProduto(idp.id, produtoImagem3, "Imagem 3", 'ds_imagem3');
+            const imgsend4 = enviarImagensProduto(idp.id, produtoImagem4, "Imagem 4", 'ds_imagem4');
         }
         
         catch (err) {
@@ -60,25 +86,28 @@ export default function AdmCadastroProduto() {
         }
     };
 
-    async function enviarImagensProduto(id) {
+    async function enviarImagensProduto(id, imagem, texdt, campo) {
         try {
-            for (let i = 0; i < selectedImages.length; i++) {
+            if (!imagem) {
+                toast.warning("Não foi possível cadastrar: "+`${texdt}`)
+            }
+            else {
                 const formData = new FormData();
-                formData.append('prodimg', selectedImages[i]);
-
-                const command = await axios.post(`http://localhost:5000/produto/${id}/imagens`, formData, {
+                formData.append('prodimg', imagem);
+            
+                const command = await axios.post(`http://localhost:5000/produto/${id}/imagens/${campo}`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     },
                 });
-            }
 
-            toast.success("Imagens Cadastradas");
+                toast.success("Imagem Cadastrada: "+`${texdt}`);
+            }
         }
         catch (err) {
             toast.error(err.response.data.erro)
         }
-    };
+    }
 
     return (
         <div className="adm-cadastrar-produto">
@@ -153,17 +182,39 @@ export default function AdmCadastroProduto() {
                         <label>Descrição</label>
                         <textarea value={descricaoProduto} onChange={e => setDescricaoProduto(e.target.value)}></textarea>
                     </div>
-
-                    <input type="file" id='btimg' multiple onChange={handleImageChange} />
                     
                     <div id="container-imagens">
                         <div id="imagens">
-                        {imagePreviews.map((imageUrl, index) => (
-                            <div key={index} className="image-preview">
-                                <img src={imageUrl} alt="" />
-                                <button onClick={() => removeImage(index)}>Remover</button>
+                            <div>
+                                <input type="file" id='capa' onChange={e => imageSelecionada(e, setCapaPreview, setCapaProduto)} />
+                                <label>Imagem Capa</label>
+                                <img src={capaPreview} alt="Capa" onClick={() => escolherFoto('capa')}/>
+                                <button onClick={() => limparImagem(setCapaPreview, setCapaProduto, 'capa')}>Remover</button>
                             </div>
-                        ))}
+                            <div>
+                                <input type="file" id='imagem1' onChange={e => imageSelecionada(e, setPreviewImagem1, setProdutoImagem1)} />
+                                <label>Imagem 1</label>
+                                <img src={previewImagem1} alt="Imagem1" onClick={() => escolherFoto('imagem1')}/>
+                                <button onClick={() => limparImagem(setPreviewImagem1, setProdutoImagem1, 'imagem1')}>Remover</button>
+                            </div>
+                            <div>
+                                <input type="file" id='imagem2' onChange={e => imageSelecionada(e, setPreviewImagem2, setProdutoImagem2)} />
+                                <label>Imagem 2</label>
+                                <img src={previewImagem2} alt="Imagem2" onClick={() => escolherFoto('imagem2')}/>
+                                <button onClick={() => limparImagem(setPreviewImagem2, setProdutoImagem2,'imagem2')}>Remover</button>
+                            </div>
+                            <div>
+                                <input type="file" id='imagem3' onChange={e => imageSelecionada(e, setPreviewImagem3, setProdutoImagem3)} />
+                                <label>Imagem 3</label>
+                                <img src={previewImagem3} alt="Imagem3"  onClick={() => escolherFoto('imagem3')}/>
+                                <button onClick={() => limparImagem(setPreviewImagem3, setProdutoImagem3,'imagem3')}>Remover</button>
+                            </div>
+                            <div>
+                                <input type="file" id='imagem4' onChange={e => imageSelecionada(e, setPreviewImagem4, setProdutoImagem4)} />
+                                <label>Imagem 4</label>
+                                <img src={previewImagem4} alt="Imagem4" onClick={() => escolherFoto('imagem4')} />
+                                <button onClick={() => limparImagem(setPreviewImagem4, setProdutoImagem4,'imagem4')}>Remover</button>
+                            </div>
                         </div>
                     </div>
                     <button id='btcadastr' onClick={CadastrarProduto}>Cadastrar</button>
