@@ -1,19 +1,36 @@
-.adm-cadastrar-produto {
+.pagina-adm-editar-produto {
     display: flex;
     flex-direction: row;
     width: 100vw;
     height: 100vh;
 
-    .corp {
+    .corpo {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        padding: 50px;
+        height: 100%;
+        padding: 40px;
     }
 
-    .corp > h1 {
+    .corpo > h1 {
         font: 32px "Bebas Neue";
         color: #3D3D3D;
+    }
+
+    .group1 {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        padding-bottom: 30px;
+    }
+
+    .leftside {
+        display: flex;
+        flex-direction: column;
+        width: 492px;
+        height: 594px;
+        border-radius: 5px;
+        border: 1px solid #545454;
     }
 
     .menus {
@@ -69,46 +86,43 @@
         padding: 10px;
     }
 
-    #btimg {
-        width: auto;
-        height: 45px;
-        border: none;
-        border-radius: 3px;
-        background-color: transparent;
-        color: #545454;
-        margin: 30px 0px;
-        font: 15px "Bebas Neue";
-        cursor: pointer;
-    }
-
-    #container-imagens {
-        width: 400px;
-        overflow-x: scroll;
-      }
-
-    #imagens {
-        display: flex;
-        flex-direction: row;
-        align-self: center;
-    }
-    
-    #imagens img {
-        width: 88px;
-        height: 88px;
-        border: 1px solid;
-        margin: 0px 5px;
-    }
-
     #btcadastr {
-        width: 165px;
-        height: 62px;   
+        width: 125px;
+        height: 42px;   
         border-radius: 3px;
         border: none;
         background-color: #707070;
         color: #fff;
-        font: 32px "Bebas Neue";
-        align-self: center;
+        font: 25px "Bebas Neue";
+        align-self: start;
         cursor: pointer;
         margin: 20px 0px;
+    }
+
+    .rightside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 492px;
+        height: 594px;
+        border-radius: 5px;
+    }
+
+    .rightside div {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin: 10px 0px;
+    }
+
+    .rightside img {
+        width: 88px;
+        height: 88px;
+        border: 1px solid #545454;
+    }
+
+    #capa1 {
+        width: 404px;
+        height: 171px;
     }
 }

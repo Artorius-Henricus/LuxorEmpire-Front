@@ -1,0 +1,95 @@
+.pagina-listar-produtos {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+
+    .corpo {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 100%;
+        padding: 40px;
+    }
+
+    .corpo > h1 {
+        font: 32px "Bebas Neue";
+        color: #3D3D3D;
+    }
+
+    .produtos {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0px 30px 0px;
+        border: 1px solid #3D3D3D;
+        width: 350px;
+        height: 500px;
+        overflow: scroll;
+        border-radius: 3px;
+    }
+
+    .box table {
+        min-width: 100%;
+        min-height: 100%;
+        border-radius: 3px;
+        border-collapse: collapse;
+    }
+
+    .box tr {
+        border-bottom: 1px solid #3D3D3D;
+    }
+
+    .tcabeca th {
+        font: 16px "Inter";
+        font-weight: 600;
+        min-width: 100%;
+        text-align: start;
+        padding-left: 10px;
+        height: 30px;
+    }
+
+    .tcorpo td {
+        font: 16px "Inter";
+        font-weight: 400;
+        text-align: start;
+        padding-left: 10px;
+        height: 40px;
+        white-space: nowrap; /* Impede que o texto seja quebrado */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Adicione "..." ao final do texto se ele for cortado */
+    }
+
+    .box::-webkit-scrollbar {
+        width: 5px;
+        height: 10px;
+        cursor: pointer;
+    }
+      
+    .box::-webkit-scrollbar-track {
+        background: transparent;
+    }
+      
+    .box::-webkit-scrollbar-thumb {
+        background-color: rgb(88, 88, 88);
+        border-radius: 20px;
+        border: none;
+    }
+
+    .box button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin: 0px 10px;
+    }
+}

@@ -80,7 +80,6 @@ export default function AdmCadastroProduto() {
         }
     };
 
-    
     return (
         <div className="adm-cadastrar-produto">
             <CompMenuBar />

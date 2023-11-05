@@ -25,6 +25,8 @@ import PaginaPedidos from './pages/site/meuspedidos';
 import PaginaPedidoConcluido from './pages/site/pedidoconcluido';
 import PedidoProduto from './pages/site/pedidoproduto';
 import CompUserMenuResp from './components/site/resp-usermenu';
+import AdmListarProdutos from './pages/adm/adm-listar-produtos';
+import AdmEditarProduto from './pages/adm/adm-editar-produtos';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -41,7 +43,9 @@ root.render(
         <Route path='/adm/central' element={<AdmCentral />} />
         <Route path='/adm/pedidos-concluidos' element={<AdmPedidosConcluidos />} />
         <Route path='/adm/pedidos-andamento' element={<AdmPedidosAndamento />} />
-        <Route path='/adm/cadastrar-produto' element={<AdmCadastroProduto />} />
+        <Route path='/adm/produtos/cadastrar' element={<AdmCadastroProduto />} />
+        <Route path='/adm/produtos/listar' element={<AdmListarProdutos />} />
+        <Route path='/adm/produtos/editar' element={<AdmEditarProduto />} />
 
         {/* Perfil do USUÁRIO */}
         <Route path='/perfil' element={<PaginaTelaUsuario />} />

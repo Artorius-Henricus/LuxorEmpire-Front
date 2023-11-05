@@ -41,7 +41,8 @@ export default function CompMenuBar() {
                     Ferramentas
                 </span>
                 <div className={`off ${shoff2 ? 'show' : ''}`}>
-                    <Link to='/adm/cadastrar-produto' className='btextra'>Cadastrar Produto</Link>
+                    <Link to='/adm/produtos/cadastrar' className='btextra'>Cadastrar Produto</Link>
+                    <Link to='/adm/produtos/listar' className='btextra'>Listar Produtos</Link>
                 </div>
             </button>
         </div>
