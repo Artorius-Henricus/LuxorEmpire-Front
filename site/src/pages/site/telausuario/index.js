@@ -17,6 +17,7 @@ export default function PaginaTelaUsuario(){
     const [perfilImg, setPerfilImg] = useState('');
     const [slnImg, setSlnImg] = useState('');
 
+    const [userId, setUserId] = useState('')
     const [userName, setUserName] = useState('');
     const [userCpf, setUserCpf] = useState('');
     const [userEmail, setUserEmail] = useState('');
@@ -28,6 +29,7 @@ export default function PaginaTelaUsuario(){
             navigate('/')
         }
         else {
+            setUserId(storage('user-info').id)
             setUserName(storage('user-info').nome)
             setUserCpf(storage('user-info').cpf)
             setUserEmail(storage('user-info').email)
@@ -38,6 +40,7 @@ export default function PaginaTelaUsuario(){
                 setPerfilImg('');
             }
             else {
+                setSlnImg("http://localhost:5000/"+storage('user-info').img);
                 setPerfilImg("http://localhost:5000/"+storage('user-info').img);
             }
         }
@@ -58,6 +61,38 @@ export default function PaginaTelaUsuario(){
         if (selectedFile) {
             const fileUrl = URL.createObjectURL(selectedFile);
             setPerfilImg(fileUrl);
+        }
+    }
+
+    async function AtualizarPerfil() {
+        try {
+            let user = {
+                nome: userName,
+                cpf: userCpf,
+                email: userEmail,
+                telefone: userTelefone,
+                nascimento: userNascimento
+            };
+            const url = `http://localhost:5000/usuario/atualizar/${userId}`
+            const command = await axios.put(url, user);
+            toast.success("Informações Atualizadas!")
+
+            const data = storage('user-info')
+            data.nome = user.nome;
+            data.cpf = user.cpf;
+            data.email = user.email;
+            data.telefone = user.telefone;
+            data.nascimento = user.nascimento;
+            storage('user-info', data);
+            if (slnImg != storage('user-info').img) {
+                enviarPerfilIMG()
+            }
+            else {
+                console.log("error")
+            }
+        }
+        catch (err) {
+            toast.error(err.response.data.erro)
         }
     }
 
@@ -112,7 +147,7 @@ export default function PaginaTelaUsuario(){
                             </div>
                         </div>
                         <div id='btsvsc'>
-                            <button onClick={enviarPerfilIMG}>Salvar Alterações</button>
+                            <button onClick={AtualizarPerfil}>Salvar Alterações</button>
                             <button id='sairbt' onClick={Deslogar}>Sair da Conta</button>
                         </div>
                     </section>
