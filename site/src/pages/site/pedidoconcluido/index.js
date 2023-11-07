@@ -26,7 +26,7 @@ export default function PaginaPedidoConcluido() {
                 <article className='pedido-infos'>
                     <h2>Informações do Pedido:</h2>
 
-                    <article>
+                    <article >
                         <section>
                             <div>
                                 <h3>Pedido Realizado Em:</h3>
