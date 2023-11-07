@@ -83,7 +83,8 @@
 
         .comp-rodape{
             display: flex;
-            flex-direction: column !important;
+            flex-direction: column;
+            flex-wrap: wrap;
             height: 2000;
         }
         
