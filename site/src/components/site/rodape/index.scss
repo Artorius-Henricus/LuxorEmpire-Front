@@ -31,13 +31,6 @@
         color: #666666;
     }
 
-    #colunas{
-        display:flex ;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 60vw;
-
-    }
 
     #ltblock {
         display: flex;
@@ -64,36 +57,34 @@
         height: 16px;
     }
 
-    @media(max-width: 320px) {
 
+
+};
+
+@media(max-width: 320px) {
+    .comp-rodape{ 
 
         h1 {
-            font: 14px 'Bebas Neue'; 
+            font: 14px 'Bebas Neue';
+            
         }
-
+    
         a {
+            
             font: 10px "Bebas Neue";
-        }
-
-        img {
-             height: 50px;
-             width: 50px;
-
+            
         }
 
         .comp-rodape{
             display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
+            flex-direction: column !important;
             height: 2000;
         }
         
         #ltblock{
-
-            #logordp{
             display: none;
-            }
         }
+        
     }
 
 }

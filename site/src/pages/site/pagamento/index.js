@@ -38,7 +38,7 @@ export default function Pagamento() {
                 <div className='metodo'>
                     <h3><b>2. Método de Pagamento</b></h3>
                     
-                    <div className='cart'><img src='/assets/images/carrinho/cartao.png' alt='' /><p id='texto'>Informações Cartão de Crédito</p></div>
+                    <div className='cart'><img src='/assets/images/carrinho/cardzin.png' alt='' /><p id='texto'>Informações Cartão de Crédito</p></div>
 
                     <Link to="" id='botao'>Alterar</Link>
                 </div>

@@ -11,6 +11,8 @@ import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import InputMask from 'react-input-mask';
+
 
 export default function PaginaTelaUsuario(){
     const navigate = useNavigate();
@@ -64,6 +66,8 @@ export default function PaginaTelaUsuario(){
         }
     }
 
+    const onlyNumbers = (str) => str.replace(/[^0-9]/g, "")
+
     async function AtualizarPerfil() {
         try {
             let user = {
@@ -92,7 +96,12 @@ export default function PaginaTelaUsuario(){
             }
         }
         catch (err) {
-            toast.error(err.response.data.erro)
+            if (err.response.data.erro == "Incorrect date value: '2005-08-23T03:00:00.000Z' for column 'dt_nascimento' at row 1") {
+                toast.error("Data de Nascimento Inválida!")
+            }
+            else {
+                toast.error(err.response.data.erro)
+            }
         }
     }
 
@@ -109,7 +118,7 @@ export default function PaginaTelaUsuario(){
             });
             const imgdata = await axios.get(`http://localhost:5000/usuario/info/${user}`)
             const data = storage('user-info')
-            data.img = imgdata.data.img;
+            data.img = imgdata.data.img
             storage('user-info', data)
 
             toast.success("Imagem Cadastrada");
@@ -140,9 +149,9 @@ export default function PaginaTelaUsuario(){
                             </div>
                             <div>
                                 <input type='text' value={userName} onChange={e => setUserName(e.target.value)}/>
-                                <input type='text' value={userCpf} onChange={e => setUserCpf(e.target.value)}/>
+                                <InputMask mask='999.999.999-99' placeholder='CPF' value={userCpf} onChange={e => setUserCpf(onlyNumbers(e.target.value))}/>
                                 <input type='text' value={userEmail} onChange={e => setUserEmail(e.target.value)}/>
-                                <input type='text' value={userTelefone} onChange={e => setUserTelefone(e.target.value)}/>
+                                <InputMask mask='(99) 99999-9999' placeholder='Número de Telefone' value={userTelefone} onChange={e => setUserTelefone(onlyNumbers(e.target.value))}/>
                                 <input type='date' value={userNascimento} onChange={e => setUserNascimento(e.target.value)}/>
                             </div>
                         </div>

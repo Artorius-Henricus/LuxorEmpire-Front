@@ -167,3 +167,19 @@
         }
     }
 }
+
+@media(max-width: 320px) {
+    .endereco{
+        display: flex;
+        flex-direction: column;
+
+
+    }
+ 
+ 
+    .right_pag{
+    display: none;
+
+ }
+
+}
