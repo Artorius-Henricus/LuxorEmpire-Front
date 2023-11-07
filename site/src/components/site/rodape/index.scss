@@ -55,4 +55,12 @@
     #logordp {
         height: 16px;
     }
+
+    @media(max-width: 320px) {
+        #ltblock{
+            display: none;
+
+        }
+    }
+
 }
