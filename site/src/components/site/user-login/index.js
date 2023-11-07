@@ -28,7 +28,7 @@ export default function LoginUser({ isOpen, onClose, trocar}){
     const navigate = useNavigate();
     const ref = useRef();
 
-    const onlyNumbers = (str) => str.replace(/[^0-9]/g, "")
+    const onlyNumbers = (str) => str.replace(/[^0-9]/g, "");
 
     async function Logar() {
         setLoading(true)
@@ -43,7 +43,7 @@ export default function LoginUser({ isOpen, onClose, trocar}){
 
         .then(response => {
             toast.success("Login Realizado!");
-            ref.current.continuousStart()
+            ref.current.continuousStart();
             storage('user-info', response.data);
 
             setTimeout(() => {
@@ -89,7 +89,7 @@ export default function LoginUser({ isOpen, onClose, trocar}){
                     </div>
 
                     <div>
-                        <input type="text" placeholder='Nome Completo' value={nomeUser} onChange={e => setNomeUser(e.target.value)}/>
+                        <input type="text" placeholder='Nome de Usuário' value={nomeUser} onChange={e => setNomeUser(e.target.value)}/>
                         <input type={`${showPass ? 'number' : 'password'}`} placeholder='Senha' value={senhaUser} onChange={e => setSenhaUser(e.target.value)}/>
                     </div>
 

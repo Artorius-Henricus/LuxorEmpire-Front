@@ -88,7 +88,7 @@ export default function RegisterUser({ isOpen, onClose, trocar}){
                 <h1>Criar Conta</h1>
 
                 <article>
-                <div>
+                    <div>
                         <input type="text" placeholder='E-mail' value={emailUser} onChange={e => setEmailUser(e.target.value)}/>
                         <input type="date" placeholder='Nascimento' value={nasciUser} onChange={e => setNasciUser(e.target.value)}/>
                     </div>
