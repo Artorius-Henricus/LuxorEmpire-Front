@@ -8,9 +8,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function AdmCadastroProduto() {
-    const [selectedImages, setSelectedImages] = useState([]); // Para armazenar as imagens selecionadas
-
-
     const [capaProduto, setCapaProduto] = useState("");
     const [capaPreview, setCapaPreview] = useState("");
 

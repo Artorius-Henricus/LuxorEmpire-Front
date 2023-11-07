@@ -75,6 +75,12 @@
             
         }
 
+        .comp-rodape{
+            display: flex;
+            flex-direction: column !important;
+            height: 2000;
+        }
+        
         #ltblock{
             display: none;
         }

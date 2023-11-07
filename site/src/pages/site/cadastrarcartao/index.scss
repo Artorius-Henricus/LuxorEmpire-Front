@@ -117,17 +117,45 @@
             width: 50vw  !important;
         }
 
-        .buttons *{
+        .buttons{
             display: flex;
             flex-direction: column;
+        }
+
+        .inputs{
+            font-weight: 100 ;
+
         }
             
     }
 
-    @media (max-width: 580px) {
+    @media (max-width: 570px) {
         .corp{
             display: flex;
             align-items: center;
+            justify-content: center;
+        }
+
+        .inputs{
+            align-items: center;
+        }
+
+        .inputs h1{
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .inputs label{
+            font-size: 14px;
+        }
+
+
+        .buttons{
+            display: flex;
+            flex-direction: column !important;
+            align-items: center;
+
         }
     }
 
