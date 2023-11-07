@@ -5,6 +5,10 @@
         flex-direction: row;
         justify-content: space-between;
         margin: 0px;
+        a{
+            text-decoration: none;
+        
+        }
 
         .left_pag{
             width: 62vw;
@@ -24,11 +28,12 @@
                 padding-left: 10px;
                 border: 1px solid black;
                 display: flex;
+                flex-direction: row;
                 width: 63vw;
                 justify-content: space-between;
 
                 
-                #texto{
+                .texto{
                     font-size: 16px;
                     font-weight: 200;
                     font-style: inherit;
@@ -168,18 +173,32 @@
     }
 }
 
-@media(max-width: 320px) {
-    .endereco{
-        display: flex;
-        flex-direction: column;
+@media(max-width: 350px) {
+    .left_pag{
 
+        .endereco{
+            display: flex;
+            flex-direction: column !important;
+            width: 80vw;
+            #texto{
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                p{
+                    font: 12px "inter";
+                    
+
+                }
+
+            }
+        }
 
     }
  
- 
     .right_pag{
-    display: none;
-
- }
+        display: none;
+    }
 
 }
