@@ -169,7 +169,15 @@
 }
 
 @media(max-width: 320px) {
- .right_pag{
+    .endereco{
+        display: flex;
+        flex-direction: column;
+
+
+    }
+ 
+ 
+    .right_pag{
     display: none;
 
  }
