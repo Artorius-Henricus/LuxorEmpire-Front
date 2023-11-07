@@ -37,7 +37,7 @@
     }
 
     .inputs input {
-        width: 496px;
+        width: 40vw;
         height: 34px;
         border-radius: 5px;
         border: 1px solid #404040;
@@ -63,12 +63,12 @@
     }
 
     .inputs select {
-        width: 496px;
+        width: 40vw;
         height: 34px;
         border-radius: 5px;
         border: 1px solid #404040;
         background-color: transparent;
-        font: 15px "Inter";
+        font: 1.2vw "Inter";
         outline: none;
         padding: 0px 10px;
     }
@@ -118,5 +118,9 @@
 
     #btreturn:hover {
         background-color: #808080;
+    }
+
+    @media (max-width: 600) {
+        
     }
 }
