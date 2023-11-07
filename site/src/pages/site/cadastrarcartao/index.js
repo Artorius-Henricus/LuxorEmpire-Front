@@ -37,13 +37,13 @@ export default function CadastrarCartao() {
 
                     <section className='doubleinpt'>
                         <div>
-                            <label>Endereço</label>
-                            <input type='text' />
+                            <label>Data de Expiração</label>
+                            <input type='date' />
                         </div>
 
                         <div>
-                            <label>Número da Residência</label>
-                            <input type='text' />
+                            <label>Código de Segurança (CVV)</label>
+                            <input type='number' />
                         </div>
                     </section>
                     <div className='buttons'>
