@@ -6,31 +6,31 @@ export default function CompRodape() {
     
     return(
         <div className="comp-rodape">
-            <div id='colunas'>
-                <div>
-                    <h1>Institucional</h1>
+            
+            <div>
+                <h1>Institucional</h1>
 
-                    <Link to=''>Formas de Entrega</Link>
-                    <Link to=''>Políticas de Segurança</Link>
-                    <Link to=''>Políticas de Privacidade</Link>
-                    <Link to=''>Termos de Uso</Link>
-                </div>
-
-                <div>
-                    <h1>Atendimento</h1>
-
-                    <Link to=''>Trocas e Devoluções</Link>
-                    <Link to=''>Central de Atendimento</Link>
-                </div>
-
-                <div>
-                    <h1>Perfil</h1>
-
-                    <Link to=''>Meus Pedidos</Link>
-                    <Link to=''>Notificações</Link>
-                    <Link to=''>Meu Carrinho</Link>
-                </div>
+                <Link to=''>Formas de Entrega</Link>
+                <Link to=''>Políticas de Segurança</Link>
+                <Link to=''>Políticas de Privacidade</Link>
+                <Link to=''>Termos de Uso</Link>
             </div>
+
+            <div>
+                <h1>Atendimento</h1>
+
+                <Link to=''>Trocas e Devoluções</Link>
+                <Link to=''>Central de Atendimento</Link>
+            </div>
+
+            <div>
+                <h1>Perfil</h1>
+
+                <Link to=''>Meus Pedidos</Link>
+                <Link to=''>Notificações</Link>
+                <Link to=''>Meu Carrinho</Link>
+            </div>
+            
             <div id='ltblock'>
                 <div id='logordp'>
                     <p>Pague com:</p>

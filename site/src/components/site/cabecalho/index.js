@@ -58,7 +58,7 @@ export default function CompCabecalho() {
                     <input type='text' />
                 </div>
 
-                <Link to='/'><img src="/assets/images/cabecalho/Logo.svg" alt="Logo" /></Link>
+                <Link to='/' id='logo'><img src="/assets/images/cabecalho/Logo.svg" alt="Logo" /></Link>
 
                 <div id='buttons-menu'>
                    
@@ -107,3 +107,4 @@ export default function CompCabecalho() {
         </div>
     )
 }
+
