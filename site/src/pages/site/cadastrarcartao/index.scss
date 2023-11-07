@@ -116,10 +116,15 @@
         .doubleinpt input {
             width: 50vw  !important;
         }
+
+        .buttons *{
+            display: flex;
+            flex-direction: column;
+        }
             
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 580px) {
         .corp{
             display: flex;
             align-items: center;
