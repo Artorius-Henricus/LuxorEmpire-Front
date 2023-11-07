@@ -173,8 +173,9 @@
     }
 }
 
-@media(max-width: 380px) {
+@media(max-width: 500px) {
     .left_pag{
+        width: 100vw;
 
         .endereco{
             display: flex;
@@ -199,6 +200,7 @@
  
     .right_pag{
         display: none;
+        width: 0px;
     }
 
 }
