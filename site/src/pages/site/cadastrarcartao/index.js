@@ -6,15 +6,46 @@ import {Link} from 'react-router-dom'
 
 import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import InputMask from 'react-input-mask';
+import { toast } from 'react-toastify';
 
 export default function CadastrarCartao() {
+    const [userId, setUserId] = useState('')
+
+    const [numeroCartao, setNumeroCartao] = useState('');
+    const [nomeCartao, setNomeCartao] = useState('');
+    const [dataCartao, setDataCartao] = useState('');
+    const [codigoCartao, setCodigoCartao] = useState('');
+
+    const onlyNumbers = (str) => str.replace(/[^0-9]/g, "")
+
+    async function CadastrarCartao() {
+        try{
+            let cartao = {
+                numero: numeroCartao,
+                nome: nomeCartao,
+                data: dataCartao,
+                cvv: codigoCartao
+            };
+            const url = `http://localhost:5000/usuario/cartao/cadastrar/${userId}`;
+            const command = await axios.post(url, cartao)
+            toast.success("Cartão Cadastrado com Sucesso!")
+        }
+        catch (err) {
+            toast.error(err.response.data.erro);
+        }
+    }
 
     const navigate = useNavigate();
 
     useEffect(() => {
         if (!storage('user-info')) {
             navigate('/')
+        }
+        else {
+            setUserId(storage('user-info').id)
         }
     }, [])
 
@@ -27,28 +58,28 @@ export default function CadastrarCartao() {
 
                     <div>
                         <label>Número do Cartão</label>
-                        <input type='text' />
+                        <InputMask mask='9999-9999-9999-9999' value={numeroCartao} onChange={e => setNumeroCartao(onlyNumbers(e.target.value))}/>
                     </div>
 
                     <div>
                         <label>Nome do Cartão</label>
-                        <input type='text' />
+                        <input type='text' value={nomeCartao} onChange={e => setNomeCartao(e.target.value)}/>
                     </div>
 
                     <section className='doubleinpt'>
                         <div>
-                            <label>Data de Expiração</label>
-                            <input type='date' />
+                            <label for="data">Data de Expiração</label>
+                            <InputMask mask='9999-99' placeholder="YYYY-MM" value={dataCartao} onChange={e => setDataCartao(e.target.value)}/>
                         </div>
 
                         <div>
                             <label>Código de Segurança (CVV)</label>
-                            <input type='number' />
+                            <input type='number' value={codigoCartao} onChange={e => setCodigoCartao(e.target.value)}/>
                         </div>
                     </section>
                     <div className='buttons'>
-                        <button>Salvar Endereço</button>
-                        <Link to='/cartoes' id='btreturn'>Retornar</Link>
+                        <button>Salvar Cartao</button>
+                        <Link to='/cartoes' id='btreturn' onClick={CadastrarCartao}>Retornar</Link>
                     </div>  
                 </article>
             </div>
