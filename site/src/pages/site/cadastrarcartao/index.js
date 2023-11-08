@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import InputMask from 'react-input-mask';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function CadastrarCartao() {
     const [userId, setUserId] = useState('')
@@ -22,7 +22,7 @@ export default function CadastrarCartao() {
     const onlyNumbers = (str) => str.replace(/[^0-9]/g, "")
 
     async function CadastrarCartao() {
-        try{
+        try {
             let cartao = {
                 numero: numeroCartao,
                 nome: nomeCartao,
@@ -53,6 +53,7 @@ export default function CadastrarCartao() {
         <div className='pagina-cadastrar-cartao'>
             <CompCabecalho />
             <div className='corp'>
+            <ToastContainer />
                 <article className='inputs'>
                     <h1>Adicionar um novo cartão</h1>
 
@@ -78,8 +79,8 @@ export default function CadastrarCartao() {
                         </div>
                     </section>
                     <div className='buttons'>
-                        <button>Salvar Cartao</button>
-                        <Link to='/cartoes' id='btreturn' onClick={CadastrarCartao}>Retornar</Link>
+                        <button onClick={CadastrarCartao}>Salvar Cartao</button>
+                        <Link to='/cartoes' id='btreturn'>Retornar</Link>
                     </div>  
                 </article>
             </div>

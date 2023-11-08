@@ -27,8 +27,8 @@ export default function CadastrarEndereco() {
 
                     <div>
                         <label>País/Região</label>
-                        <select>
-                            <option>Selecione um País</option>
+                        <select name="paises" id="paises">
+                            <option value="Brasil">Brasil</option>
                         </select>
                     </div>
 
