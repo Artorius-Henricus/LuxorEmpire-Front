@@ -74,35 +74,55 @@
         margin-top: 30px;
     }
 }
-@media(max-width: 320px){
+@media(max-width: 320px) {
     
-    
-    img{
-        height: 50px;
-        width: 50px;
-        
+    .pagina-pedido-concluido{
 
-    }
-    
-    h1{
-        font: 20px "inter" !important;
-        
-    }
+        >h1{
+            font: 40px "bebas neue";
+            width: 550px;
+            
 
-    .pedido-infos{
-        display: flex;
-        
-        article{
-            display: flex;
-            flex-direction: row;
-            height: 200px;
-            width: 100px;
         }
 
-        section {
-            display: flex;
-            flex-direction: column  !important;
+        >img{
+            height: 250px;
+            width: 250px;
+
+
+
         }
-    
+
+        .pedido-infos{
+
+            h2{
+                font: 20px "inter";
+
+
+            }
+
+            article{
+                display: flex;
+                flex-direction: column;
+                border: 1px solid red;
+                width: 20px
+
+            }
+
+            section{
+                display: flex;
+                flex-direction: column;
+                width: 20px;
+
+  
+            }
+
+            p{
+                width: 10px;
+
+            }
+
+        }
     }
+
 }
