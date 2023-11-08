@@ -57,7 +57,7 @@
         background-color: #C3C3C3 !important;
         border: 1px solid #404040;
         background-color: transparent;
-        font: 15px "Inter";
+        font: 1.8px "Inter";
         outline: none;
         padding: 0px 10px;
     }
@@ -68,7 +68,7 @@
         border-radius: 5px;
         border: 1px solid #404040;
         background-color: transparent;
-        font: 1.2vw "Inter";
+        font: 1.8vw "Inter";
         outline: none;
         padding: 0px 10px;
     }
@@ -120,7 +120,13 @@
         background-color: #808080;
     }
 
-    @media (max-width: 600) {
+    @media (max-width: 500) {
+
+        .unaltera{
+            flex-wrap: wrap;
+            text-wrap: wrap;
+            height: 15px;
+        }
         
     }
 }
