@@ -32,8 +32,8 @@ export default function CompUserMenuResp(){
             
             <div className='opcoes'>
             <article id='selectbox' onMouseEnter={() => {setShow(true)}} onMouseLeave={() => {setShow(false)}}>
-                <div id='select'>
-                    <h1>Minha Conta</h1>
+                <div className='select'>
+                    <a id='text'>Minha Conta</a>
                 </div>
                 <div className={`off ${show ? 'show' : ''}`}>
                     <Link to='/perfil'>Perfil</Link>
