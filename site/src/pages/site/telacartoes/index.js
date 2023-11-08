@@ -35,7 +35,6 @@ export default function PaginaCartoes() {
         }
         else {
             setUserInfo(storage('user-info'));
-            ConsultarCartao();
         }
     }, [])
 
