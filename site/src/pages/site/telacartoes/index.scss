@@ -256,4 +256,15 @@
         }
     }
 }
+
+    @media(max-width: 510px) {
+        .cartaoblock{
+            width: 90vw;
+
+            button img{
+                width: 10vw;
+            }
+        }
+    }
+    
 }
