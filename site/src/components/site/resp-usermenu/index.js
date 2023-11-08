@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react';
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import storage from "local-storage"
 
 export default function CompUserMenuResp(){
     const [show, setShow] = useState(false);
     const [perfilImg, setPerfilImg] = useState('');
     const [infoUser, setInfoUser] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if(!storage('user-info').img) {
-            setPerfilImg(null);
+        if (!storage('user-info')) {
+            navigate('/')
         }
         else {
+            if(!storage('user-info').img) {
+                setPerfilImg(null);
+            }
+            else {
+                setPerfilImg("http://localhost:5000/"+storage('user-info').img);
+            }
             setInfoUser(storage('user-info'))
-            setPerfilImg("http://localhost:5000/"+storage('user-info').img);
         }
     }, [])
 
@@ -27,7 +33,7 @@ export default function CompUserMenuResp(){
                 {perfilImg &&
                  <img src={perfilImg} alt=""/>
                 }
-                <h1>{storage('user-info').nome}</h1>
+                <h1>{infoUser.nome}</h1>
             </div>
             
             <div className='opcoes'>
