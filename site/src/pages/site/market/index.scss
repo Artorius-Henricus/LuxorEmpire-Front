@@ -55,23 +55,25 @@
     flex-direction: column;
     align-items: center;
     width: 1600px;
-    height: 1150px;
+    height: 1000px;
     gap: 40px;
+    margin-top: 100px;
 }
 
 .content {
     display: flex;
     flex-direction: row;
     gap: 30px;
-    position: relative;
-    top: 145px;
 }
 
 .botão {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 8px;
     height: 120px;
+    width: 1445px;
 }
 
 #button {
@@ -79,7 +81,31 @@
     height: 50px;
     align-self: center;
     border: 1px solid #959595;
+    background-color: #fff;
     border-radius: 5px;
     font: 20px "Inter";
+    cursor: pointer;
 }
+
+.dir {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 90%;
+    align-items: flex-end;
+}
+
+.filtragem > select {
+    height: 48px;
+    border-radius: 10px;
+    width: 180px;
+    border: none;
+
+}
+
+.filtragem img {
+    width: 25px;
+}
+
+
 

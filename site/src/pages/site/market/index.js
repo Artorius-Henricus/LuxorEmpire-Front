@@ -6,7 +6,7 @@ export default function Paginamarket () {
     return(
         <div className='pagina-market'>
             <CompCabecalho></CompCabecalho>
-            <img id='banner' src='/assets/images/market-page/Rolex Luxor 2.svg' />        
+            <img id='banner' src='/assets/images/market-page/Rolex Luxor 2.svg' />   
             <div className='tudo'>
                 <div className='esq'>
                     <div className='agrupamento'>
@@ -105,6 +105,16 @@ export default function Paginamarket () {
                 </div>
 
                 <div className='mid'>
+                    <div className='dir'>
+                        <div className='filtragem'>
+                            <select>
+                                <option>Destaque</option>
+                                
+                            </select>
+                            <img src='/assets/images/market-page/img-destaque-select.svg' />
+                        </div>
+                    </div>
+
                     <div className='content'>
                         <CompIndicacoes/>
                         <CompIndicacoes/>
@@ -131,7 +141,6 @@ export default function Paginamarket () {
             <div className='botão'>
                 <button id='button'>Descubra Mais</button> 
             </div>
-            
 
             <CompRodape/>
         </div>
