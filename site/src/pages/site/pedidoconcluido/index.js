@@ -21,7 +21,7 @@ export default function PaginaPedidoConcluido() {
             <CompCabecalho />
                 <h1>Compra Realizada!</h1>
                 <img src="/assets/images/produtos/ProdutoConc.svg" alt="" />
-                <h1>Código do Pedido: 4183hasd325ha</h1>
+                <h1 id='h1Baixo'>Código do Pedido: 4183hasd325ha</h1>
 
                 <article className='pedido-infos'>
                     <h2>Informações do Pedido:</h2>

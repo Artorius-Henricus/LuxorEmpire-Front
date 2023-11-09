@@ -9,6 +9,7 @@
         font: 32px "Inter";
         margin-top: 50px;
     }
+    
 
     > img {
         width: 296px;
@@ -40,6 +41,8 @@
         flex-direction: row;
         gap: 30px;
         margin: 10px 0px;
+
+
     }
 
     .pedido-infos h3 {
@@ -79,15 +82,24 @@
     .pagina-pedido-concluido{
 
         >h1{
-            font: 40px "bebas neue";
-            width: 550px;
+            font: 30px "inter";
+            font-weight: bold;
             
 
         }
 
+        #h1Baixo{
+            display: flex;
+            
+            font: 18px "inter";
+            font-weight: bold;            
+            
+            width: 315px;
+        }
+
         >img{
-            height: 250px;
-            width: 250px;
+            height: 245px;
+            width: 245px;
 
 
 
@@ -96,8 +108,8 @@
         .pedido-infos{
 
             h2{
-                font: 20px "inter";
-
+                font: 30px "bebas neue";
+                
 
             }
 
@@ -123,8 +135,8 @@
             }
 
             p{
-                width: 5px;
-
+                width: 150px;
+    
             }
 
         }
