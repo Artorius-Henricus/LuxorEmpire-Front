@@ -135,6 +135,7 @@ export default function PaginaTelaUsuario(){
 
             <section className='corp'>
                 <CompUserMenu />
+                
 
                 <article className='usermenusprofile'>
                     <section id='sideleft'>

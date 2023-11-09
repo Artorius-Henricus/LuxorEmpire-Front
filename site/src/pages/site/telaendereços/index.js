@@ -1,5 +1,5 @@
 import './index.scss';
-
+import CompUserMenuResp from '../../../components/site/resp-usermenu'
 import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 
@@ -47,6 +47,7 @@ export default function PaginaCartoes() {
             <CompCabecalho />
             <div className='corp'>
                 <CompUserMenu />
+                <CompUserMenuResp/>
                 <article>
                     <section className='leftside'>
                         <h1>Seus Endereços</h1>
@@ -69,7 +70,7 @@ export default function PaginaCartoes() {
                     </section>
 
                     <section className='rightside'>
-                        <Link to='/enderecos/cadastro'>Adicionar Endereço</Link >
+                        <Link id='some' to='/enderecos/cadastro'>Adicionar Endereço</Link >
 
                         <div className='selecendblock'>
                             <h1>Arthur Silva Alves</h1>
@@ -80,6 +81,7 @@ export default function PaginaCartoes() {
                             <h3>São Paulo, SP</h3>
                             <button>Editar</button>
                         </div>
+                        <Link id='aparecer' to='/enderecos/cadastro'>Adicionar Endereço</Link >
                     </section>
                 </article>
             </div>

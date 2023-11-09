@@ -223,6 +223,11 @@
     @media (max-width: 1258px) {
         .corp{
             
+            .rightside{
+                display: flex;
+                align-items: center;
+            }
+
             article{
                 display: flex;
                 flex-direction: column;
@@ -231,8 +236,10 @@
             #sume {
                 display: none;
             }
+
             #resp{
                 display: block;
+            
             }
             .cartaoselected{
                 display: none;
