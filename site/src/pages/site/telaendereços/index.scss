@@ -20,7 +20,7 @@
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
-        height: 150px;
+        height: 550px;
         padding: 0px 10px 0px 0px;
     }
 
@@ -137,12 +137,14 @@
         background-color: transparent;
         padding: 5px 10px;
         border-radius: 5px;
-        width: 320px;
-        max-height: 200px;
+        max-width: 490px;
+        width: 100%;
         margin-bottom: 20px;
     }
 
     .selecendblock {
+        max-width: 490px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         border: 2px solid #383838;
@@ -211,13 +213,20 @@
         
     }
 
-    @media (max-width: 760px) {
-       .corp{
+    @media (max-width: 1212px){
+        .corp{
             flex-direction: column;
             align-items: center;
-        .comp-user-menu {
-            display: none;
+            .comp-user-menu-resp{
+                display: block;
+            }
+            .comp-user-menu {
+                display: none;
+            }      .leftside {
+            height: 350px;
+           
         }
+    
         .comp-user-menu-resp{
             display: block;
         }
@@ -234,9 +243,40 @@
 
         #aparecer {
             display: block;
+            align-items: center;
+        }
+        .rightside > #aparecer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            width: 230px;
+            height: 40px;
+            border-radius: 3px;
+            background-color: transparent;
+            font: 20px "Inter";
+            color: #383838;
+            border: 1px solid #383838;
+            outline: none;
+            margin:  25px;
+            cursor: pointer;
+        }
+    
+        
         }
         
- }
+        .corp > article{
+            flex-direction: column;
+            align-items: center;
 
+            #some {
+            display: none;
+        }
+
+            #aparecer{
+                display: block;
+    }
+    }
 }
 }

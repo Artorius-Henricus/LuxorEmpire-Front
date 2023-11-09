@@ -245,6 +245,23 @@
                 display: none;
             }
 
+            .rightside > #resp {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                width: 230px;
+                height: 40px;
+                border-radius: 3px;
+                background-color: transparent;
+                font: 20px "Inter";
+                color: #383838;
+                border: 1px solid #383838;
+                outline: none;
+                margin:  25px;
+                cursor: pointer;
+            }
         }
     }
 
