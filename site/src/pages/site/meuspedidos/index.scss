@@ -19,8 +19,6 @@
     .pedidosbox {
         display: flex;
         flex-direction: row;
-        min-width: 800px;
-        min-height: 124px;
         background-color: transparent;
         justify-content: space-around;
         border: 1px solid #3D3D3D;
@@ -74,7 +72,15 @@
         }
 
         .pedidosbox{
-            
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            width: 70vw;
+        }
+
+        .pedidosbox img{
+            width: 60px;
+            height: 60px;
         }
     }
 }
