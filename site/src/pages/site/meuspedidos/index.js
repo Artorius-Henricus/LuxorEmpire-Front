@@ -7,6 +7,7 @@ import CompUserMenu from '../../../components/site/usermenu';
 import { Link, useNavigate } from 'react-router-dom';
 import storage from "local-storage"
 import { useState, useEffect } from 'react';
+import CompUserMenuResp from '../../../components/site/resp-usermenu';
 
 export default function PaginaPedidos() {
     const navigate = useNavigate();
@@ -32,6 +33,7 @@ export default function PaginaPedidos() {
     return(
         <div className='pagina-pedidos'>
             <CompCabecalho />
+            <CompUserMenuResp />
                 <article className='corp'>
                     <CompUserMenu />
 

@@ -73,7 +73,7 @@ export default function CadastrarCartao() {
                             <InputMask mask='9999-99' placeholder="YYYY-MM" value={dataCartao} onChange={e => setDataCartao(e.target.value)}/>
                         </div>
 
-                        <div>
+                        <div id='inputdouble'>
                             <label>Código de Segurança (CVV)</label>
                             <input type='number' value={codigoCartao} onChange={e => setCodigoCartao(e.target.value)}/>
                         </div>

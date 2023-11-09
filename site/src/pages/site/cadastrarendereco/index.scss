@@ -120,7 +120,30 @@
         background-color: #808080;
     }
 
-    @media (max-width: 500) {
+    @media (max-width: 500px) {
+
+        
+
+        .inputs{
+            display: flex;
+            align-items: center;
+        }
+
+        .inputs input{
+            display: flex;
+            width: 70vw;
+        }
+
+        .inputs select{
+            width: 70vw;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
 
         .unaltera{
             flex-wrap: wrap;

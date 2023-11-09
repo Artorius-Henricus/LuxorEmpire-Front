@@ -61,4 +61,20 @@
     .pedidosbox a:hover {
         text-decoration: underline;
     }
+
+    .comp-user-menu-resp{display: none;}
+
+    @media (max-width: 500px) {
+        .comp-user-menu{
+            display: none;
+        }
+
+        .comp-user-menu-resp{
+            display: block;
+        }
+
+        .pedidosbox{
+            
+        }
+    }
 }
