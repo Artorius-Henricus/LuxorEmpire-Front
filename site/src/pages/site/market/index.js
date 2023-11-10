@@ -108,10 +108,21 @@ export default function Paginamarket () {
                     <div className='dir'>
                         <div className='filtragem'>
                             <select>
-                                <option>Destaque</option>
-                                
+                                <option>Destaque                             <img src='/assets/images/market-page/img-destaque-select.svg' /></option>
+                                <option>Preço: Menor ao Maior</option>
+                                <option>Preço: Maior ao Menor</option>
+                                <option>A - Z</option>
+                                <option>Z - A</option>
+                                <option>Mais Novo ao Mais Antigo</option>
+                                <option>Mais Antigo ao Mais Novo</option>
+{/* 
+                                <optgroup label="Swedish Cars">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                </optgroup>
+                                 */}
                             </select>
-                            <img src='/assets/images/market-page/img-destaque-select.svg' />
+
                         </div>
                     </div>
 
