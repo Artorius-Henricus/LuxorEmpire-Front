@@ -1,179 +1,246 @@
 .pagina-produto {
-    .sec1{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+    .sectionprodu {
         display: flex;
         flex-direction: row;
-        gap: 60px;
-        position: relative;
-        top: 30px;
-        height: 530px;
+        margin-top: 30px;
+        padding: 0px 20px;
+        justify-content: center;
     }
 
-    .esq {
+
+
+    .imgsinfo {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        position: relative;
-        left: 15px;
-    }
-
-    .esq-imgs {
-        width: 100px;
-        height: 100px;
-        border: 1px solid #3d3d3d;
-        border-radius: 5px;
-    }
-
-    .mid {
-        width:700px;
-        height:451px;
-        border: 1px solid #3d3d3d;
-        border-radius: 5px;
-    }
-
-    .dir {
-        display: flex;
-        flex-direction: column;
-        margin-top: 12px;
-    }
-
-    .separador {
-        height: 132px;
-    }
-
-    .dir > h2 {
-        font: 32px "Bebas Neue";
-        font-weight: 400;
-        line-height: 38.4px;
-        height: 29px;
-    }
-
-    .dir-linha {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .dir-linha img {
-        width: 29px;
-        height: 29px;
-    }
-
-    .dir-linha h2{
-        font: 24px "Bebas Neue";
-        font-weight: 400;
-    }
-
-    .dir-linha-button {
-        display: flex;
-        gap: 23px;
-    }
-    .dir-linha-main{
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        width: 50px;
-        font-size: 20px;
-    }
-    .dir-linha-main button {
-        width: 30px;
-        height: 1px;
-        font-size: 30px;
-        border: none;
-        outline: none;
-    }
-
-    #but-dir {
-        width: 177px;
-        height: 38px;
-        border-radius:5px;
-        border: 1px solid #959595;
-        background-color: #fff;
-        font-size:14px
-    }
-
-    .dir-linha-img {
-        display: flex;
-        gap: 7.5px;
-        margin-top: 10px;
-    }
-
-    .dir-linha-img p {
-        font: 16px "Inter";
-    }
-
-    .txt-light {
-        color: #8e8e8e;
-    }
-
-    .dir-linha-seguranca {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 7.5px;
-        margin-top: 10px;
-    }
-
-    .txt-column {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .descrição {
-        display: flex;
-        align-items: center;
-        font: 24px "Inter";
-        font-weight: 600;
-    
-        #linha{
-            height: 1px;
-            width: 300px;
-            margin: 0px 40px;
-            border: 2px solid #3B3B3B;
-        }
-    }
-
-    .sec-mid {
-        height: 240px;
-    }
-
-    .topicos {
-        display: flex;
-        flex-direction: column;
-        margin: 10px;
-        font-size:  16px;
-    }
-
-    .sec-mid-bottom {
-        display: flex;
         align-items: center;
     }
 
-    .separador {
+    .images {
         display: flex;
         flex-direction: row;
-        font-size: 36px;
-        font-weight: 300;
-
-        #linha {
-            height: 1px;
-            width: 400px;
-            margin: 24px 40px;
-            border: 2px solid #3b3b3b;
-        }
     }
 
-    .sec-bottom {
+    .images section {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .images div {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        height: 400px;
-        gap:40px;
+        border: 1px solid #333333;
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        padding: 20px;
     }
-}
 
-@media (max-width:320px) {
+    .images img {
+        height: 70px;
+    }
+
+    #mainimg {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #333333;
+        width: 700px;
+        height: 451px;
+        border-radius: 5px;
+        padding: 20px;
+        margin-left: 17px;
+    }
+
+    #mainimgg {
+        height: 440px;
+    }
+
+    .separate {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 20px 0px;
+    }
+
+    .separate h1 {
+        font: 20px "Inter";
+        font-weight: 400;
+        margin: 0px 24px;
+    }
+
+    .separate span {
+        width: 300px;
+        height: 3px;
+        background-color: #3B3B3B;
+    }
+
+    .infos {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        align-self: flex-start;
+    }
     
-    .pagina-produto{
-        width: 320px;
+    .infos p {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font: 20px "Inter";
+        font-weight: 200;
+    }
+
+
+
+    .infosgeralprod {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 20px;
+    }
+
+    .infosgeralprod h1 {
+        font: 24px "Inter";
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+
+    .infosgeralprod h2 {
+        width: 440px;
+        min-height: 132px;
+        font: 16px "Inter";
+        font-weight: 200;
+    }
+
+    .infosgeralprod h3 {
+        font: 32px "Bebas Neue";
+        margin-top: 20px;
+    }
+    
+    .divrow {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #cartaoimg {
+        width: 29px;
+        height: 29px;
+        margin-right: 5px;
+    }
+
+    .parcelamento {
+        font: 23px "Bebas Neue";
+        margin-top: 0px;
+        border-radius: 5px;
+    }
+    
+    .buttonsadd {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .buttonsadd button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        font: 32px "Inter";
+        border: none;
+        outline: none;
+        width: 40px;
+        height: 40px;
+        font-weight: 200;
+        cursor: pointer;
+    }
+
+    .buttonsadd h1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font: 24px "Inter";
+        font-weight: 200;
+        width: 30px;
+        height: 40px;
+    }
+
+    #buttoncarrinho {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        font: 16px "Inter";
+        border: 1px solid #959595;
+        border-radius: 5px;
+        outline: none;
+        width: 180px;
+        height: 40px;
+        font-weight: 200;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .producao {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .producao img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .producao h3 {
+        font: 16px "Inter";
+        font-weight: 400;
+        color: #000;
+        margin: 0px;
+    }
+
+    .producao p {
+        font: 16px "Inter";
+        font-weight: 200;
+        color: #747474;
+    }
+
+    .certificado {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px;
+    }
+
+    .certificado p {
+        font: 16px "Inter";
+        font-weight: 200;
+        color: #747474;
+        width: 380px;
+        margin-left: 30px;
+    }
+
+    .sugestoes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        margin: 20px 0px;
+    }
+
+    .items {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;   
     }
 }

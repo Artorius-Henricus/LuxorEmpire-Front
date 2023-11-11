@@ -2,101 +2,152 @@ import './index.scss';
 import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 import CompIndicacoes from '../../../components/site/indicacoes-produto';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Paginaproduto() {
+    const [capaProduto, setCapaProduto] = useState("");
+    const [produtoImagem1, setProdutoImagem1] = useState("");
+    const [produtoImagem2, setProdutoImagem2] = useState("");
+    const [produtoImagem3, setProdutoImagem3] = useState("");
+    const [produtoImagem4, setProdutoImagem4] = useState("");
+
+    // Selects:
+    const [tipoProduto, setTipoProduto] = useState("");
+    const [generoProduto, setGeneroProduto] = useState("");
+    const [materialProduto, setMaterialProduto] = useState("");
+    const [gemaProduto, setGemaProduto] = useState("");
+    const [nomeProduto, setNomeProduto] = useState("");
+    const [precoProduto, setPrecoProduto] = useState("");
+    const [descricaoProduto, setDescricaoProduto] = useState("");
+
+    const { id } = useParams();
+
+    async function BuscarInfos(idprod) {
+        const command = await axios.get(`http://localhost:5000/produto/${idprod}`)
+        const data = command.data;
+
+        setNomeProduto(data.Nome)
+        setGemaProduto(data.Gema)
+        setPrecoProduto(data.Preço)
+        setDescricaoProduto(data.Descrição)
+        setMaterialProduto(data.Material)
+        setGeneroProduto(data.Gênero)
+        setTipoProduto(data.Categoria)
+
+        setCapaProduto(data.Capa)
+        setProdutoImagem1(data.Imagem1)
+        setProdutoImagem2(data.Imagem2)
+        setProdutoImagem3(data.Imagem3)
+        setProdutoImagem4(data.Imagem4)
+    }
+
+    useEffect(() => {
+        BuscarInfos(id)
+    }, []);
 
     return(
         <div className='pagina-produto'>
-            <CompCabecalho></CompCabecalho>
-            <section className='sec1'>
-                <div className='esq'>
-                   
-                    <div className='esq-imgs'>
-                        <div></div>
-                    </div>
-
-                    <div className='esq-imgs'>
-                        <div></div>
-                    </div>
-
-                    <div className='esq-imgs'>
-                        <div></div>
-                    </div>
-
-                    <div className='esq-imgs'>
-                        <div></div>
-                    </div>
-                </div>
-                <div className='mid'>
-                    <div></div>
-                </div>
-
-                <div className='dir'>
-                    <h1>Nome Produto</h1>
-                    <div className='separador'></div>
-                    <h2>R$ 000,00</h2>
-                    <div className='dir-linha'>
-                        <img src='/assets/images/produtos/Cartão Icon.svg' />
-                        <h2>10x de R$valor sem juros</h2>
-                    </div>
-                    <div className='dir-linha-button'>
-                        <div className='dir-linha-main'>
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
+            <CompCabecalho />
+                <article className='sectionprodu'>
+                    <section className='imgsinfo'>
+                        <div className='images'>
+                            <section>
+                                <div>
+                                    <img src={`http://localhost:5000/${produtoImagem1}`} alt="" />
+                                </div>
+                                <div>
+                                    <img src={`http://localhost:5000/${produtoImagem2}`} alt="" />
+                                </div>
+                                <div>
+                                    <img src={`http://localhost:5000/${produtoImagem3}`} alt="" />
+                                </div>
+                                <div>
+                                    <img src={`http://localhost:5000/${produtoImagem4}`} alt="" />
+                                </div>
+                            </section>
+                            <div id='mainimg'>
+                                <img src={`http://localhost:5000/${capaProduto}`} alt="" id='mainimgg' />
+                            </div>
                         </div>
-                            
-                        <button id='but-dir'>Adicionar ao Carrinho</button>
+
+                        <div className='separate'>
+                            <span></span>
+                            <h1>Descrição</h1>
+                            <span></span>
+                        </div>
+
+                        <div className='infos'>
+                            <p><b>・Material:</b> {materialProduto}</p>
+                            <p><b>・Gema:</b> {gemaProduto}</p>
+                            <p><b>・Categoria:</b> {tipoProduto}</p>
+                            <p><b>・Gênero:</b> {generoProduto}</p>
+                        </div>
+                    </section>
+
+
+
+                    <section className='infosgeralprod'>
+                        <h1>{nomeProduto}</h1>
+                        <h2>{descricaoProduto}</h2>
+
+                        <div>
+                            <h3>R$ {precoProduto}</h3>
+                            <div className='divrow'>
+                                <img src='/assets/images/produtos/Cartão Icon.svg' alt="" id='cartaoimg'/>
+                                <select className='parcelamento'>
+                                    <option value="">1x De R$ {precoProduto}</option>
+                                    <option value="">2x De R$ {Math.floor(precoProduto/2)}</option>
+                                    <option value="">3x De R$ {Math.floor(precoProduto/3)}</option>
+                                    <option value="">4x De R$ {Math.floor(precoProduto/4)}</option>
+                                    <option value="">5x De R$ {Math.floor(precoProduto/5)}</option>
+                                    <option value="">6x De R$ {Math.floor(precoProduto/6)}</option>
+                                    <option value="">7x De R$ {Math.floor(precoProduto/7)}</option>
+                                    <option value="">8x De R$ {Math.floor(precoProduto/8)}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className='buttonsadd'>
+                            <button>-</button>
+                            <h1>1</h1>
+                            <button>+</button>
+
+                            <button id='buttoncarrinho'>Adicionar ao Carrinho</button>
+                        </div>
+
+                        <div className='producao'>
+                            <img src="/assets/images/produtos/Caixa 1.svg" alt="" />
+                            <h3>Prazo de Produção:</h3>
+                            <p>2 dias úteis</p>
+                        </div>
+
+                        <div className='certificado'>
+                            <div className='producao'>
+                                <img src='/assets/images/produtos/check-mark-icon-vector-removebg-preview 1.svg' alt="" />
+                                <h3>Certificado de Garantia e Autenticidade</h3>
+                            </div>
+                            <p>Todas as Joias acompanham certificado de garantia e autenticidade do Ouro 18k, Diamantes e Pedras Preciosas.</p>
+                        </div>
+                    </section>
+                </article>
+                <section className='sugestoes'>
+                    <div className='separate'>
+                        <span></span>
+                        <h1>Descrição</h1>
+                        <span></span>
                     </div>
 
-                    <div className='dir-linha-img'>
-                        <img src='/assets/images/produtos/Caixa 1.svg'/>
-                        <p>Prazo de produção:</p>
-                        <p className='txt-light'>2 dias úteis</p>
+                    <div className='items'>
+                        <CompIndicacoes />
+                        <CompIndicacoes />
+                        <CompIndicacoes />
+                        <CompIndicacoes />
+                        <CompIndicacoes />
                     </div>
-
-                    <div className='dir-linha-seguranca'>
-                        <img src='/assets/images/produtos/check-mark-icon-vector-removebg-preview 1.svg' />
-                        <div className='txt-column'>
-                            <p>Certificado de Garantia e Autenticidade</p>
-                            <p className='txt-light'>Todas as Joias acompanham certificado <br/>de garantia e autenticidade do Ouro 18k, <br/> Diamantes e Pedras Preciosas.</p>
-                        </div>  
-                    </div>
-                </div>
-            </section>
-            <div className='sec-mid'>
-                <div className='descrição'>
-                    <div id='linha'></div>
-                    <p>Descrição</p>
-                    <div id='linha'></div>
-                </div>
-                <div className='topicos'>
-                    <b>・Material:</b>
-                    <b>・Gema:</b>
-                    <b>・Categoria:</b>
-                    <b>・Gênero:</b>
-                </div>
-               
-            </div>
-
-            <div className='sec-mid-bottom'>
-                <div className='separador'>
-                    <div id='linha'></div>
-                    <p>Você Pode Gostar</p>
-                    <div id='linha'></div> 
-                </div>
-            </div>
-
-            <div className='sec-bottom'>
-                <CompIndicacoes />
-                <CompIndicacoes />
-                <CompIndicacoes />
-                <CompIndicacoes />
-                <CompIndicacoes />
-            </div>
-
+                </section>
             <CompRodape />
-            
         </div>
     )
 }

@@ -17,7 +17,7 @@ export default function Carrinho(){
         if (!storage('user-info')) {
             navigate('/')
         }
-    }, [])
+    }, []);
 
     return(
         <div className='pag-carrinho'>
