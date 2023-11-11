@@ -3,10 +3,11 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 import CompIndicacoes from '../../../components/site/indicacoes-produto';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Paginaproduto() {
+    const navigate = useNavigate();
     const [capaProduto, setCapaProduto] = useState("");
     const [produtoImagem1, setProdutoImagem1] = useState("");
     const [produtoImagem2, setProdutoImagem2] = useState("");
@@ -43,8 +44,12 @@ export default function Paginaproduto() {
         setProdutoImagem4(data.Imagem4)
     }
 
-    useEffect(() => {
-        BuscarInfos(id)
+    useEffect(async () => {
+        const command = await axios.get(`http://localhost:5000/produto/${id}`)
+        const data = command.data;
+        if (!data) {
+            navigate('/')
+        }
     }, []);
 
     return(
