@@ -41,7 +41,6 @@ export default function Paginamarket () {
             <img id='banner' src='/assets/images/market-page/Rolex Luxor 2.svg' />   
             <div className='tudo'>
                 <div className='esq'>
-                    <button onClick={ListarProdutos}>Clickque</button>
                     <div className='agrupamento'>
                          <h2>Categoria</h2>
                          <div className='types'>
