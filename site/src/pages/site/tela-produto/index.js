@@ -94,19 +94,7 @@ export default function Paginaproduto() {
 
                         <div>
                             <h3>R$ {precoProduto}</h3>
-                            <div className='divrow'>
-                                <img src='/assets/images/produtos/Cartão Icon.svg' alt="" id='cartaoimg'/>
-                                <select className='parcelamento'>
-                                    <option value="">1x De R$ {precoProduto}</option>
-                                    <option value="">2x De R$ {Math.floor(precoProduto/2)}</option>
-                                    <option value="">3x De R$ {Math.floor(precoProduto/3)}</option>
-                                    <option value="">4x De R$ {Math.floor(precoProduto/4)}</option>
-                                    <option value="">5x De R$ {Math.floor(precoProduto/5)}</option>
-                                    <option value="">6x De R$ {Math.floor(precoProduto/6)}</option>
-                                    <option value="">7x De R$ {Math.floor(precoProduto/7)}</option>
-                                    <option value="">8x De R$ {Math.floor(precoProduto/8)}</option>
-                                </select>
-                            </div>
+                            
                         </div>
 
                         <div className='buttonsadd'>
