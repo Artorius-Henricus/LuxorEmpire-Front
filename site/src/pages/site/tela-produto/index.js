@@ -44,12 +44,8 @@ export default function Paginaproduto() {
         setProdutoImagem4(data.Imagem4)
     }
 
-    useEffect(async () => {
-        const command = await axios.get(`http://localhost:5000/produto/${id}`)
-        const data = command.data;
-        if (!data) {
-            navigate('/')
-        }
+    useEffect(() => {
+        BuscarInfos(id)
     }, []);
 
     return(

@@ -1,114 +1,119 @@
 .pagina-market {
     display: flex;
     flex-direction: column;
+    
+    .tudo {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .esq {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 25px;
+        top: 100px;
+    }
+    
+    .esq h2 {
+        font: 24px "Inter";
+    }
+    
+    .types {
+        display: flex;
+        width: 15vw;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .types input {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #000000;
+    }
+    
+    .types p {
+        margin-left: 3px;
+        font: 16px "Inter";
+    }
+    
+    .agrupamento {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 325px;
+    }
+    
+    .section-mid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1600px;
+        max-height: 1105px;
+        overflow: hidden;
+        gap: 40px;
+        margin-top: 100px;
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .content a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    .botão {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        height: 120px;
+        width: 1445px;
+    }
+    
+    #button {
+        width: 203px;
+        height: 50px;
+        align-self: center;
+        border: 1px solid #959595;
+        background-color: #fff;
+        border-radius: 5px;
+        font: 20px "Inter";
+        cursor: pointer;
+    }
+    
+    .dir {
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        width: 90%;
+        align-items: flex-end;
+    }
+    
+    .filtragem img {
+        width: 25px;
+    }
+    
+    .filtragem select {
+        height: 48px;
+        border-radius: 10px;
+        border: 1px solid #3d3d3d;
+        font-family: "Inter";
+        font-size: 15px;
+    }   
+    
+    .select option {
+    
+    }
+    
 }
-
-.tudo {
-    display: flex;
-    flex-direction: row;
-}
-
-.esq {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    left: 25px;
-    top: 100px;
-}
-
-.esq h2 {
-    font: 24px "Inter";
-}
-
-.types {
-    display: flex;
-    width: 15vw;
-    flex-direction: row;
-    align-items: center;
-}
-
-.types input {
-    width: 32px;
-    height: 32px;
-    border: 1px solid #000000;
-}
-
-.types p {
-    margin-left: 3px;
-    font: 16px "Inter";
-}
-
-.agrupamento {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 325px;
-}
-
-.section-mid {
-    display: flex;
-    flex-direction: column;
-}
-
-.mid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 1600px;
-    height: 1075px;
-    gap: 40px;
-    margin-top: 100px;
-}
-
-.content {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
-
-.botão {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    height: 120px;
-    width: 1445px;
-}
-
-#button {
-    width: 203px;
-    height: 50px;
-    align-self: center;
-    border: 1px solid #959595;
-    background-color: #fff;
-    border-radius: 5px;
-    font: 20px "Inter";
-    cursor: pointer;
-}
-
-.dir {
-    display: flex;
-    flex-direction: column;
-    height: 50px;
-    width: 90%;
-    align-items: flex-end;
-}
-
-.filtragem img {
-    width: 25px;
-}
-
-.filtragem select {
-    height: 48px;
-    border-radius: 10px;
-    border: 1px solid #3d3d3d;
-    font-family: "Inter";
-    font-size: 15px;
-}   
-
-.select option {
-
-}
-
-
