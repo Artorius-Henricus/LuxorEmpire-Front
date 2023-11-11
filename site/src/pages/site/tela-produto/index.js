@@ -7,7 +7,17 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Paginaproduto() {
-    const navigate = useNavigate();
+    const [quantidade, setQuantidade] = useState(1);
+
+    function QuantRemove() {
+        if(quantidade == 1) {
+            setQuantidade(1)
+        }
+        else {
+            setQuantidade(quantidade-1)
+        }
+    }
+
     const [capaProduto, setCapaProduto] = useState("");
     const [produtoImagem1, setProdutoImagem1] = useState("");
     const [produtoImagem2, setProdutoImagem2] = useState("");
@@ -99,9 +109,9 @@ export default function Paginaproduto() {
                         </div>
 
                         <div className='buttonsadd'>
-                            <button>-</button>
-                            <h1>1</h1>
-                            <button>+</button>
+                            <button onClick={QuantRemove}>-</button>
+                            <h1>{quantidade}</h1>
+                            <button onClick={() => setQuantidade(quantidade+1)}>+</button>
 
                             <button id='buttoncarrinho'>Adicionar ao Carrinho</button>
                         </div>
@@ -124,7 +134,7 @@ export default function Paginaproduto() {
                 <section className='sugestoes'>
                     <div className='separate'>
                         <span></span>
-                        <h1>Descrição</h1>
+                        <h1>Sugestões</h1>
                         <span></span>
                     </div>
 
