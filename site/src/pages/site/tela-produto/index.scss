@@ -18,6 +18,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-right: 20px;
     }
 
     .images {
@@ -86,7 +87,6 @@
     .infos {
         display: flex;
         flex-direction: column;
-        width: 200px;
         align-self: flex-start;
     }
     
@@ -96,7 +96,7 @@
         justify-content: space-between;
         align-items: center;
         font: 20px "Inter";
-        min-width: 260px;
+        min-width: 280px;
         font-weight: 200;
     }
 
@@ -105,7 +105,6 @@
     .infosgeralprod {
         display: flex;
         flex-direction: column;
-        padding: 0px 20px;
     }
 
     .infosgeralprod h1 {

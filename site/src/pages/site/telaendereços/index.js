@@ -65,7 +65,7 @@ export default function PaginaCartoes() {
                         </div>
                         )
                         ) : (
-                        <p>Ainda não há cartões disponíveis.</p>
+                        <p>Ainda não há endereços disponíveis.</p>
                         )}
                     </section>
 

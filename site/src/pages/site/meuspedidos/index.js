@@ -20,13 +20,6 @@ export default function PaginaPedidos() {
         }
         else {
             setInfoUser(storage('user-info'));
-
-            if(!storage('user-info').img) {
-                setPerfilImg('');
-            }
-            else {
-                setPerfilImg("http://localhost:5000/"+storage('user-info').img);
-            }
         }
     }, [])
 

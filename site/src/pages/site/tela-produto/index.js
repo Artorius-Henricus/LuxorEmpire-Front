@@ -4,10 +4,13 @@ import CompRodape from '../../../components/site/rodape';
 import CompIndicacoes from '../../../components/site/indicacoes-produto';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import storage from "local-storage"
 import axios from 'axios';
 
 export default function Paginaproduto() {
     const [quantidade, setQuantidade] = useState(1);
+
+    const [userInfo, setUserInfo] = useState('')
 
     function QuantRemove() {
         if(quantidade == 1) {
@@ -56,8 +59,30 @@ export default function Paginaproduto() {
 
     useEffect(() => {
         BuscarInfos(id)
+        if (!storage('user-info')) {
+            setUserInfo('')
+        }
+        else {
+            setUserInfo(storage('user-info'));
+        }
     }, []);
 
+
+    async function AdicionarCarrinho() {
+        try {
+            let idprod = id;
+            let info = {
+                qtd: quantidade,
+                user: userInfo.id
+            }
+            const url = `http://localhost:5000/produto/carrinho/add/${idprod}`
+            const command = await axios.post(url, info);
+            console.log("Adicionou!")
+        }
+        catch (err) {
+            console.log(err.response.data.erro)
+        }
+    }
     return(
         <div className='pagina-produto'>
             <CompCabecalho />
@@ -103,17 +128,14 @@ export default function Paginaproduto() {
                         <h1>{nomeProduto}</h1>
                         <h2>{descricaoProduto}</h2>
 
-                        <div>
-                            <h3>R$ {precoProduto}</h3>
-                            
-                        </div>
+                        <h3>R$ {precoProduto}</h3>
 
                         <div className='buttonsadd'>
                             <button onClick={QuantRemove}>-</button>
                             <h1>{quantidade}</h1>
                             <button onClick={() => setQuantidade(quantidade+1)}>+</button>
 
-                            <button id='buttoncarrinho'>Adicionar ao Carrinho</button>
+                            <button id='buttoncarrinho' onClick={AdicionarCarrinho}>Adicionar ao Carrinho</button>
                         </div>
 
                         <div className='producao'>
