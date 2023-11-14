@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './index.scss';
 import axios from 'axios';
 
-export default function CompCarrinho({data, getTotal}) {
+export default function CompCarrinho({data, getTotal, deletecar}) {
     const [prodinfo, setProdInfo] = useState('')
     const [quantidadeItens, setQuantidadeItens] = useState(data.quantd);
     const [total, setTotal] = useState(0)
@@ -69,7 +69,7 @@ export default function CompCarrinho({data, getTotal}) {
 
             <p id='number'>R$ {total* quantidadeItens}</p>
 
-            <button className='exclusao'>Excluir</button>
+            <button className='exclusao' onClick={() => deletecar(data.itemid)}>Excluir</button>
         </div>
     )
 }

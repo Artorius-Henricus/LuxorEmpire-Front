@@ -8,6 +8,7 @@ import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 export default function Carrinho(){
@@ -68,6 +69,17 @@ export default function Carrinho(){
         }
     }, []);
 
+    async function DeletarCarrinho(itemid) {
+        try {
+            const command = await axios.delete(`http://localhost:5000/produto/carrinho/deletar/${itemid}`);
+            BuscarCarrinho(userInfo.id);
+            toast.success("Produto Removido do Carrinho!")
+        }
+        catch (err) {
+            toast.success("Não foi possível remover o item do Carrinho!")
+        }
+    }
+
     return(
         <div className='pag-carrinho'>
             <CompCabecalho />
@@ -86,7 +98,7 @@ export default function Carrinho(){
 
             <div className='itens'>
                 {carrinho.map(item =>
-                    <CompCarrinho data={item} key={item.itemid} getTotal={getTotal}/>
+                    <CompCarrinho data={item} key={item.itemid} getTotal={getTotal} deletecar={DeletarCarrinho}/>
                 )}
             </div>
 
