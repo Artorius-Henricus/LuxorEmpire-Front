@@ -1,27 +1,69 @@
+import { useEffect, useState } from 'react';
 import './index.scss';
+import axios from 'axios';
 
-export default function CompCarrinho() {
+export default function CompCarrinho({data}) {
+    const [prodinfo, setProdInfo] = useState('')
+    const [quantidadeItens, setQuantidadeItens] = useState(data.quantd);
+    const [total, setTotal] = useState(0)
+
+    async function BuscarInfos() {
+        const command = await axios.get(`http://localhost:5000/produto/${data.prodid}`)
+        const data2 = command.data;
+
+        setProdInfo(data2);
+        setTotal(data2.Preço * quantidadeItens)
+    }
+
+    useEffect(() => {
+        BuscarInfos()
+    }, []);
+
+
+    async function alterarQuantidade(quantidade){
+        try {
+            const url = `http://localhost:5000/produto/carrinho/alterar/${data.itemid}/${quantidade}`
+            const command = await axios.put(url);
+        }
+        catch (err) {
+            console.log("err")
+        }
+    }
+
+    function QuantRemove() {
+        if(quantidadeItens == 1) {
+            setQuantidadeItens(1);
+        }
+        else {
+            setQuantidadeItens(quantidadeItens-1);
+            alterarQuantidade(quantidadeItens-1);
+        }
+    }
+
+    function QuantAdd() {
+        setQuantidadeItens(quantidadeItens+1);
+        alterarQuantidade(quantidadeItens+1);
+    }
     return (
         <div className='produto'>
             <div id='imgtotal'>
 
-                <input type="checkbox" /> 
-
                 <div id='img'></div>
 
-                <p>Nome Produto</p>
+                <p>{prodinfo.Nome}</p>
 
             </div>
 
-                <p id='number'>R$ 000,00</p>
+                <p id='number'>R$ {prodinfo.Preço}</p>
 
             <div className='quant'>
-                <button className='block'> - </button>
-                <h1 id='block2'> 0 </h1>
-                <button className='block'> + </button>
+                <button className='block' onClick={QuantRemove}> - </button>
+                <h1 id='block2'> {quantidadeItens} </h1>
+                
+                <button className='block' onClick={QuantAdd}> + </button>
             </div>
 
-            <p id='number'>R$ 000,00</p>
+            <p id='number'>R$ {total}</p>
 
             <button className='exclusao'>Excluir</button>
         </div>
