@@ -70,4 +70,16 @@
     .exclusao:hover {
         text-decoration: underline;
     }
+
+    @media (max-width: 500px) {
+        
+        .produto{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 70vw;
+
+        }
+    }
 }

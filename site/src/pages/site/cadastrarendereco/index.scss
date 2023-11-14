@@ -60,6 +60,11 @@
         font: 1.8px "Inter";
         outline: none;
         padding: 0px 10px;
+        text-align: start;
+    }
+
+    .unaltera:placeholder-shown{
+        text-overflow: ellipsis;
     }
 
     .inputs select {
@@ -119,9 +124,10 @@
     #btreturn:hover {
         background-color: #808080;
     }
+    
 
     @media (max-width: 500px) {
-
+        
         
 
         .inputs{
@@ -147,8 +153,7 @@
 
         .unaltera{
             flex-wrap: wrap;
-            text-wrap: wrap;
-            height: 15px;
+            
         }
         
     }
