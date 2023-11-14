@@ -217,6 +217,10 @@
                 display: none;
             }
         }
+
+        #resp{
+            margin: 0px;
+        }
         
     }
 
@@ -266,6 +270,9 @@
     }
 
     @media (max-width: 820px){
+        .geral{
+            padding: 20px 0px;
+        }
       
       .corp{
 

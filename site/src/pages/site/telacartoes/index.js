@@ -51,7 +51,7 @@ export default function PaginaCartoes() {
                 <CompUserMenu />
                 <CompUserMenuResp/>
 
-                <article>
+                <div className='geral'>
                     
                     <section className='leftside'>
                         <h1>Seus Cartões</h1>
@@ -87,7 +87,7 @@ export default function PaginaCartoes() {
                         </div>
                         <Link id='resp' to='/cartoes/cadastro'>Adicionar Cartão</Link>
                     </section>
-                </article>
+                </div>
             </div>
             <CompRodape />
         </div>
