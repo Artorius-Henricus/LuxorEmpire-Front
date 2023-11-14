@@ -6,7 +6,7 @@ import CompCarrinho from '../../../components/site/itens-carrinho';
 
 import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
@@ -17,36 +17,45 @@ export default function Carrinho(){
     const [prodPrice, setProdPrice] = useState(0);
     
     async function BuscarCarrinho(idprod) {
-        const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta/${idprod}`)
-        const data = command.data;
+        try {
+            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta/${idprod}`)
+            const data = command.data;
 
-        setCarrinho(data);
+            setCarrinho(data);
+        }   catch (error) {
+            console.error('Erro na chamada Axios:', error);
+        }
+    }
+
+    async function getTotal() {
+        try {
+            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta/${userInfo.id}`)
+            const data = command.data;
+            let sum = 0;
+
+            for (let item of data) {
+                try {
+                    const command = await axios.get(`http://localhost:5000/produto/${item.prodid}`);
+                    const produto = command.data;
+                    sum += produto.Preço * item.quantd;
+                } catch (error) {
+                    console.error('Erro na chamada Axios:', error);
+                }
+            }
+    
+            setProdPrice(sum);
+        } catch (error) {
+            console.error('Erro ao buscar carrinho:', error);
+        }
     }
 
     useEffect(() => {
         if (userInfo) {
             BuscarCarrinho(userInfo.id);
+            getTotal();
+            getTotal();
         }
     }, [userInfo]);
-
-
-
-    async function BuscarInfosProd(id) {
-        const command = await axios.get(`http://localhost:5000/produto/${id}`);
-        const produto = command.data;
-        setGeral(produto);
-    }
-
-    const getTotal = async () => {
-        let sum = 0;
-    
-        for (let item of carrinho) {
-          BuscarInfosProd(item.prodid);
-          sum += geral.Preço * item.quantd;
-        }
-    
-        setProdPrice(sum);
-    };
 
     const navigate = useNavigate();
 
@@ -62,7 +71,6 @@ export default function Carrinho(){
     return(
         <div className='pag-carrinho'>
             <CompCabecalho />
-            <button onClick={getTotal}>Clickaaaa</button>
 
             <div className='topicos'>
                 <h3 id='pr'>Produtos</h3>
@@ -83,11 +91,6 @@ export default function Carrinho(){
             </div>
 
             <div className='total'>
-                <div className='left'>
-                    <input type="checkbox" className='img'/>
-
-                    <p id='grande'>Selecionar Tudo</p>
-                </div>
 
                 <div className='right'>
                     <div id='right'>
