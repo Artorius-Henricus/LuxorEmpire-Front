@@ -14,7 +14,6 @@ import { toast } from 'react-toastify';
 export default function Carrinho(){
     const [userInfo, setUserInfo] = useState('');
     const [carrinho, setCarrinho] = useState([]);
-    const [geral, setGeral] = useState('');
     const [prodPrice, setProdPrice] = useState(0);
     
     async function BuscarCarrinho(idprod) {
@@ -50,10 +49,17 @@ export default function Carrinho(){
         }
     }
 
+    const [verify, setVerify] = useState(false)
+
+    useEffect(() => {
+        setVerify(carrinho.length > 0);
+      }, [carrinho, verify]);
+    
+
+
     useEffect(() => {
         if (userInfo) {
             BuscarCarrinho(userInfo.id);
-            getTotal();
             getTotal();
         }
     }, [userInfo]);
@@ -73,6 +79,7 @@ export default function Carrinho(){
         try {
             const command = await axios.delete(`http://localhost:5000/produto/carrinho/deletar/${itemid}`);
             BuscarCarrinho(userInfo.id);
+            getTotal();
             toast.success("Produto Removido do Carrinho!")
         }
         catch (err) {
@@ -97,9 +104,12 @@ export default function Carrinho(){
             </div>
 
             <div className='itens'>
-                {carrinho.map(item =>
-                    <CompCarrinho data={item} key={item.itemid} getTotal={getTotal} deletecar={DeletarCarrinho}/>
-                )}
+                {verify
+                    ? carrinho.map(item => (
+                        <CompCarrinho data={item} key={item.itemid} getTotal={getTotal} deletecar={DeletarCarrinho} />
+                    ))
+                    : <h1>Nenhum item no carrinho</h1>
+                }
             </div>
 
             <div className='total'>
@@ -110,7 +120,11 @@ export default function Carrinho(){
                         <p id='grande'>R$ {prodPrice}</p>
                     </div>
 
-                    <button id='bottom'>Continuar</button>
+                    {verify ? (
+                        <Link to=''>Continuar</Link>
+                    ) : (
+                        <button id='bottom'>Continuar</button>
+                    )}
                 </div>
             </div>
 

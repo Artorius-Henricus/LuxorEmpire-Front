@@ -25,6 +25,26 @@
         font-size: 18px;
     }
 
+    .itens {
+        height: 70vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .itens::-webkit-scrollbar {
+        width: 5px;
+    }
+      
+    .itens::-webkit-scrollbar-track {
+        background: transparent;
+    }
+      
+    .itens::-webkit-scrollbar-thumb {
+        background-color: rgb(88, 88, 88);
+        border-radius: 20px;
+        border: none;
+    }
+
     .total{
         border-top: 1px solid #404040;
         border-bottom: 1px solid #404040;
@@ -82,7 +102,19 @@
                 border-radius: 6px;
                 border: 1px solid #404040;
                 margin: 0px 40px;
+                cursor:not-allowed;
+            }
+
+            a {
+                font: 26px "Inter";
+                font-weight: 100;
+                color: #3D3D3D;
+                padding: 8px 30px;
+                border-radius: 6px;
+                border: 1px solid #404040;
+                margin: 0px 40px;
                 cursor: pointer;
+                text-decoration: none;
             }
         }
     }
