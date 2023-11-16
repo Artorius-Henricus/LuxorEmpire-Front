@@ -54,7 +54,7 @@ export default function CompUserMenu(){
                 Meus Pedidos
             </Link>
 
-            <Link to='' className='bttt'>
+            <Link to='/notificacoes' className='bttt'>
                 <img src="/assets/images/cartoes/Sino.png" alt="Imagem Notificações" />
                 Notificações
             </Link>
