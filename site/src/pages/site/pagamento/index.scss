@@ -22,12 +22,69 @@
 
             }
 
-            .endereco{
+            #container1 {
+                display: flex;
+                flex-direction: column;
                 margin-top: 90px;
                 padding: 35px;
-                padding-top: 15px;
-                padding-left: 10px;
                 border: 1px solid black;
+            }
+
+            .endblock {
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #383838;
+                background-color: transparent;
+                padding: 5px 10px;
+                border-radius: 5px;
+                width: 320px;
+                max-height: 200px;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+        
+            .endblock h1 {
+                font: 20px "Inter";
+                font-weight: 500;
+            }
+        
+            .endblock h3 {
+                font: 14px "Inter";
+                font-weight: 500;
+                color: #383838;
+                margin: 2px 0px;
+            }
+
+            .render {
+                display: flex;
+                flex-direction: column;
+                margin-top: 30px;
+                height: 0;
+                opacity: 0;
+                transition: width 0.3s ease, height 0.3s ease, opacity 1s ease;
+                overflow-y: scroll;
+            }
+
+            .show {
+                height: 290px;
+                opacity: 1;
+            }
+
+            .render::-webkit-scrollbar {
+                width: 5px;
+            }
+              
+            .render::-webkit-scrollbar-track {
+                background: transparent;
+            }
+              
+            .render::-webkit-scrollbar-thumb {
+                background-color: rgb(88, 88, 88);
+                border-radius: 20px;
+                border: none;
+            }
+
+            .endereco{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -43,17 +100,16 @@
                     color: rgb(0, 133, 255);
                     font-size: 20px;
                     font-style: inherit;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    outline: none;
                 }
             }
 
             .metodo{
                 display: flex;
                 justify-content: space-between;
-                margin-top: 40px;
-                padding: 35px;
-                padding-top: 15px;
-                padding-left: 10px;
-                border: 1px solid black;
 
                 .cart{
                     display: flex;
@@ -69,8 +125,44 @@
                     color: rgb(0, 133, 255);
                     font-size: 20px;
                     font-style: inherit;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    outline: none;
                 }
             }
+
+            .cartaoblock {
+                display: flex;
+                flex-direction: column;
+                width: 420px;
+                min-height: 100px;
+                border: 1px solid #404040;
+                padding: 10px;
+                border-radius: 2px;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+        
+            .cartaoblock > div {
+                display: flex;
+                flex-direction: row;
+            }
+        
+            #textbox {
+                display: flex;
+                flex-direction: column;
+                margin-left: 20px;
+            }
+        
+            .cartaoblock h1 {
+                font: 20px "Inter";
+            }
+        
+            .cartaoblock h3 {
+                font: 14px "Inter";
+            }
+
 
             .Produtos{
                 margin: 15px;
@@ -78,8 +170,24 @@
                 align-items: center;
                 flex-wrap: wrap;
                 padding: 20px;
+                height: 300px;
+                overflow-y: scroll;
                 border-radius: 5px;
                 border: 1px solid black;
+            }
+
+            .Produtos::-webkit-scrollbar {
+                width: 8px;
+            }
+              
+            .Produtos::-webkit-scrollbar-track {
+                background: transparent;
+            }
+              
+            .Produtos::-webkit-scrollbar-thumb {
+                background-color: rgb(88, 88, 88);
+                border-radius: 20px;
+                border: none;
             }
 
             .finalizar{
@@ -102,8 +210,30 @@
                     font-size: 20px;
                     border: 1px solid black;
                     border-radius: 15px;
+                    cursor: pointer;
                 }
             }
+        }
+
+        .select {
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+        }
+
+        .select label {
+            font: 15px "Inter";
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .select select {
+            background-color: transparent;
+            height: 40px;
+            width: 200px;
+            border-radius: 5px;
+            font: 15px "Inter";
+            cursor: pointer;
         }
 
         .right_pag{
@@ -136,6 +266,7 @@
                         font-size: 20px;
                         border: 1px solid black;
                         border-radius: 15px;
+                        cursor: pointer;
                     }
                 }
     
@@ -162,9 +293,13 @@
                     font: 16px "Inter";
                 }
 
-                #total{
+                #total {
                     margin: 30px;
                     font: 16px "Inter";
+                }
+
+                #total h4 {
+                    font: 15px "Inter";
                 }
             }
         }

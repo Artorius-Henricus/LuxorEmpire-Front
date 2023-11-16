@@ -31,6 +31,12 @@
         overflow-x: hidden;
     }
 
+    .itens > h1 {
+        font: 25px "Inter";
+        text-align: center;
+        margin-top: 20px;
+    }
+
     .itens::-webkit-scrollbar {
         width: 5px;
     }

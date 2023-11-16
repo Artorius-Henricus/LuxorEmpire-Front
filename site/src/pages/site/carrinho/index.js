@@ -53,7 +53,7 @@ export default function Carrinho(){
 
     useEffect(() => {
         setVerify(carrinho.length > 0);
-      }, [carrinho, verify]);
+    }, [carrinho, verify]);
     
 
 
@@ -108,7 +108,7 @@ export default function Carrinho(){
                     ? carrinho.map(item => (
                         <CompCarrinho data={item} key={item.itemid} getTotal={getTotal} deletecar={DeletarCarrinho} />
                     ))
-                    : <h1>Nenhum item no carrinho</h1>
+                    : <h1>Não há itens no carrinho</h1>
                 }
             </div>
 
@@ -121,7 +121,7 @@ export default function Carrinho(){
                     </div>
 
                     {verify ? (
-                        <Link to=''>Continuar</Link>
+                        <Link to='/pagamento'>Continuar</Link>
                     ) : (
                         <button id='bottom'>Continuar</button>
                     )}
