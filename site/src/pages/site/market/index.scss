@@ -105,15 +105,24 @@
     }
     
     .filtragem select {
+        appearance: none;
         height: 48px;
+        width: 205px;
         border-radius: 10px;
-        border: 2px solid #3d3d3d;
+        padding: 12px;
+        border: 2px solid #3d3d3d; 
         font-family: "Inter";
-        font-size: 15px;
+        font-size: 15px;    
     }   
+
+    select:hover, select.active {
+        box-shadow: 1px 1px 10px rgba(1, 0, 0, 0.7);
+    }
     
-    .select option {
+    .filtragem option {
         color: #3d3d3d;
+        background-color: #fff !important;
+
     }
     
 }

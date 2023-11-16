@@ -153,7 +153,7 @@ export default function Paginamarket () {
                             </select>
                         </div>
                     </div>
-                    
+
                     {produtos.map((item, index) => {
                     if (index % 4 === 0) {
                         const grupo = produtos.slice(index, index + 4);
