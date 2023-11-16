@@ -10,10 +10,33 @@
         width: 100vw;
     }
 
+    #indisp {
+        font: 20px "Inter";
+        font-weight: 500;
+        margin-top: 20px;
+    }
+
     .corp > section {
         display: flex;
         flex-direction: column;
-        padding: 40px 0px 0px 40px;
+        padding: 40px 40px 0px 40px;
+        overflow-y: scroll;
+        height: 700px;
+        width: 100%;
+    }
+
+    .corp > section::-webkit-scrollbar {
+        width: 8px;
+    }
+      
+    .corp > section::-webkit-scrollbar-track {
+        background: transparent;
+    }
+      
+    .corp > section::-webkit-scrollbar-thumb {
+        background-color: rgb(88, 88, 88);
+        border-radius: 20px;
+        border: none;
     }
 
     .pedidosbox {
@@ -40,6 +63,14 @@
         font: 15px "Inter";
         color: #000;
         font-weight: 500;
+        width: max-content;
+    }
+
+    #nped {
+        font: 15px "Inter";
+        color: #000;
+        font-weight: 500;
+        width: 170px;
     }
 
     .pedidosbox p {

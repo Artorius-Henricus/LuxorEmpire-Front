@@ -52,7 +52,7 @@ root.render(
         <Route path='/pedidos' element={<PaginaPedidos />} />
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />
-        <Route path='/pedido/:produto' element={<PedidoProduto />} />
+        <Route path='/pedido/:id' element={<PedidoProduto />} />
         <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />
         <Route path='/cartoes/cadastro' element={<CadastrarCartao />} />
 

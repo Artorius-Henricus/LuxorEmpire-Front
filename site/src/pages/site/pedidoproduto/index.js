@@ -3,58 +3,202 @@ import { useState, useEffect } from 'react';
 
 import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
+import { useNavigate, useParams } from 'react-router-dom';
+import storage from "local-storage"
+import axios from 'axios';
 
 export default function PedidoProduto() {
+    const navigate = useNavigate();
     const [payment, setPayment] = useState(false);
     const [confirmed, setConfirmed] = useState(false);
     const [shipped, setShipped] = useState(false);
     const [delivered, setDelivered] = useState(false);
+
+    const [userInfo, setUserInfo] = useState('')
+
+    const [enderecoInfo, setEnderecoInfo] = useState('');
+    const [cartaoInfo, setCartaoInfo] = useState('');
+
+    const { id } = useParams();
+
+    useEffect(() => {
+        if (!storage('user-info')) {
+            navigate('/')
+        }
+        else {
+            setUserInfo(storage('user-info'));
+        }
+    }, [])
+
+    const [pedidoInfo, setPedidoInfo] = useState([])
+
+    async function PedidoInfos() {
+        try {
+            const command = await axios.get(`http://localhost:5000/usuario/compra/consulta/${id}`);
+            const data = command.data
+            if (data.SITUACAO == "Pagamento Efetuado") {
+                setPayment(true)
+            }
+            setPedidoInfo(data);
+        }
+        catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    async function ConsultarEndereco() {
+        try {
+            const command = await axios.get(`http://localhost:5000/usuario/endereco/consultar2/${pedidoInfo.IDENDR}`);
+            const data = command.data;
+            setEnderecoInfo(data);
+        } catch (err) {
+            console.log("Error ao Carregar os Endereços");
+        }
+    }
+    
+    async function ConsultarCartao() {
+        try {
+            const command = await axios.get(`http://localhost:5000/usuario/cartao/consultar2/${pedidoInfo.IDCART}`);
+            const data = command.data;
+            setCartaoInfo(data);
+        } catch (err) {
+            console.log("Error ao Carregar os Cartões");
+        }
+    }
+
+    const [prodPrice, setProdPrice] = useState(0);
+    const [qtditens, setQtdItns] = useState(0);
+
+    async function getTotal() {
+        try {
+            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta3/${id}`)
+            const data = command.data;
+            let sum = 0;
+            let sum2 = 0;
+
+            for (let item of data) {
+                try {
+                    const command = await axios.get(`http://localhost:5000/produto/${item.prodid}`);
+                    const produto = command.data;
+                    sum += produto.Preço * item.quantd;
+                    sum2 += item.quantd;
+                } catch (error) {
+                    console.error('Erro na chamada Axios:', error);
+                }
+            }
+            
+            setQtdItns(sum2);
+            setProdPrice(sum);
+        } catch (error) {
+            console.error('Erro ao buscar carrinho:', error);
+        }
+    }
+
+    function formatarData(dataOriginal) {
+        // Converter a string para um objeto Date
+        var dataObj = new Date(dataOriginal);
+    
+        // Obter os componentes da data
+        var dia = dataObj.getUTCDate();
+        var mes = dataObj.getUTCMonth() + 1; // Mês é baseado em zero
+        var ano = dataObj.getUTCFullYear();
+    
+        // Formatar a data no formato desejado (DD-MM-AAAA)
+        var dataFormatada = dia + "-" + mes + "-" + ano;
+    
+        return dataFormatada;
+    };
+
+    const [carrinho, setCarrinho] = useState([]);
+    async function ConsultarProduto(idprod) {
+        try {
+            const command2 = await axios.get(`http://localhost:5000/produto/${idprod}`);
+            setCarrinho(...carrinho, command2.data);
+        } catch (err) {
+            console.log("Error ao Carregar os Cartões");
+        }
+    }
+    
+    async function ConsultarCarrinho() {
+        try {
+            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta3/${id}`);
+            const data = command.data;
+            for (let i = 0; i < data.length; i++) {
+                await ConsultarProduto(data[i].prodid);
+            }
+        } catch (err) {
+            console.log("Error ao Carregar os Cartões");
+        }
+    }
+
+    useEffect(() => {
+        if (userInfo) {
+            PedidoInfos();
+            getTotal();
+            ConsultarCarrinho();
+        }
+    }, [userInfo]);
+    
+    useEffect(() => {
+        if (userInfo && pedidoInfo.IDENDR) {
+            ConsultarEndereco();
+        }
+    }, [userInfo, pedidoInfo.IDENDR]);
+    
+    useEffect(() => {
+        if (userInfo && pedidoInfo.IDCART) {
+            ConsultarCartao();
+        }
+    }, [userInfo, pedidoInfo.IDCART]);
 
 
     return(
         <div className="pagina-produto-pedido">
             <CompCabecalho />
                 <article className='corpo'>
-                    <h1><b>Seu Pedido</b> &gt; Colar de Cristal</h1>
+                    <h1><b>Seu Pedido</b> &gt; {id}</h1>
                     
                     <div className='groupinfo'>
                         <h1 id='infoglobal'>Informações Gerais</h1>
 
                         <div>
                             <section className='prodinfo'>
-                                <img src="" alt="" />
                                 <div className='infostext'>
                                     <section>
                                         <div>
                                             <h3>Pedido Realizado Em:</h3>
-                                            <p>25 de Novembro de 2015</p>
+                                            <p>{formatarData(pedidoInfo.DTPED)}</p>
                                         </div>
                                         <div>
                                             <h3>Forma de Pagamento:</h3>
-                                            <p>Cartão de Crédito</p>
+                                            <p>{pedidoInfo.FRMPAG}</p>
                                         </div>
                                         <div>
-                                            <h3>Enviar Para:</h3>
-                                            <p>Conjunto Habitacional Brigadeiro Faria Lima</p>
+                                            <h3>Cartão Utilizado:</h3>
+                                            <p>{cartaoInfo ? "Cartão Terminado em "+cartaoInfo.Cartao : "Carregando Cartão..."}</p>
+                                        </div>
+                                        <div>
+                                            <h3></h3>
+                                            <p></p>
                                         </div>
                                     </section>
                                     
                                     <section>
                                         <div>
-                                            <h3>Preço Unitário:</h3>
-                                            <p>R$ 5000,00</p>
+                                            <h3>Enviar Para:</h3>
+                                            <p>{enderecoInfo ? enderecoInfo.Bairro : "Carregando Endereço..."}</p>
                                         </div>
                                         <div>
                                             <h3>Quantidade:</h3>
-                                            <p>5 Unidades</p>
+                                            <p>{qtditens} Unidades</p>
                                         </div>
                                         <div>
                                             <h3>Preço Total:</h3>
-                                            <p>R$ 20.000,00</p>
+                                            <p>R$ {prodPrice}</p>
                                         </div>
                                         <div>
-                                            <h3>Nome do Produto:</h3>
-                                            <p>Colar de Cristal</p>
+                                            <h3>Status do Pedido:</h3>
+                                            <p>{pedidoInfo.SITUACAO}</p>
                                         </div>
                                     </section>
                                 </div>
@@ -114,6 +258,19 @@ export default function PedidoProduto() {
                                         }
                                         <h1>Pedido Entregue</h1>
                                     </div>
+                            </section>
+
+                            <section className='rendercar'>
+                                <h1 id='title'>Seus Itens</h1>
+                                    {carrinho.length > 0 ? (
+                                    carrinho.map(item => 
+                                        <div>
+                                            <h1>{item.Nome}</h1>
+                                        </div>
+                                    )
+                                    ) : (
+                                    <p id='indisp'>Carregando seus Itens.</p>
+                                    )}
                             </section>
                         </div>
                     </div>
