@@ -1,0 +1,46 @@
+.pag-notificacoes {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+    .corp {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .centro {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px ;
+        padding: 20px 40px;
+        flex-grow: 1;
+    }
+
+   #apagar{
+        background-color: white;
+        font-size:18px;
+        padding: 5px;
+        width: 6vw;
+   }
+
+
+@media (max-width: 500px) {
+    .corp{
+    flex-direction: column;
+    
+    }
+
+    #apagar{
+        background-color: white;
+        font-size:5vw;
+        padding: 5px;
+        width: 40vw;
+    }
+
+    .centro{
+        align-items: center;
+    }
+}
+    
+    
+}

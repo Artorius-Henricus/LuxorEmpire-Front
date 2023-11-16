@@ -27,6 +27,7 @@ import PedidoProduto from './pages/site/pedidoproduto';
 import CompUserMenuResp from './components/site/resp-usermenu';
 import AdmListarProdutos from './pages/adm/adm-listar-produtos';
 import AdmEditarProduto from './pages/adm/adm-editar-produtos';
+import Notificações from './pages/site/notificacoes';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -49,6 +50,7 @@ root.render(
 
         {/* Perfil do USUÁRIO */}
         <Route path='/perfil' element={<PaginaTelaUsuario />} />
+        <Route path='/notificacoes' element={<Notificações />} />
         <Route path='/pedidos' element={<PaginaPedidos />} />
         <Route path='/enderecos' element={<PaginaEnderecos />} />
         <Route path='/cartoes' element={<PaginaCartoes />} />
