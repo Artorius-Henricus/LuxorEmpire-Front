@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import storage from "local-storage"
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function Paginaproduto() {
     const [quantidade, setQuantidade] = useState(1);
@@ -77,10 +78,10 @@ export default function Paginaproduto() {
             }
             const url = `http://localhost:5000/produto/carrinho/add/${idprod}`
             const command = await axios.post(url, info);
-            console.log("Adicionou!")
+            toast.success("Produto Adicionado ao Carrinho");
         }
         catch (err) {
-            console.log(err.response.data.erro)
+            toast.success("Não foi possível adicionar ao Carrinho");
         }
     }
     return(

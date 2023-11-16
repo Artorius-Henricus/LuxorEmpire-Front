@@ -3,12 +3,14 @@ import './index.scss';
 import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import storage from "local-storage"
 import { useState, useEffect } from 'react';
 
 export default function PaginaPedidoConcluido() {
     const navigate = useNavigate();
+
+    const { id } = useParams();
 
     useEffect(() => {
         if (!storage('user-info')) {

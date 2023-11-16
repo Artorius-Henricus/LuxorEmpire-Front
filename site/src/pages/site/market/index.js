@@ -5,6 +5,9 @@ import CompRodape from '../../../components/site/rodape';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+
+
 export default function Paginamarket () {
     const [produtos, setProdutos] = useState([]);
 
@@ -33,7 +36,7 @@ export default function Paginamarket () {
         overflow: 'hidden',
         gap: '40px',
         marginTop: '100px',
-      };
+    };
 
     return(
         <div className='pagina-market'>
