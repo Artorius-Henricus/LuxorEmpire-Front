@@ -19,7 +19,7 @@ export default function Pagamento() {
     async function BuscarCarrinho() {
         try {
             let idprod = userInfo.id
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta/${idprod}`)
+            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta2/${idprod}`)
             const data = command.data;
 
             setCarrinho(data);
@@ -111,7 +111,7 @@ export default function Pagamento() {
 
     async function getTotal() {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta/${userInfo.id}`)
+            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta2/${userInfo.id}`)
             const data = command.data;
             let sum = 0;
 
@@ -142,7 +142,7 @@ export default function Pagamento() {
 
     async function AtualizarPedidoItem() {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta/${userInfo.id}`);
+            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta2/${userInfo.id}`);
             const data = command.data;
     
             for (let item of data) {

@@ -8,6 +8,8 @@
     > h1 {
         font: 32px "Inter";
         margin-top: 50px;
+        width: 500px;
+        text-align: center;
     }
     
 
@@ -47,12 +49,13 @@
 
     .pedido-infos h3 {
         font: 15px "Inter";
+        width: max-content;
     }
 
     .pedido-infos p {
         font: 12px "Inter";
         color: #383838;
-        width: 134px;
+        width: 135px;
     }
 
     .pedido-infos div {
