@@ -135,9 +135,7 @@ export default function Paginamarket () {
                         </div>
                     </div>
                 </div>
-
-
-                
+  
                 <div style={Mid}>
                     <div className='dir'>
                         <div className='filtragem'>
@@ -149,14 +147,7 @@ export default function Paginamarket () {
                                 <option>Z - A</option>
                                 <option>Mais Novo ao Mais Antigo</option>
                                 <option>Mais Antigo ao Mais Novo</option>
-{/* 
-                                <optgroup label="Swedish Cars">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                </optgroup>
-                                 */}
                             </select>
-
                         </div>
                     </div>
                     
