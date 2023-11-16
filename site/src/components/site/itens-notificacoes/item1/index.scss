@@ -1,0 +1,12 @@
+.item{
+    display: flex;
+    border: 2px black solid;
+    padding: 10px;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+}

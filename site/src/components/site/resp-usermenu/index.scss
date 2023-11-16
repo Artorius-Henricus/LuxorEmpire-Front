@@ -1,5 +1,5 @@
 .comp-user-menu-resp{
-    display: flex;
+    display: none;
     flex-direction: column;
     max-width: 320px;
     gap: 10px;
@@ -125,8 +125,11 @@
 
 }
 
+@media (max-width: 500px) {
+    display: block;
+}
 
 
-}   
+}
   
 

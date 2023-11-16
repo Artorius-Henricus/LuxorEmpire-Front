@@ -2,7 +2,7 @@ import './index.scss';
 import { useState, useEffect } from 'react';
 import LoginUser from '../user-login';
 import RegisterUser from '../user-register';
-
+import Notificações from '../../../pages/site/notificacoes';
 import {Link} from 'react-router-dom'
 import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
@@ -79,7 +79,8 @@ export default function CompCabecalho() {
                     </button>
 
                     <button>
-                        <img src="/assets/images/cartoes/Sino.png" alt="Imagem Notificações" />
+                        <Link to='/notificacoes'>
+                        <img src="/assets/images/cartoes/Sino.png" alt="Imagem Notificações" /></Link>
                         Notificações
                     </button>
                 </div>
