@@ -6,6 +6,9 @@ import CompRodape from '../../../components/site/rodape';
 import { useNavigate, useParams } from 'react-router-dom';
 import storage from "local-storage"
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import CompPedidoProduto from '../../../components/site/compedidoproduo';
 
 export default function PedidoProduto() {
     const navigate = useNavigate();
@@ -68,6 +71,7 @@ export default function PedidoProduto() {
 
     const [prodPrice, setProdPrice] = useState(0);
     const [qtditens, setQtdItns] = useState(0);
+    const [carrinho, setCarrinho] = useState([]);
 
     async function getTotal() {
         try {
@@ -109,24 +113,15 @@ export default function PedidoProduto() {
         return dataFormatada;
     };
 
-    const [carrinho, setCarrinho] = useState([]);
-    async function ConsultarProduto(idprod) {
-        try {
-            const command2 = await axios.get(`http://localhost:5000/produto/${idprod}`);
-            const data2 = command2.data
-            setCarrinho([...carrinho, data2]);
-        } catch (err) {
-            console.log("Fatal Error");
-        }
-    }
-    
+    const [capaProd, setCapaProd] = useState('')
+    const [nomeProd, setNomeProd] = useState('')
+    const [preçoProd, setPreçoProd] = useState('')
+
     async function ConsultarCarrinho() {
         try {
             const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta3/${id}`);
             const data = command.data;
-            for (let i = 0; i < data.length; i++) {
-                await ConsultarProduto(data[i].prodid);
-            }
+            setCarrinho(data)
         } catch (err) {
             console.log("Error ao carregar os Itens do Carrinho");
         }
@@ -155,6 +150,7 @@ export default function PedidoProduto() {
 
     return(
         <div className="pagina-produto-pedido">
+            <ToastContainer />
             <CompCabecalho />
                 <article className='corpo'>
                     <h1><b>Seu Pedido</b> &gt; {id}</h1>
@@ -259,18 +255,15 @@ export default function PedidoProduto() {
 
                             <section className='rendercar'>
                                 <h1 id='title'>Seus Itens</h1>
-                                <div className='blockk'>
+                                <div className='block'>
                                     <h1>Capa</h1>
                                     <h1>Nome</h1>
                                     <h1>Preço</h1>
+                                    <h1>Quantidade</h1>
                                 </div>
                                     {carrinho.length > 0 ? (
                                     carrinho.map(item => 
-                                        <div className='blockk'>
-                                            <img src="" alt="" />
-                                            <h1>{item.Nome}</h1>
-                                            <h1>R$ {item.Preço}</h1>
-                                        </div>
+                                        <CompPedidoProduto data={item} quantidade={item.quantd}/>
                                     )
                                     ) : (
                                     <p id='indisp'>Carregando seus Itens.</p>
