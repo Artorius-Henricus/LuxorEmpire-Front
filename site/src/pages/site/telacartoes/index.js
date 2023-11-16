@@ -11,6 +11,7 @@ import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function PaginaCartoes() {
 
@@ -42,7 +43,17 @@ export default function PaginaCartoes() {
         if (userInfo) {
           ConsultarCartao();
         }
-      }, [userInfo]);
+      }, [userInfo, ConsultarCartao]);
+
+    async function DeletarCartão(idcrt) {
+        try {
+            const command = await axios.delete(`http://localhost:5000/usuario/cartao/deletar/${idcrt}`);
+            ConsultarCartao();
+            toast.success("Cartão Removido com Sucesso!")
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
 
     return(
         <div className='pagina-cartoes'>
@@ -66,7 +77,7 @@ export default function PaginaCartoes() {
                                 <h3>Cartão de crédito terminando em {item.Cartao}</h3>
                                 </div>
                             </div>
-                            <button><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
+                            <button onClick={() => DeletarCartão(item.Id)}><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
                             </div>
                         )
                         ) : (

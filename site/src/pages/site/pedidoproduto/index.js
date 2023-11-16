@@ -153,7 +153,7 @@ export default function PedidoProduto() {
             <ToastContainer />
             <CompCabecalho />
                 <article className='corpo'>
-                    <h1><b>Seu Pedido</b> &gt; {id}</h1>
+                    <h1><b onClick={() => navigate('/pedidos')} style={{cursor: 'pointer'}}>Seus Pedidos</b> &gt; {id}</h1>
                     
                     <div className='groupinfo'>
                         <h1 id='infoglobal'>Informações Gerais</h1>
