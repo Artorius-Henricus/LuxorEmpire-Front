@@ -33,7 +33,7 @@ export default function CadastrarEndereco() {
             setCidade(data.localidade);
             setEstado(data.uf);
         }
-        catch (err) {
+        catch (err) { 
             console.log("Deu Error")
         }
     }
@@ -52,7 +52,7 @@ export default function CadastrarEndereco() {
         try {
             let endereco = {
                 regiao: pais, 
-                nome: nome, 
+                nome: nome,  
                 cep: cep, 
                 endereco: usrendereco, 
                 residencia: nResidencia, 
