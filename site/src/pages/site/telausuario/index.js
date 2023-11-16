@@ -121,7 +121,7 @@ export default function PaginaTelaUsuario(){
             data.img = imgdata.data.img
             storage('user-info', data)
 
-            toast.success("Imagem Cadastrada");
+            
         }
         catch (err) {
             toast.error(err.response.data.erro)

@@ -144,14 +144,11 @@ export default function Pagamento() {
         try {
             const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta/${userInfo.id}`);
             const data = command.data;
-
-            let pedido = {
-                idd: idgerado
-            }
-
+    
             for (let item of data) {
                 try {
-                    const command = await axios.put(`http://localhost:5000/produto/carrinho/atualizarpedido/${item.itemid}`, pedido);
+                    const url = `http://localhost:5000/produto/carrinho/atualizarpedido/${item.itemid}`
+                    const command = await axios.put(url, { chave: idgerado });
                 } catch (error) {
                     console.error('Erro na chamada Axios:', error);
                 }
@@ -186,7 +183,12 @@ export default function Pagamento() {
             const command = await axios.post(`http://localhost:5000/usuario/compra/pagamento/${userInfo.id}`, infos);
             AtualizarPedidoItem();
 
-            toast.success("Foii");
+            const delay = 500; // Tempo de espera em milissegundos (1 segundo neste exemplo)
+
+            const timeoutId = setTimeout(() => {
+                navigate(`/pagamento/pedido/${idgerado}`)
+            }, delay);
+            
         } catch (error) {
             if (error = "Cannot read properties of null (reading 'Id')") {
                 toast.error("Um Endereço e um Cartão devem ser selecionados!");
