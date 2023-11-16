@@ -113,9 +113,10 @@ export default function PedidoProduto() {
     async function ConsultarProduto(idprod) {
         try {
             const command2 = await axios.get(`http://localhost:5000/produto/${idprod}`);
-            setCarrinho(...carrinho, command2.data);
+            const data2 = command2.data
+            setCarrinho([...carrinho, data2]);
         } catch (err) {
-            console.log("Error ao Carregar os Cartões");
+            console.log("Fatal Error");
         }
     }
     
@@ -127,7 +128,7 @@ export default function PedidoProduto() {
                 await ConsultarProduto(data[i].prodid);
             }
         } catch (err) {
-            console.log("Error ao Carregar os Cartões");
+            console.log("Error ao carregar os Itens do Carrinho");
         }
     }
 
@@ -176,10 +177,6 @@ export default function PedidoProduto() {
                                         <div>
                                             <h3>Cartão Utilizado:</h3>
                                             <p>{cartaoInfo ? "Cartão Terminado em "+cartaoInfo.Cartao : "Carregando Cartão..."}</p>
-                                        </div>
-                                        <div>
-                                            <h3></h3>
-                                            <p></p>
                                         </div>
                                     </section>
                                     
@@ -262,10 +259,17 @@ export default function PedidoProduto() {
 
                             <section className='rendercar'>
                                 <h1 id='title'>Seus Itens</h1>
+                                <div className='blockk'>
+                                    <h1>Capa</h1>
+                                    <h1>Nome</h1>
+                                    <h1>Preço</h1>
+                                </div>
                                     {carrinho.length > 0 ? (
                                     carrinho.map(item => 
-                                        <div>
+                                        <div className='blockk'>
+                                            <img src="" alt="" />
                                             <h1>{item.Nome}</h1>
+                                            <h1>R$ {item.Preço}</h1>
                                         </div>
                                     )
                                     ) : (
