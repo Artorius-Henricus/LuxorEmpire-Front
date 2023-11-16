@@ -16,9 +16,31 @@
         flex-grow: 1;
     }
 
+   #apagar{
+        background-color: white;
+        font-size:18px;
+        padding: 5px;
+        width: 6vw;
+   }
 
+
+@media (max-width: 500px) {
+    .corp{
+    flex-direction: column;
     
-    .comp-user-menu-resp{
-        display: none;
     }
+
+    #apagar{
+        background-color: white;
+        font-size:5vw;
+        padding: 5px;
+        width: 40vw;
+    }
+
+    .centro{
+        align-items: center;
+    }
+}
+    
+    
 }

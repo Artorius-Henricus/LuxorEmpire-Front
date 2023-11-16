@@ -119,7 +119,9 @@
 
 
 }    
-@media(max-width: 327px){
+@media(max-width: 500px){
+    display: none;
+
     #select h1 {
         font: 15px 'Inter';
         font-weight: 1000;

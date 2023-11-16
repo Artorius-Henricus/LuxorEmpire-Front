@@ -52,7 +52,7 @@ export default function CompUserMenuResp(){
                 Meus Pedidos
             </Link>
 
-            <Link to='' className='bttt'>
+            <Link to='/notificacoes' className='bttt'>
                 Notificações
             </Link>
             </div>

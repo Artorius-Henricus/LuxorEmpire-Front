@@ -23,7 +23,7 @@ export default function Notificações(){
                         <ItensNotificacoes2 />
                         
                     </div>
-
+                    <button id='apagar'>Apagar</button>
                 </div>
             </div>
             <CompRodape />
