@@ -27,6 +27,7 @@ import PedidoProduto from './pages/site/pedidoproduto';
 import CompUserMenuResp from './components/site/resp-usermenu';
 import AdmListarProdutos from './pages/adm/adm-listar-produtos';
 import AdmEditarProduto from './pages/adm/adm-editar-produtos';
+import PaginaInformações from './pages/site/informações';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -56,12 +57,14 @@ root.render(
         <Route path='/enderecos/cadastro' element={<CadastrarEndereco />} />
         <Route path='/cartoes/cadastro' element={<CadastrarCartao />} />
 
+
         {/* Página do Mercado */}
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/pagamento/pedido/:id' element={<PaginaPedidoConcluido />} />
         <Route path='/produto/:id' element={<Paginaproduto />} />   
         <Route path='/market' element={<Paginamarket/>} />   
+        <Route path='/informações' element={<PaginaInformações />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

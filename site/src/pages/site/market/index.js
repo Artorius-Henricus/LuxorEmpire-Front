@@ -143,7 +143,7 @@ export default function Paginamarket () {
                     <div className='dir'>
                         <div className='filtragem'>
                             <select>
-                                <option>Destaque       <img src='/assets/images/market-page/img-destaque-select.svg' /></option>
+                                <option>Destaque       {/*<img src='/assets/images/market-page/img-destaque-select.svg' />*/}</option> 
                                 <option>Preço: Menor ao Maior</option>
                                 <option>Preço: Maior ao Menor</option>
                                 <option>A - Z</option>
