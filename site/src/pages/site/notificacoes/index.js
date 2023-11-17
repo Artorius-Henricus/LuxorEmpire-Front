@@ -18,12 +18,16 @@ export default function Notificações(){
                 <div className='centro'>
                     <h1>Notificações</h1>
 
-                    <div>
-                        <ItensNotificacoes1 />
-                        <ItensNotificacoes2 />
-                        
+                   <div className='bloco'> 
+                        <div>
+                            <ItensNotificacoes1 />
+                            <ItensNotificacoes2 />
+                            
+                        </div>
+
+
+                        <button id='apagar'>Apagar</button>
                     </div>
-                    <button id='apagar'>Apagar</button>
                 </div>
             </div>
             <CompRodape />

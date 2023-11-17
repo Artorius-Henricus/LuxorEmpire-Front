@@ -16,6 +16,14 @@
         flex-grow: 1;
     }
 
+    .bloco{
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        justify-content: space-between;
+        align-items: end;
+    }
+
    #apagar{
         background-color: white;
         font-size:18px;
@@ -37,7 +45,7 @@
         width: 40vw;
     }
 
-    .centro{
+    .centro .bloco{
         align-items: center;
     }
 }
