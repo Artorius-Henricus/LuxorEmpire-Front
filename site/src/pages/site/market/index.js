@@ -45,6 +45,7 @@ export default function Paginamarket () {
             <div className='tudo'>
                 <div className='esq'>
                     <div className='agrupamento'>
+                        <button>Carregar</button>
                          <h2>Categoria</h2>
                          <div className='types'>
                             <input type='radio' />
