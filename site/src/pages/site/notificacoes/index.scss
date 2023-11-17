@@ -19,16 +19,23 @@
     .bloco{
         display: flex;
         flex-direction: column;
-        height: 80vh;
+        height: 70vh;
+        align-items: center;
         justify-content: space-between;
-        align-items: end;
     }
 
    #apagar{
         background-color: white;
-        font-size:18px;
-        padding: 5px;
-        width: 6vw;
+        font-size:25px;
+        padding: 10px  5px;
+        align-self: center;
+        width: 15vw;
+   }
+
+   #apagar:hover{
+        transform: translateY(-3px);
+        box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.387);
+
    }
 
 

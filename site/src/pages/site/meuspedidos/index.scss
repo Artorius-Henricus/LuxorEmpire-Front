@@ -11,15 +11,15 @@
     }
 
     #indisp {
-        font: 20px "Inter";
+        font: 18px "Inter";
         font-weight: 500;
-        margin-top: 20px;
+        margin-top: 5px;
     }
 
     .corp > section {
         display: flex;
         flex-direction: column;
-        padding: 40px 40px 0px 40px;
+        padding: 20px 40px 0px 40px;
         overflow-y: scroll;
         height: 700px;
         width: 100%;
@@ -57,6 +57,14 @@
         background-color: transparent;
         border: 1px solid #000;
         border-radius: 5px;
+    }
+
+    section{
+        align-items: center;
+    }
+
+    section  h1{
+        font-size: 32px;
     }
 
     .pedidosbox h2 {
