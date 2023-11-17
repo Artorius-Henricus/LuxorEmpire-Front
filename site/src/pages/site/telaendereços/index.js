@@ -10,6 +10,7 @@ import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function PaginaCartoes() {
     const navigate = useNavigate();
@@ -40,7 +41,17 @@ export default function PaginaCartoes() {
         if (userInfo) {
           ConsultarEndereco();
         }
-      }, [userInfo]);
+      }, [userInfo, ConsultarEndereco]);
+
+    async function DeletarEndereço(idcrt) {
+        try {
+            const command = await axios.delete(`http://localhost:5000/usuario/endereco/deletar/${idcrt}`);
+            ConsultarEndereco();
+            toast.success("Endereço Removido com Sucesso!")
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
 
     return(
         <div className='pagina-enderecos'>
@@ -61,7 +72,7 @@ export default function PaginaCartoes() {
                             <h3>{item.Rua}, {item.NRua}</h3>
                             <h3>{item.Bairro}</h3>
                             <h3>{item.Cidade}, {item.Estado}</h3>
-                            <button><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
+                            <button onClick={() => DeletarEndereço(item.Id)}><img src="/assets/images/cartoes/lixeira-de-reciclagem.svg" alt="IconDeletar" /></button>
                         </div>
                         )
                         ) : (
