@@ -12,7 +12,7 @@
         display: flex;
         flex-direction: column;
         padding-left: 32px;
-        gap: 40px;
+        gap: 30px;
     }
     
     ul {
@@ -58,17 +58,24 @@
     .dados p {
         font: 16px "Inter";
         width: 575px;
-    
     }
     
+    .dados b {
+        font: 18px "Inter";
+        font-weight: 600;
+    }
     .dados h1, b {
         padding-left: 20px;
-        
     }
     
     .dados h1 {
         font: 20px "Inter";
         font-weight: 700;
+    }
+
+    .termos {
+        display: flex;
+        flex-direction: column;
     }
     
 }
