@@ -48,32 +48,32 @@ export default function Paginamarket () {
                         <button>Carregar</button>
                          <h2>Categoria</h2>
                          <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Anéis</p>
                          </div>
                     
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Brincos</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Colares</p>
                          </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Pingentes</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Pulseiras</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Relógios</p>
                         </div>
                     </div>
@@ -81,32 +81,32 @@ export default function Paginamarket () {
                     <div className='agrupamento'>
                         <h2>Material</h2>
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Ouro</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Prata</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Titânio</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Aço inoxidável</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Couro</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Brilhantes</p>
                         </div>
                     </div>
@@ -114,27 +114,27 @@ export default function Paginamarket () {
                     <div className='agrupamento'>
                         <h2>Gema</h2>
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Diamante</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Esmeralda</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Rubi</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Safira</p>
                         </div>
 
                         <div className='types'>
-                            <input type='checkbox' />
+                            <input type='radio' />
                             <p>Pérola</p>
                         </div>
                     </div>
