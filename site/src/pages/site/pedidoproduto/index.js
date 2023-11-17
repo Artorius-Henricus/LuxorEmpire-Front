@@ -42,6 +42,27 @@ export default function PedidoProduto() {
             if (data.SITUACAO == "Pagamento Efetuado") {
                 setPayment(true)
             }
+            else if (data.SITUACAO == "Pedido Confirmado") {
+                setPayment(true)
+                setConfirmed(true)
+            }
+            else if (data.SITUACAO == "Pedido a Caminho") {
+                setPayment(true)
+                setConfirmed(true)
+                setShipped(true)
+            }
+            else if (data.SITUACAO == "Pedido Entregue") {
+                setPayment(true)
+                setConfirmed(true)
+                setShipped(true);
+                setDelivered(true)
+            }
+            else {
+                setPayment(true)
+                setConfirmed(false)
+                setShipped(false);
+                setDelivered(false)
+            }
             setPedidoInfo(data);
         }
         catch (error) {

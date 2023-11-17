@@ -46,10 +46,11 @@ export default function AdmPedidosAndamento() {
 
     const [situacaoAtual, setSituacaoAtual] = useState("");
 
-    async function AtualizarPedido(situacao, id) {
+    async function AtualizarPedido(situacao, id, iduser) {
         try {
             const data = {
-                code: situacao
+                code: situacao,
+                user: iduser
             };
             const command = await axios.put(`http://localhost:5000/admin/pedidos/atualizar/${id}`, data)
             BuscarPedidosAndamento();
@@ -102,10 +103,10 @@ export default function AdmPedidosAndamento() {
                                     <option value="Pagamento Efetuado">Pagamento Efetuado</option>
                                     <option value="Pedido Confirmado">Pedido Confirmado</option>
                                     <option value="Pedido a Caminho">Pedido a Caminho</option>
-                                    <option value="Pedido entregue">Pedido Entregue</option>
+                                    <option value="Pedido Entregue">Pedido Entregue</option>
                                 </select>
                             </td>
-                            <td><button onClick={() => AtualizarPedido(situacaoAtual, item.IDPED)}>✓</button></td>
+                            <td><button onClick={() => AtualizarPedido(situacaoAtual, item.IDPED, item.IDUSER)}>✓</button></td>
                         </tr> 
                         )
                         ) : (

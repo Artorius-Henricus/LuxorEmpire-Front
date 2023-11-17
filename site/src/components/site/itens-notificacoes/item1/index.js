@@ -1,13 +1,13 @@
 import './index.scss';
 
-export default function ItensNotificacoes1(){
+export default function ItensNotificacoes1(props){
     return(
         <div className='item'>
             <h1>Aviso!</h1>
 
-            <p>Seu pedido pedido está aguardando retirada</p>
+            <p>{props.notificacao}</p>
 
-            <b>21 de novembro</b>
+            <b>Pedido: {props.pedido}</b>
         </div>
     )
 }
