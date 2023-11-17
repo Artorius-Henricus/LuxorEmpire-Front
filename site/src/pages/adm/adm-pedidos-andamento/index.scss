@@ -67,6 +67,7 @@
         border: 1px solid;
         margin-top: 50px;
         padding: 5px 0px 0px 0px;
+        overflow-y: scroll;
     }
 
     #tabela h1 {
@@ -104,11 +105,23 @@
     .tablebody td {
         text-align: center;
         height: 40px;
+        width: 500px;
     }
 
     .tablebody button {
         background-color: transparent;
         border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .tablebody select {
+        width: 180px;
+        height: 30px;
+        border: 1px solid #000;
+        border-radius: 3px;
+        font: 15px "Inter";
+        background-color: transparent;
         outline: none;
         cursor: pointer;
     }

@@ -3,10 +3,10 @@ import storage from "local-storage"
 import CompMenuBar from '../../../components/adm/menubar';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function AdmPedidosAndamento() {
     const [adminInfos, setAdminInfos] = useState('')
-
 
     const navigate = useNavigate();
     useEffect(() => {
@@ -18,20 +18,59 @@ export default function AdmPedidosAndamento() {
         }
     }, [])
 
-    return(
-    <div className="adm-pagina-pedidos-andamento">
+    function formatarData(dataOriginal) {
+        // Converter a string para um objeto Date
+        var dataObj = new Date(dataOriginal);
+    
+        // Obter os componentes da data
+        var dia = dataObj.getUTCDate();
+        var mes = dataObj.getUTCMonth() + 1; // Mês é baseado em zero
+        var ano = dataObj.getUTCFullYear();
+    
+        // Formatar a data no formato desejado (DD-MM-AAAA)
+        var dataFormatada = dia + "-" + mes + "-" + ano;
+    
+        return dataFormatada;
+    };
+
+    const [pedidos, setPedidos] = useState([]);
+    async function BuscarPedidosAndamento() {
+        try {
+            const command = await axios.get("http://localhost:5000/admin/pedidos/andamento")
+            setPedidos(command.data)
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const [situacaoAtual, setSituacaoAtual] = useState("");
+
+    async function AtualizarPedido(situacao, id) {
+        try {
+            const data = {
+                code: situacao
+            };
+            const command = await axios.put(`http://localhost:5000/admin/pedidos/atualizar/${id}`, data)
+            BuscarPedidosAndamento();
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        if (adminInfos){
+          BuscarPedidosAndamento();
+        }
+      }, [adminInfos])
+      
+    return (
+        <div className="adm-pagina-pedidos-andamento">
         <CompMenuBar />
 
         <section className='corp'>
             <h1>Pedidos Em Andamento</h1>
-
-            <article id='search'>
-                <select>
-                    <option>Selecione o Filtro</option>
-                </select>
-                <input type='text' />
-                <button><img src="/assets/images/adm/1617460.svg" alt="" /></button>
-            </article>
 
             <article id='tabela'>
                 <h1>Pedidos</h1>
@@ -39,40 +78,39 @@ export default function AdmPedidosAndamento() {
                     <thead className='tablehead'>
                         <tr>
                             <th>Id</th>
-                            <th>Nome</th>
-                            <th>Valor Uni.</th>
-                            <th>Total</th>
-                            <th>Quant</th>
+                            <th>Forma de Pagamento</th>
+                            <th>Parcelas</th>
+                            <th>Usuário</th>
                             <th>Data Compra</th>
-                            <th>Previsão Entrega</th>
                             <th>Status</th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody className='tablebody'>
+                    {pedidos.length > 0 ? (
+                        pedidos.map(item =>
                         <tr>
-                            <td>1</td>
-                            <td>Brincos de Cristal</td>
-                            <td>54</td>
-                            <td>54</td>
-                            <td>1</td>
-                            <td>12390/*123/123</td>
-                            <td>12390/*123/123</td>
-                            <td>Vendido</td>
-                            <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Brincos de Cristal</td>
-                            <td>54</td>
-                            <td>54</td>
-                            <td>1</td>
-                            <td>12390/*123/123</td>
-                            <td>12390/*123/123</td>
-                            <td>Vendido</td>
-                            <td><button><img src="/assets/images/adm/Pencil.svg" alt="" /></button></td>
-                        </tr>
-                        
+                            <td>{item.IDPED}</td>
+                            <td>{item.FRMPAG}</td>
+                            <td>{item.PARCLS}</td>
+                            <td>{item.IDUSER}</td>
+                            <td>{formatarData(item.DTPED)}</td>
+                            <td>{item.SITUACAO}</td>
+                            <td>
+                                <select value={situacaoAtual} onChange={e => setSituacaoAtual(e.target.value)}>
+                                    <option value="Pagamento Efetuado">Pagamento Efetuado</option>
+                                    <option value="Pedido Confirmado">Pedido Confirmado</option>
+                                    <option value="Pedido a Caminho">Pedido a Caminho</option>
+                                    <option value="Pedido entregue">Pedido Entregue</option>
+                                </select>
+                            </td>
+                            <td><button onClick={() => AtualizarPedido(situacaoAtual, item.IDPED)}>✓</button></td>
+                        </tr> 
+                        )
+                        ) : (
+                        <td colSpan={'8'}>Ainda não há transações disponíveis.</td>
+                        )}           
                     </tbody>
                 </table>
             </article>

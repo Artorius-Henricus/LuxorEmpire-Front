@@ -88,13 +88,28 @@ export default function AdmCentral() {
 
   async function Buscarpedidos() {
     try {
-      const command = await axios.get(`http://localhost:5000/usuario/pedidos`)
-      setPedidos([command.data])
+      const command = await axios.get(`http://localhost:5000/admin/pedidos`)
+      setPedidos(command.data)
     } 
     catch (error) {
       console.log(error)
     }
   }
+
+  function formatarData(dataOriginal) {
+    // Converter a string para um objeto Date
+    var dataObj = new Date(dataOriginal);
+
+    // Obter os componentes da data
+    var dia = dataObj.getUTCDate();
+    var mes = dataObj.getUTCMonth() + 1; // Mês é baseado em zero
+    var ano = dataObj.getUTCFullYear();
+
+    // Formatar a data no formato desejado (DD-MM-AAAA)
+    var dataFormatada = dia + "-" + mes + "-" + ano;
+
+    return dataFormatada;
+};
 
   useEffect(() => {
     if (adminInfos){
