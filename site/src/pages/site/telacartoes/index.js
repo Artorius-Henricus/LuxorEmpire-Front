@@ -22,7 +22,7 @@ export default function PaginaCartoes() {
     async function ConsultarCartao() {
         try {
             const id = userInfo.id
-            const command = await axios.get(`http://localhost:5000/usuario/cartao/consultar/${id}`);    
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/cartao/consultar/${id}`);    
             setCartaoInfo(command.data);
         }
         catch (err) {
@@ -47,7 +47,7 @@ export default function PaginaCartoes() {
 
     async function DeletarCartão(idcrt) {
         try {
-            const command = await axios.delete(`http://localhost:5000/usuario/cartao/deletar/${idcrt}`);
+            const command = await axios.delete(`http://129.148.42.252:5019/usuario/cartao/deletar/${idcrt}`);
             ConsultarCartao();
             toast.success("Cartão Removido com Sucesso!")
         } catch (error) {

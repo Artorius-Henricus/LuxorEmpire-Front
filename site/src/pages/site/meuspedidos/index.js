@@ -42,7 +42,7 @@ export default function PaginaPedidos() {
 
     async function PedidoInfos() {
         try {
-            const command = await axios.get(`http://localhost:5000/usuario/compra/consulta2/${infoUser.id}`);
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/compra/consulta2/${infoUser.id}`);
             const data = command.data
             for (let i = 0; i < data.length; i++) {
                 data[i].IDENDR = await ConsultarEndereco(data[i].IDENDR);
@@ -60,7 +60,7 @@ export default function PaginaPedidos() {
 
     async function ConsultarEndereco(idped) {
         try {
-            const command = await axios.get(`http://localhost:5000/usuario/endereco/consultar2/${idped}`);
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/endereco/consultar2/${idped}`);
             const data = command.data.Bairro;
             return data;
         } catch (err) {
@@ -70,13 +70,13 @@ export default function PaginaPedidos() {
 
     async function getTotal(idped) {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta3/${idped}`)
+            const command = await axios.get(`http://129.148.42.252:5019/produto/carrinho/consulta3/${idped}`)
             const data = command.data;
             let sum = 0;
 
             for (let item of data) {
                 try {
-                    const command = await axios.get(`http://localhost:5000/produto/${item.prodid}`);
+                    const command = await axios.get(`http://129.148.42.252:5019/produto/${item.prodid}`);
                     const produto = command.data;
                     sum += produto.Preço * item.quantd;
                 } catch (error) {

@@ -12,7 +12,7 @@ export default function Paginamarket () {
     const [produtos, setProdutos] = useState([]);
 
     async function ListarProdutos() {
-        const command = await axios.get("http://localhost:5000/produtos/all");
+        const command = await axios.get("http://129.148.42.252:5019/produtos/all");
         setProdutos(command.data);
     }
 
@@ -44,7 +44,7 @@ export default function Paginamarket () {
 
     async function Buscar() {
         try {
-            let url = "http://localhost:5000/produtos/all";
+            let url = "http://129.148.42.252:5019/produtos/all";
             
 
             let value = 0;
@@ -82,7 +82,7 @@ export default function Paginamarket () {
 
     async function BuscarPesquisa(pesquisa) {
         try {
-            const command = await axios.get(`http://localhost:5000/produtos/find?name=${pesquisa}`);
+            const command = await axios.get(`http://129.148.42.252:5019/produtos/find?name=${pesquisa}`);
             setProdutos(command.data)
         } catch (error) {
             console.log(error)

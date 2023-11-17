@@ -88,7 +88,7 @@ export default function AdmCentral() {
 
   async function Buscarpedidos() {
     try {
-      const command = await axios.get(`http://localhost:5000/admin/pedidos`)
+      const command = await axios.get(`http://129.148.42.252:5019/admin/pedidos`)
       setPedidos(command.data)
     } 
     catch (error) {

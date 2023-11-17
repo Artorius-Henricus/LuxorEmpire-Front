@@ -37,7 +37,7 @@ export default function AdmPedidosConcluidos() {
     const [pedidos, setPedidos] = useState([]);
     async function BuscarPedidosConcluidos() {
         try {
-            const command = await axios.get("http://localhost:5000/admin/pedidos/concluido")
+            const command = await axios.get("http://129.148.42.252:5019/admin/pedidos/concluido")
             setPedidos(command.data)
 
         } catch (error) {

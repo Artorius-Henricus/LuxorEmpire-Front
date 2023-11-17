@@ -28,7 +28,7 @@ export default function AdmListarProdutos() {
     const [relogios, setRelogios] = useState([]);
 
     async function Consultar(categoria, setadd) {
-        const command = await axios.get(`http://localhost:5000/produto/consultar/${categoria}`);
+        const command = await axios.get(`http://129.148.42.252:5019/produto/consultar/${categoria}`);
         setadd(command.data)
     }
 

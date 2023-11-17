@@ -17,7 +17,7 @@ export default function AdmLogin() {
             nome: nomeUser, 
             senha: senhaUser, 
         }
-        const url = "http://localhost:5000/admin/logar";
+        const url = "http://129.148.42.252:5019/admin/logar";
         const resposta = await axios.post(url, credenciais)
 
         .then(response => {

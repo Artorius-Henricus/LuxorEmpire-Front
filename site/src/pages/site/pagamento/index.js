@@ -19,7 +19,7 @@ export default function Pagamento() {
     async function BuscarCarrinho() {
         try {
             let idprod = userInfo.id
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta2/${idprod}`)
+            const command = await axios.get(`http://129.148.42.252:5019/produto/carrinho/consulta2/${idprod}`)
             const data = command.data;
 
             setCarrinho(data);
@@ -66,7 +66,7 @@ export default function Pagamento() {
     async function ConsultarEndereco() {
         try {
             const id = userInfo.id
-            const command = await axios.get(`http://localhost:5000/usuario/endereco/consultar/${id}`);    
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/endereco/consultar/${id}`);    
             setEnderecoInfo(command.data);
         }
         catch (err) {
@@ -77,7 +77,7 @@ export default function Pagamento() {
     async function ConsultarCartao() {
         try {
             const id = userInfo.id
-            const command = await axios.get(`http://localhost:5000/usuario/cartao/consultar/${id}`);    
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/cartao/consultar/${id}`);    
             setCartaoInfo(command.data);
         }
         catch (err) {
@@ -111,13 +111,13 @@ export default function Pagamento() {
 
     async function getTotal() {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta2/${userInfo.id}`)
+            const command = await axios.get(`http://129.148.42.252:5019/produto/carrinho/consulta2/${userInfo.id}`)
             const data = command.data;
             let sum = 0;
 
             for (let item of data) {
                 try {
-                    const command = await axios.get(`http://localhost:5000/produto/${item.prodid}`);
+                    const command = await axios.get(`http://129.148.42.252:5019/produto/${item.prodid}`);
                     const produto = command.data;
                     sum += produto.Preço * item.quantd;
                 } catch (error) {
@@ -142,12 +142,12 @@ export default function Pagamento() {
 
     async function AtualizarPedidoItem() {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta2/${userInfo.id}`);
+            const command = await axios.get(`http://129.148.42.252:5019/produto/carrinho/consulta2/${userInfo.id}`);
             const data = command.data;
     
             for (let item of data) {
                 try {
-                    const url = `http://localhost:5000/produto/carrinho/atualizarpedido/${item.itemid}`
+                    const url = `http://129.148.42.252:5019/produto/carrinho/atualizarpedido/${item.itemid}`
                     const command = await axios.put(url, { chave: idgerado });
                 } catch (error) {
                     console.error('Erro na chamada Axios:', error);
@@ -180,7 +180,7 @@ export default function Pagamento() {
                 dtpedido: dataFormatadaString,
                 situacao: 'Pagamento Efetuado'
             };
-            const command = await axios.post(`http://localhost:5000/usuario/compra/pagamento/${userInfo.id}`, infos);
+            const command = await axios.post(`http://129.148.42.252:5019/usuario/compra/pagamento/${userInfo.id}`, infos);
             AtualizarPedidoItem();
 
             const delay = 500; // Tempo de espera em milissegundos (1 segundo neste exemplo)

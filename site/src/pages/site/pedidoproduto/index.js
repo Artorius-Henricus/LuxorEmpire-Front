@@ -37,7 +37,7 @@ export default function PedidoProduto() {
 
     async function PedidoInfos() {
         try {
-            const command = await axios.get(`http://localhost:5000/usuario/compra/consulta/${id}`);
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/compra/consulta/${id}`);
             const data = command.data
             if (data.SITUACAO == "Pagamento Efetuado") {
                 setPayment(true)
@@ -72,7 +72,7 @@ export default function PedidoProduto() {
 
     async function ConsultarEndereco() {
         try {
-            const command = await axios.get(`http://localhost:5000/usuario/endereco/consultar2/${pedidoInfo.IDENDR}`);
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/endereco/consultar2/${pedidoInfo.IDENDR}`);
             const data = command.data;
             setEnderecoInfo(data);
         } catch (err) {
@@ -82,7 +82,7 @@ export default function PedidoProduto() {
     
     async function ConsultarCartao() {
         try {
-            const command = await axios.get(`http://localhost:5000/usuario/cartao/consultar2/${pedidoInfo.IDCART}`);
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/cartao/consultar2/${pedidoInfo.IDCART}`);
             const data = command.data;
             setCartaoInfo(data);
         } catch (err) {
@@ -96,14 +96,14 @@ export default function PedidoProduto() {
 
     async function getTotal() {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta3/${id}`)
+            const command = await axios.get(`http://129.148.42.252:5019/produto/carrinho/consulta3/${id}`)
             const data = command.data;
             let sum = 0;
             let sum2 = 0;
 
             for (let item of data) {
                 try {
-                    const command = await axios.get(`http://localhost:5000/produto/${item.prodid}`);
+                    const command = await axios.get(`http://129.148.42.252:5019/produto/${item.prodid}`);
                     const produto = command.data;
                     sum += produto.Preço * item.quantd;
                     sum2 += item.quantd;
@@ -140,7 +140,7 @@ export default function PedidoProduto() {
 
     async function ConsultarCarrinho() {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta3/${id}`);
+            const command = await axios.get(`http://129.148.42.252:5019/produto/carrinho/consulta3/${id}`);
             const data = command.data;
             setCarrinho(data)
         } catch (err) {

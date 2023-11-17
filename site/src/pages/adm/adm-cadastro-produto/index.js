@@ -81,7 +81,7 @@ export default function AdmCadastroProduto() {
                 preco: precoProduto.trim(),
                 descricao: descricaoProduto.trim()
             };
-            const command = await axios.post("http://localhost:5000/produto/registrar", produto);
+            const command = await axios.post("http://129.148.42.252:5019/produto/registrar", produto);
             toast.success("Produto Cadastrado");
 
             const idp = command.data;
@@ -106,7 +106,7 @@ export default function AdmCadastroProduto() {
                 const formData = new FormData();
                 formData.append('prodimg', imagem);
             
-                const command = await axios.post(`http://localhost:5000/produto/${id}/imagens/${campo}`, formData, {
+                const command = await axios.post(`http://129.148.42.252:5019/produto/${id}/imagens/${campo}`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     },

@@ -36,7 +36,7 @@ export default function AdmPedidosAndamento() {
     const [pedidos, setPedidos] = useState([]);
     async function BuscarPedidosAndamento() {
         try {
-            const command = await axios.get("http://localhost:5000/admin/pedidos/andamento")
+            const command = await axios.get("http://129.148.42.252:5019/admin/pedidos/andamento")
             setPedidos(command.data)
 
         } catch (error) {
@@ -52,7 +52,7 @@ export default function AdmPedidosAndamento() {
                 code: situacao,
                 user: iduser
             };
-            const command = await axios.put(`http://localhost:5000/admin/pedidos/atualizar/${id}`, data)
+            const command = await axios.put(`http://129.148.42.252:5019/admin/pedidos/atualizar/${id}`, data)
             BuscarPedidosAndamento();
 
         } catch (error) {

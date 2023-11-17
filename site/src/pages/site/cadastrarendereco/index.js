@@ -61,7 +61,7 @@ export default function CadastrarEndereco() {
                 estado: estado
             }
     
-            const url = `http://localhost:5000/usuario/endereco/cadastrar/${userInfo.id}`
+            const url = `http://129.148.42.252:5019/usuario/endereco/cadastrar/${userInfo.id}`
             const command = await axios.post(url, endereco)
 
             toast.success("Endereço Cadastrado com Sucesso!")
