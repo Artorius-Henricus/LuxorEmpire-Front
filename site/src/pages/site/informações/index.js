@@ -49,7 +49,7 @@ export default function PaginaInformaçãoes () {
                     <p>No desenvolvimento de produtos e serviços</p>
                 </div>
 
-                <div className='entregas'>
+                <div className='listas'>
                     <ul>
                         <li>Termos de uso</li>
                     </ul>
@@ -93,7 +93,6 @@ export default function PaginaInformaçãoes () {
                    <div className='termos'>
                         <p>7. **Propriedade Intelectual:**</p>
                         <p> 7.1. Todo o conteúdo do E-Commerce Luxor Empire é protegido por direitos autorais e outras leis de propriedade intelectual.</p>
-                        <p>4.2. Ao realizar uma compra, você concorda com as condições de pagamento e preços apresentados.</p>
                    </div>
 
                    <div className='termos'>
@@ -118,8 +117,26 @@ export default function PaginaInformaçãoes () {
 
                    <p>Ao utilizar o E-Commerce Luxor Empire, você concorda com estes Termos de Uso. Se tiver alguma dúvida, entre em contato conosco. Obrigado por escolher o E-Commerce Luxor Empire!</p>
                 </div>
-        
-            </div>         
+
+                <div className='devolução'>
+                    <ul>
+                        <li>Como trocar ou devolver um produto ?</li>
+                    </ul>
+                    <p>O prazo de devolução ou troca é de até 30 dias da data de recebimento em seu local de entrega </p>
+                    <p>Para iniciar uma devolução entre em contato com nosso Atendimento ao Cliente </p>                
+                    <b>CONDIÇÕES PARA TROCA</b>
+                    <p>1. A primeira troca é gratuita!</p>
+                    <p>2. A troca poderá ser realizada desde que seja pelo mesmo produto adquirido, alterando apenas o tamanho.</p>
+                    <p>3. Não realizaremos a troca de produtos por outros modelos ou cores.</p>
+                    <p>4. As trocas estão sujeitas à disponibilidade de estoque.</p>
+                    <b>COMO DEVOLVER UM PRODUTO APÓS SOLICITAR A TROCA OU DEVOLUÇÃO</b>
+                    <p>1. A devolução do produto para o centro de distribuição ocorrerá por meio de postagem nos Correios com o frete pago pela Luxor.</p>
+                    <p>2. Após solicitar a troca ou devolução será enviado um e-mail com todas as orientações de postagem e código de postagem, que lhe dará o direito de postar o produto em qualquer agência dos Correios, sem custo algum.</p>
+                    <p>3. O produto deverá ser apresentando devidamente embalado, de acordo com as regras dos Correios. O procedimento é simples e agiliza o processo de troca ou reembolso.</p>
+                    <p>4. Lembramos que o envio do novo item ou a devolução do valor pago será realizada após retorno do produto ao nosso centro de distribuição e mediante análise dos produtos que será feita pelo nosso setor de qualidade.</p>           
+                </div>
+            </div>   
+            <CompRodape />      
         </div>
     )
 }

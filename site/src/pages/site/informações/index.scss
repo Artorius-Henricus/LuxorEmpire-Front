@@ -40,7 +40,7 @@
     p {
         width: 300px;
         margin-left: 25px;
-        font: 15px "Inter";
+        font: 16px "Inter";
     }
     
     .politicas {
@@ -73,9 +73,33 @@
         font-weight: 700;
     }
 
+    .listas {
+        display: flex;
+        flex-direction: column;
+        width: 1023px;
+        gap: 20px;
+    }
+
+    .listas p {
+        font: 16px "Inter";
+        width: 850px;
+    }
     .termos {
         display: flex;
         flex-direction: column;
+        gap: 5px;
+    }
+
+    .devolução {
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        gap: 20px;
+        height: 850px;
+    }
+
+    .devolução p {
+        width: 550px;
     }
     
 }
