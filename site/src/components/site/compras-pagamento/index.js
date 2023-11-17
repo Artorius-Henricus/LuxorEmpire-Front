@@ -6,7 +6,7 @@ export default function Produto({data}) {
     const [prodinfo, setProdInfo] = useState('')
 
     async function BuscarInfos() {
-        const command = await axios.get(`http://localhost:5000/produto/${data.prodid}`)
+        const command = await axios.get(`http://129.148.42.252:5019/produto/${data.prodid}`)
         const data2 = command.data;
 
         setProdInfo(data2);

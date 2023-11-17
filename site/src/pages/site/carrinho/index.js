@@ -18,7 +18,7 @@ export default function Carrinho(){
     
     async function BuscarCarrinho(idprod) {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta2/${idprod}`)
+            const command = await axios.get(`http://129.148.42.252:5019/produto/carrinho/consulta2/${idprod}`)
             const data = command.data;
 
             setCarrinho(data);
@@ -29,13 +29,13 @@ export default function Carrinho(){
 
     async function getTotal() {
         try {
-            const command = await axios.get(`http://localhost:5000/produto/carrinho/consulta2/${userInfo.id}`)
+            const command = await axios.get(`http://129.148.42.252:5019/produto/carrinho/consulta2/${userInfo.id}`)
             const data = command.data;
             let sum = 0;
 
             for (let item of data) {
                 try {
-                    const command = await axios.get(`http://localhost:5000/produto/${item.prodid}`);
+                    const command = await axios.get(`http://129.148.42.252:5019/produto/${item.prodid}`);
                     const produto = command.data;
                     sum += produto.Preço * item.quantd;
                 } catch (error) {
@@ -77,7 +77,7 @@ export default function Carrinho(){
 
     async function DeletarCarrinho(itemid) {
         try {
-            const command = await axios.delete(`http://localhost:5000/produto/carrinho/deletar/${itemid}`);
+            const command = await axios.delete(`http://129.148.42.252:5019/produto/carrinho/deletar/${itemid}`);
             BuscarCarrinho(userInfo.id);
             getTotal();
             toast.success("Produto Removido do Carrinho!")

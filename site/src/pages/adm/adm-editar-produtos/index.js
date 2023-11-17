@@ -62,7 +62,7 @@ export default function AdmEditarProduto() {
     }
 
     async function limparImagem() {
-        const command = await axios.get(`http://localhost:5000/produto/${id}`);
+        const command = await axios.get(`http://129.148.42.252:5019/produto/${id}`);
         const imagens = command.data;
         if (imagens || imagens.data) {
             setCapaProduto(imagens.Capa);
@@ -71,11 +71,11 @@ export default function AdmEditarProduto() {
             setProdutoImagem3(imagens.Imagem3);
             setProdutoImagem4(imagens.Imagem4);
 
-            setCapaPreview("http://localhost:5000/"+imagens.Capa);
-            setPreviewImagem1("http://localhost:5000/"+imagens.Imagem1);
-            setPreviewImagem2("http://localhost:5000/"+imagens.Imagem2);
-            setPreviewImagem3("http://localhost:5000/"+imagens.Imagem3);
-            setPreviewImagem4("http://localhost:5000/"+imagens.Imagem4);
+            setCapaPreview("http://129.148.42.252:5019/"+imagens.Capa);
+            setPreviewImagem1("http://129.148.42.252:5019/"+imagens.Imagem1);
+            setPreviewImagem2("http://129.148.42.252:5019/"+imagens.Imagem2);
+            setPreviewImagem3("http://129.148.42.252:5019/"+imagens.Imagem3);
+            setPreviewImagem4("http://129.148.42.252:5019/"+imagens.Imagem4);
         } else {
             setCapaProduto(null);
             setProdutoImagem1(null);
@@ -91,7 +91,7 @@ export default function AdmEditarProduto() {
     };
 
     async function Consultar(idprod) {
-        const command = await axios.get(`http://localhost:5000/produto/${idprod}`);
+        const command = await axios.get(`http://129.148.42.252:5019/produto/${idprod}`);
         setTipoProduto(command.data.Categoria)
         setGeneroProduto(command.data.Gênero)
         setMaterialProduto(command.data.Material)
@@ -109,11 +109,11 @@ export default function AdmEditarProduto() {
             setProdutoImagem3(imagens.Imagem3);
             setProdutoImagem4(imagens.Imagem4);
 
-            setCapaPreview("http://localhost:5000/"+imagens.Capa);
-            setPreviewImagem1("http://localhost:5000/"+imagens.Imagem1);
-            setPreviewImagem2("http://localhost:5000/"+imagens.Imagem2);
-            setPreviewImagem3("http://localhost:5000/"+imagens.Imagem3);
-            setPreviewImagem4("http://localhost:5000/"+imagens.Imagem4);
+            setCapaPreview("http://129.148.42.252:5019/"+imagens.Capa);
+            setPreviewImagem1("http://129.148.42.252:5019/"+imagens.Imagem1);
+            setPreviewImagem2("http://129.148.42.252:5019/"+imagens.Imagem2);
+            setPreviewImagem3("http://129.148.42.252:5019/"+imagens.Imagem3);
+            setPreviewImagem4("http://129.148.42.252:5019/"+imagens.Imagem4);
         } else {
             setCapaProduto(null);
             setProdutoImagem1(null);
@@ -139,7 +139,7 @@ export default function AdmEditarProduto() {
                 preco: precoProduto.trim(),
                 descricao: descricaoProduto.trim()
             };
-            const command = await axios.post(`http://localhost:5000/produto/atualizar/${id}`, produto);
+            const command = await axios.post(`http://129.148.42.252:5019/produto/atualizar/${id}`, produto);
             toast.success("Produto Cadastrado");
 
             const imgsendcapa = enviarImagensProduto(id, capaProduto, "Capa do Produto", 'ds_capa');
@@ -163,7 +163,7 @@ export default function AdmEditarProduto() {
                 const formData = new FormData();
                 formData.append('prodimg', imagem);
             
-                const command = await axios.post(`http://localhost:5000/produto/${id}/imagens/${campo}`, formData, {
+                const command = await axios.post(`http://129.148.42.252:5019/produto/${id}/imagens/${campo}`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     },

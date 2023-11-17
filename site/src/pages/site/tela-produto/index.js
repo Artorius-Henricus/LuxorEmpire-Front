@@ -40,7 +40,7 @@ export default function Paginaproduto() {
     const { id } = useParams();
 
     async function BuscarInfos(idprod) {
-        const command = await axios.get(`http://localhost:5000/produto/${idprod}`)
+        const command = await axios.get(`http://129.148.42.252:5019/produto/${idprod}`)
         const data = command.data;
 
         setNomeProduto(data.Nome)
@@ -76,7 +76,7 @@ export default function Paginaproduto() {
                 qtd: quantidade,
                 user: userInfo.id
             }
-            const url = `http://localhost:5000/produto/carrinho/add/${idprod}`
+            const url = `http://129.148.42.252:5019/produto/carrinho/add/${idprod}`
             const command = await axios.post(url, info);
             toast.success("Produto Adicionado ao Carrinho");
         }
@@ -92,20 +92,20 @@ export default function Paginaproduto() {
                         <div className='images'>
                             <section>
                                 <div>
-                                    <img src={`http://localhost:5000/${produtoImagem1}`} alt="" />
+                                    <img src={`http://129.148.42.252:5019/${produtoImagem1}`} alt="" />
                                 </div>
                                 <div>
-                                    <img src={`http://localhost:5000/${produtoImagem2}`} alt="" />
+                                    <img src={`http://129.148.42.252:5019/${produtoImagem2}`} alt="" />
                                 </div>
                                 <div>
-                                    <img src={`http://localhost:5000/${produtoImagem3}`} alt="" />
+                                    <img src={`http://129.148.42.252:5019/${produtoImagem3}`} alt="" />
                                 </div>
                                 <div>
-                                    <img src={`http://localhost:5000/${produtoImagem4}`} alt="" />
+                                    <img src={`http://129.148.42.252:5019/${produtoImagem4}`} alt="" />
                                 </div>
                             </section>
                             <div id='mainimg'>
-                                <img src={`http://localhost:5000/${capaProduto}`} alt="" id='mainimgg' />
+                                <img src={`http://129.148.42.252:5019/${capaProduto}`} alt="" id='mainimgg' />
                             </div>
                         </div>
 

@@ -27,7 +27,7 @@ export default function Notificações(){
     const [notificacao, setNotificacao] = useState([])
     async function BuscarNotificacoes() {
         try {
-            const command = await axios.get(`http://localhost:5000/usuario/pedidos/notificacao/${userInfo.id}`);
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/pedidos/notificacao/${userInfo.id}`);
             setNotificacao(command.data)
         } catch (error) {
             console.log(error)
@@ -43,7 +43,7 @@ export default function Notificações(){
     async function Limpar() {
         try {
             for (let item of notificacao) {
-                const command = await axios.delete(`http://localhost:5000/usuario/pedidos/notificacao/${item.id_notificacao}`);
+                const command = await axios.delete(`http://129.148.42.252:5019/usuario/pedidos/notificacao/${item.id_notificacao}`);
             }
             await BuscarNotificacoes();
         } catch (error) {

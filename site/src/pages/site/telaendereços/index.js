@@ -20,7 +20,7 @@ export default function PaginaCartoes() {
     async function ConsultarEndereco() {
         try {
             const id = userInfo.id
-            const command = await axios.get(`http://localhost:5000/usuario/endereco/consultar/${id}`);    
+            const command = await axios.get(`http://129.148.42.252:5019/usuario/endereco/consultar/${id}`);    
             setEnderecoInfo(command.data);
         }
         catch (err) {
@@ -45,7 +45,7 @@ export default function PaginaCartoes() {
 
     async function DeletarEndereço(idcrt) {
         try {
-            const command = await axios.delete(`http://localhost:5000/usuario/endereco/deletar/${idcrt}`);
+            const command = await axios.delete(`http://129.148.42.252:5019/usuario/endereco/deletar/${idcrt}`);
             ConsultarEndereco();
             toast.success("Endereço Removido com Sucesso!")
         } catch (error) {

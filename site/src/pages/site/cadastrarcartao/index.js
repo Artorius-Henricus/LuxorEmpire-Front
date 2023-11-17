@@ -29,7 +29,7 @@ export default function CadastrarCartao() {
                 data: dataCartao,
                 cvv: codigoCartao
             };
-            const url = `http://localhost:5000/usuario/cartao/cadastrar/${userId}`;
+            const url = `http://129.148.42.252:5019/usuario/cartao/cadastrar/${userId}`;
             const command = await axios.post(url, cartao)
             toast.success("Cartão Cadastrado com Sucesso!")
         }

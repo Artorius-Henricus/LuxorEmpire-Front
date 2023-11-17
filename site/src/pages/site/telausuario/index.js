@@ -42,8 +42,8 @@ export default function PaginaTelaUsuario(){
                 setPerfilImg('');
             }
             else {
-                setSlnImg("http://localhost:5000/"+storage('user-info').img);
-                setPerfilImg("http://localhost:5000/"+storage('user-info').img);
+                setSlnImg("http://129.148.42.252:5019/"+storage('user-info').img);
+                setPerfilImg("http://129.148.42.252:5019/"+storage('user-info').img);
             }
         }
     }, [])
@@ -77,7 +77,7 @@ export default function PaginaTelaUsuario(){
                 telefone: userTelefone,
                 nascimento: userNascimento
             };
-            const url = `http://localhost:5000/usuario/atualizar/${userId}`
+            const url = `http://129.148.42.252:5019/usuario/atualizar/${userId}`
             const command = await axios.put(url, user);
             toast.success("Informações Atualizadas!")
 
@@ -111,12 +111,12 @@ export default function PaginaTelaUsuario(){
             formData.append('perfilimg', slnImg);
 
             const user = storage('user-info').id;
-            const command = await axios.put(`http://localhost:5000/usuario/${user}/imagem`, formData, {
+            const command = await axios.put(`http://129.148.42.252:5019/usuario/${user}/imagem`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },
             });
-            const imgdata = await axios.get(`http://localhost:5000/usuario/info/${user}`)
+            const imgdata = await axios.get(`http://129.148.42.252:5019/usuario/info/${user}`)
             const data = storage('user-info')
             data.img = imgdata.data.img
             storage('user-info', data)
