@@ -1,7 +1,6 @@
 import './index.scss';
 import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
-import { Link } from 'react-router-dom';
 import Produto from '../../../components/site/compras-pagamento';
 
 import storage from "local-storage"

@@ -27,8 +27,8 @@ export default function CompRodape() {
                 <h1>Perfil</h1>
 
                 <Link to='/pedidos'>Meus Pedidos</Link>
-                <Link to=''>Notificações</Link>
-                <Link to=''>Meu Carrinho</Link>
+                <Link to='/notificacoes'>Notificações</Link>
+                <Link to='/carrinho'>Meu Carrinho</Link>
             </div>
             
             <div id='ltblock'>

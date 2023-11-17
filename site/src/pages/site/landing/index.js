@@ -24,7 +24,7 @@ export default function PaginaLanding() {
                 <div>
                     <h3>Brincos</h3>
                     <h2>Elegante e discreto. Conheça os nossos brincos e a nossa seleção de diamantes e outras joias preciosas.</h2>
-                    <Link to='/'>Descubra Mais</Link>
+                    <Link to='/market'>Descubra Mais</Link>
                 </div>
             </section>
 
@@ -32,7 +32,7 @@ export default function PaginaLanding() {
                 <div>
                     <h3>Pingentes</h3>
                     <h2>Para todos os dias e ocasiões. Os nossos pingentes contém detalhes que fazem qualquer mulher uma verdadeira dama.</h2>
-                    <Link to='/'>Descubra Mais</Link>
+                    <Link to='/market'>Descubra Mais</Link>
                 </div>
                 <img src="assets/images/landingpage/Pingente1.svg" alt="" />
             </section>
@@ -45,22 +45,22 @@ export default function PaginaLanding() {
                 </div>
 
                 <div id='selectbt'>
-                    <Link to='/'>
+                    <Link to='/market'>
                         <img src="/assets/images/landingpage/Pulseira1.svg" alt="" />
                         <h1>Pulseiras</h1>
                     </Link>
-                    <Link to='/'>
+                    <Link to='/market'>
                         <img src="/assets/images/landingpage/Anéis1.svg" alt="" />
                         <h1>Anéis</h1>
                     </Link>
-                    <Link to='/'>
+                    <Link to='/market'>
                         <img src="/assets/images/landingpage/RelógioPulso1.svg" alt="" />
                         <h1>Relógios</h1>
                     </Link>
                 </div>
             </section>
 
-            <Link to='' id='bannerrdp'></Link>
+            <Link to='/market' id='bannerrdp'></Link>
             <CompRodape />
         </div>
     )
