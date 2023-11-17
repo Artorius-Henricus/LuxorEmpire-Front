@@ -65,7 +65,7 @@ root.render(
         <Route path='/pagamento/pedido/:id' element={<PaginaPedidoConcluido />} />
         <Route path='/produto/:id' element={<Paginaproduto />} />   
         <Route path='/market' element={<Paginamarket/>} />   
-        <Route path='/informações' element={<PaginaInformações />} />
+        <Route path='/informacoes' element={<PaginaInformações />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

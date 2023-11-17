@@ -38,104 +38,105 @@ export default function Paginamarket () {
         marginTop: '100px',
     };
 
+    const [categoriaSelecionado, setCategoriaSelecionado] = useState(null);
+    const [materialSelecionado, setMaterialSelecionado] = useState(null);
+    const [gemaSelecionado, setGemaSelecionado] = useState(null);
+
+    async function Buscar() {
+        try {
+            let url = "http://localhost:5000/produtos/all";
+            
+
+            let value = 0;
+            if (categoriaSelecionado != null){
+                value += 1;
+                url += `?categoria=${categoriaSelecionado}`
+            }
+            
+            if (materialSelecionado != null){
+                if (value > 0){
+                    url += `&material=${materialSelecionado}`
+                }
+                else{
+                    value += 1
+                    url += `?material=${materialSelecionado}`
+                }
+            }
+            
+            if (gemaSelecionado != null){
+                if (value > 0)
+                {
+                    url += `&gema=${gemaSelecionado}`
+                }
+                else{
+                    url += `?gema=${gemaSelecionado}`
+                }
+            }
+
+            const command = await axios.get(url)
+            setProdutos(command.data);
+        } catch (error) {
+            ListarProdutos();
+        }
+    }
+
+    async function BuscarPesquisa(pesquisa) {
+        try {
+            const command = await axios.get(`http://localhost:5000/produtos/find?name=${pesquisa}`);
+            setProdutos(command.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(
         <div className='pagina-market'>
-            <CompCabecalho />
+            <CompCabecalho Produtos={BuscarPesquisa}/>
+            
             <img id='banner' src='/assets/images/market-page/Rolex Luxor 2.svg' />   
             <div className='tudo'>
                 <div className='esq'>
                     <div className='agrupamento'>
-                        <button>Carregar</button>
-                         <h2>Categoria</h2>
-                         <div className='types'>
-                            <input type='radio' />
-                            <p>Anéis</p>
-                         </div>
-                    
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Brincos</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Colares</p>
-                         </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Pingentes</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Pulseiras</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Relógios</p>
+                        <button onClick={Buscar}>Carregar</button>
+                        <div className='filtragem'>
+                            <select value={categoriaSelecionado} onChange={e => setCategoriaSelecionado(e.target.value)}>
+                                <option value="">Selecione uma Categoria  </option> 
+                                <option value="Anel">Anel</option>
+                                <option value="Brinco">Brinco</option>
+                                <option value="Colar">Colar</option>
+                                <option value="Pingete">Pingente</option>
+                                <option value="Pulseira">Pulseira</option>
+                                <option value="Relógio">Relógio</option>
+                            </select>
                         </div>
                     </div>
 
                     <div className='agrupamento'>
                         <h2>Material</h2>
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Ouro</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Prata</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Titânio</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Aço inoxidável</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Couro</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Brilhantes</p>
+                        <div className='filtragem'>
+                            <select  value={materialSelecionado} onChange={e => setMaterialSelecionado(e.target.value)}>
+                                <option value="">Selecione um Material       {/*<img src='/assets/images/market-page/img-destaque-select.svg' />*/}</option> 
+                                <option value="Ouro">Ouro</option>
+                                <option value="Prata">Prata</option>
+                                <option value="Titânio">Titânio</option>
+                                <option value="Aço Inoxidável">Aço Inoxidável</option>
+                                <option value="Couro">Couro</option>
+                                <option value="Brilhantes">Brilhantes </option>
+                            </select>
                         </div>
                     </div>
 
                     <div className='agrupamento'>
                         <h2>Gema</h2>
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Diamante</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Esmeralda</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Rubi</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Safira</p>
-                        </div>
-
-                        <div className='types'>
-                            <input type='radio' />
-                            <p>Pérola</p>
+                        <div className='filtragem'>
+                            <select value={gemaSelecionado} onChange={e => setGemaSelecionado(e.target.value)}>
+                                <option value="">Selecione uma Gema      {/*<img src='/assets/images/market-page/img-destaque-select.svg' />*/}</option> 
+                                <option value="Diamente">Diamante</option>
+                                <option value="Esmeralda">Esmeralda</option>
+                                <option value="Rubi">Rubi</option>
+                                <option value="Safira">Safira</option>
+                                <option value="Pérola">Pérola </option>
+                            </select>
                         </div>
                     </div>
                 </div>

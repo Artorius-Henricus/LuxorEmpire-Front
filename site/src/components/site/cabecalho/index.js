@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react';
 import LoginUser from '../user-login';
 import RegisterUser from '../user-register';
 import Notificações from '../../../pages/site/notificacoes';
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import storage from "local-storage"
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-export default function CompCabecalho() {
+export default function CompCabecalho({Produtos}) {
     const [mostrarComponente1, setMostrarComponente1] = useState(true);
 
     const trocarComponente = () => {
@@ -49,13 +50,29 @@ export default function CompCabecalho() {
         setAbrirRegistro(false);
     }
 
+    const location = useLocation();
+
+    const [pesquisa, setPesquia] = useState('');
+
+    async function PesquisarNome() {
+        try {
+            if (location != "/market") {
+                navigate("/market")
+            }
+            Produtos(pesquisa);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
     return(
         <div className="comp-cabecalho">
 
             <div className='sombra'>
                 <div id='search'>
-                    <button><img src="/assets/images/cabecalho/Lupa.svg" alt="BtPesquisar" /></button>
-                    <input type='text' />
+                    <button onClick={() => PesquisarNome()}><img src="/assets/images/cabecalho/Lupa.svg" alt="BtPesquisar" /></button>
+                    <input type='text' value={pesquisa} onChange={e => setPesquia(e.target.value)} />
                 </div>
 
                 <Link to='/' id='logo'><img src="/assets/images/cabecalho/Logo.svg" alt="Logo" /></Link>
