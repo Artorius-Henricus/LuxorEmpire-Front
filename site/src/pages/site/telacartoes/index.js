@@ -87,15 +87,6 @@ export default function PaginaCartoes() {
 
                     <section className='rightside'>
                         <Link id='sume' to='/cartoes/cadastro'>Adicionar Cartão</Link>
-
-                        <div className='cartaoselected'>
-                            <img src="/assets/images/cartoes/913Au7zc4eL.svg" alt="" id='cartaoimg'/>
-                            <div>
-                                <h1>Itaucard Mastercard Default</h1>
-                                <h3>Cartão de crédito terminando em •••• 0000</h3>
-                                <button>Editar</button>
-                            </div>
-                        </div>
                         <Link id='resp' to='/cartoes/cadastro'>Adicionar Cartão</Link>
                     </section>
                 </div>

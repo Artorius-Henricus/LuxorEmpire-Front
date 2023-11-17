@@ -82,16 +82,6 @@ export default function PaginaCartoes() {
 
                     <section className='rightside'>
                         <Link id='some' to='/enderecos/cadastro'>Adicionar Endereço</Link >
-
-                        <div className='selecendblock'>
-                            <h1>Arthur Silva Alves</h1>
-                            <h3>Brasil</h3>
-                            <h3>04840-650</h3>
-                            <h3>Rua Pontes Gestal, 93</h3>
-                            <h3>Conjunto Habitacional Brigadeiro Faria Lima</h3>
-                            <h3>São Paulo, SP</h3>
-                            <button>Editar</button>
-                        </div>
                         <Link id='aparecer' to='/enderecos/cadastro'>Adicionar Endereço</Link >
                     </section>
                 </article>

@@ -65,6 +65,7 @@ export default function CompCabecalho({Produtos}) {
         }
     }
 
+    const [responsive, setResponsive] = useState(false);
 
     return(
         <div className="comp-cabecalho">
@@ -106,12 +107,11 @@ export default function CompCabecalho({Produtos}) {
                 </button>
             </div>  
             <nav id='navegation-bar'>
-                <Link to='/'>PACOTES PREMIUM</Link>
-                <Link to='/'>JÓIAS</Link>
-                <Link to='/'>ACESSÓRIOS</Link>
-                <Link to='/'>RELÓGIOS</Link>
-                <Link to='/'>LANÇAMENTOS</Link>
-                <Link to='/'>MASCULINO</Link>
+                <Link to='/market'>JÓIAS</Link>
+                <Link to='/market'>ACESSÓRIOS</Link>
+                <Link to='/market'>RELÓGIOS</Link>
+                <Link to='/market'>LANÇAMENTOS</Link>
+                <Link to='/market'>MASCULINO</Link>
                 {mostrarComponente1 
                     ? (
                         <RegisterUser isOpen={abrirRegistro} onClose={fecharReg} trocar={trocarComponente}/>

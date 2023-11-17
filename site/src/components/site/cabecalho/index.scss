@@ -147,34 +147,6 @@
     .menu img {
         display: none;
     }
-
-    @media ( max-width: 1258px )  {
-        .menu  {
-        display: block;
-        }
-        .menu  img {
-        display: block;
-        
-        }
-        #buttons-menu {
-            display: none;
-        }
-
-        #navegation-bar {
-            display: none;
-        }
-    
-        .sombra{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-        }
-    }
       
 }
 
