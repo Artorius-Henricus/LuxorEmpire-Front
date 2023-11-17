@@ -3,8 +3,45 @@
     flex-direction: row;
     width: 100vw;
 
-    .umdois {
-        width: 200px;
-        height: 300px;
+    .corp {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 40px;
+    }
+
+    .corp > h1 {
+        font: 32px "Bebas Neue";
+        color: #3D3D3D;
+    }
+
+    .title {
+        font: 32px "Bebas neue";
+        color: #000000;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .graficosdiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        border: 1px solid #3D3D3D;
+        border-radius: 3px;
+        margin: 10px;
+        padding: 20px 5px 0px 5px;
+    }
+
+    .genereta {
+        display: flex;
+        flex-direction: column;
+        width: 318px;
+        height: 403px;
+        overflow-y: scroll;
     }
 }

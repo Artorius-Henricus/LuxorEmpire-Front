@@ -1,19 +1,27 @@
 import { useState } from 'react';
 import './index.scss';
+import storage from "local-storage"
 
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 export default function CompMenuBar() {
     const [shoff, setShoff] = useState(false);
     const [shoff2, setShoff2] = useState(false);
+
+    const navigate = useNavigate();
+
+    function Deslogar() {
+        storage.remove('admin-info');
+        navigate('/adm');
+    }
 
     return (
         <div className="comp-menu-bar">
             <div id='adm-profile'>
                 <img src="/assets/images/cabecalho/Usuario.svg" alt="" />
                 <div>
-                    <h1>Admin Name</h1>
-                    <button>Editar Perfil</button>
+                    <h1>Admin</h1>
+                    <button onClick={Deslogar}>Sair da Conta</button>
                 </div>
             </div>
             <img src="/assets/images/rodape/LogoResu.svg" alt="" id='logoadm'/>

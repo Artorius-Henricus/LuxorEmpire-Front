@@ -92,15 +92,14 @@ export default function Paginamarket () {
     return(
         <div className='pagina-market'>
             <CompCabecalho Produtos={BuscarPesquisa}/>
-            
+
             <img id='banner' src='/assets/images/market-page/Rolex Luxor 2.svg' />   
             <div className='tudo'>
                 <div className='esq'>
                     <div className='agrupamento'>
-                        <button onClick={Buscar}>Carregar</button>
+                        <button onClick={Buscar} id='btcarregar'>Carregar</button>
                         <div className='filtragem'>
                             <select value={categoriaSelecionado} onChange={e => setCategoriaSelecionado(e.target.value)}>
-                                <option value="">Selecione uma Categoria  </option> 
                                 <option value="Anel">Anel</option>
                                 <option value="Brinco">Brinco</option>
                                 <option value="Colar">Colar</option>
@@ -115,7 +114,6 @@ export default function Paginamarket () {
                         <h2>Material</h2>
                         <div className='filtragem'>
                             <select  value={materialSelecionado} onChange={e => setMaterialSelecionado(e.target.value)}>
-                                <option value="">Selecione um Material       {/*<img src='/assets/images/market-page/img-destaque-select.svg' />*/}</option> 
                                 <option value="Ouro">Ouro</option>
                                 <option value="Prata">Prata</option>
                                 <option value="Titânio">Titânio</option>
@@ -130,7 +128,6 @@ export default function Paginamarket () {
                         <h2>Gema</h2>
                         <div className='filtragem'>
                             <select value={gemaSelecionado} onChange={e => setGemaSelecionado(e.target.value)}>
-                                <option value="">Selecione uma Gema      {/*<img src='/assets/images/market-page/img-destaque-select.svg' />*/}</option> 
                                 <option value="Diamente">Diamante</option>
                                 <option value="Esmeralda">Esmeralda</option>
                                 <option value="Rubi">Rubi</option>
@@ -145,7 +142,7 @@ export default function Paginamarket () {
                     <div className='dir'>
                         <div className='filtragem'>
                             <select>
-                                <option>Destaque       {/*<img src='/assets/images/market-page/img-destaque-select.svg' />*/}</option> 
+                                <option>Destaque</option> 
                                 <option>Preço: Menor ao Maior</option>
                                 <option>Preço: Maior ao Menor</option>
                                 <option>A - Z</option>
@@ -156,26 +153,33 @@ export default function Paginamarket () {
                         </div>
                     </div>
 
-                    {produtos.map((item, index) => {
-                    if (index % 4 === 0) {
-                        const grupo = produtos.slice(index, index + 4);
-
-                        return (
-                        <div className='content' key={index}>
-                            {grupo.map((produto) => (
-                            <Link key={produto.Id} to={`/produto/${produto.Id}`}>
-                                <CompIndicacoes
-                                nome={produto.Nome}
-                                preco={produto.Preço}
-                                imagem={produto.Capa}
-                                />
-                            </Link>
-                            ))}
+                    {produtos.length === 0 ? (
+                        <div className='content'>
+                            Carregando Produtos
+                            <img src="https://i.gifer.com/ZKZg.gif" alt="" />
                         </div>
-                        );
-                    }
-                    return null; // Retorna null para os itens que já foram renderizados no grupo anterior
-                    })}
+                    ) : (
+                        produtos.map((item, index) => {
+                            if (index % 4 === 0) {
+                                const grupo = produtos.slice(index, index + 4);
+
+                                return (
+                                    <div className='content' key={index}>
+                                        {grupo.map((produto) => (
+                                            <Link key={produto.Id} to={`/produto/${produto.Id}`}>
+                                                <CompIndicacoes
+                                                    nome={produto.Nome}
+                                                    preco={produto.Preço}
+                                                    imagem={produto.Capa}
+                                                />
+                                            </Link>
+                                        ))}
+                                    </div>
+                                );
+                            }
+                            return null; // Retorna null para os itens que já foram renderizados no grupo anterior
+                        })
+                    )}
                 </div>
                 
             </div> 
