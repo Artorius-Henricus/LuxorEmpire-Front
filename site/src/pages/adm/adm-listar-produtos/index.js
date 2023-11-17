@@ -3,9 +3,23 @@ import "./index.scss";
 import CompMenuBar from '../../../components/adm/menubar';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import storage from "local-storage"
 
 export default function AdmListarProdutos() {
+    const [adminInfos, setAdminInfos] = useState('')
+
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!storage('admin-info')) {
+            navigate('/adm')
+        }
+        else {
+        setAdminInfos(storage('admin-info'));
+        }
+    }, [])
+
     const [aneis, setAneis] = useState([]);
     const [pingentes, setPingentes] = useState([]);
     const [brincos, setBrincos] = useState([]);

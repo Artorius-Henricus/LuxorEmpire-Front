@@ -7,6 +7,18 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function AdmPedidosConcluidos() {
+    const [adminInfos, setAdminInfos] = useState('')
+
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!storage('admin-info')) {
+            navigate('/adm')
+        }
+        else {
+        setAdminInfos(storage('admin-info'));
+        }
+    }, [])
 
     const [produtos, setProduto] = useState([]);
 

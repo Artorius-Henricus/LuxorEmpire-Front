@@ -89,7 +89,7 @@ export default function AdmCentral() {
   async function Buscarpedidos() {
     try {
       const command = await axios.get(`http://localhost:5000/usuario/pedidos`)
-      setPedidos(command.data)
+      setPedidos([command.data])
     } 
     catch (error) {
       console.log(error)
@@ -100,12 +100,11 @@ export default function AdmCentral() {
     if (adminInfos){
       Buscarpedidos();
     }
-  }, [adminInfos, Buscarpedidos])
+  }, [adminInfos])
 
     return(
         <div className="pagina-adm-central">
             <CompMenuBar />
-            <button onClick={Buscarpedidos}>CLICK</button>
             <article className='corp'>
               <h1>Central</h1>
 
@@ -141,7 +140,9 @@ export default function AdmCentral() {
                         <div className='genereta'>
                         {pedidos.length > 0 ? (
                         pedidos.map(item =>
-                            <h1>haha</h1>
+                          <div>
+                            <p>{item.DTPED}</p>
+                          </div>
                         )
                         ) : (
                         <p style={{alignSelf: "Center"}}>Ainda não há transações disponíveis.</p>

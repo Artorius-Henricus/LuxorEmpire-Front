@@ -1,8 +1,22 @@
 import './index.scss';
-
+import storage from "local-storage"
 import CompMenuBar from '../../../components/adm/menubar';
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function AdmPedidosAndamento() {
+    const [adminInfos, setAdminInfos] = useState('')
+
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!storage('admin-info')) {
+            navigate('/adm')
+        }
+        else {
+        setAdminInfos(storage('admin-info'));
+        }
+    }, [])
 
     return(
     <div className="adm-pagina-pedidos-andamento">

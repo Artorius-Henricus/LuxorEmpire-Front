@@ -1,13 +1,27 @@
 import './index.scss';
 
 import CompMenuBar from '../../../components/adm/menubar';
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import storage from "local-storage"
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function AdmCadastroProduto() {
+    const [adminInfos, setAdminInfos] = useState('')
+
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!storage('admin-info')) {
+            navigate('/adm')
+        }
+        else {
+        setAdminInfos(storage('admin-info'));
+        }
+    }, [])
+
     const [capaProduto, setCapaProduto] = useState("");
     const [capaPreview, setCapaPreview] = useState("");
 
