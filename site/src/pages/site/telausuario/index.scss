@@ -58,9 +58,14 @@
         flex-direction: row;
     }
 
+    #blocksresp{
+        display: none;
+    }
+
     #blocks div {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: flex-end;
         justify-content: center;
         margin: 0px 10px;
@@ -142,6 +147,7 @@
 
     #btsvsc {
         display: flex;
+        margin: 20px 0px 0px 0px;
         flex-direction: row;
         align-self: center;
         gap: 20px;
@@ -164,5 +170,51 @@
         height: auto !important;
         font: 15px "Inter" !important;
         margin-top: 10px;
+    }
+
+    @media (max-width: 500px) {
+    
+        .corp{
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        #sideleft p {
+            text-align: start;
+        }
+
+        #sideleft input {
+            width: 70vw;
+        }
+
+        #blocks{
+            display: none;
+        }
+
+        #blocksresp{
+            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-items: start;
+            align-items: center;
+        }
+
+        #sideright button{
+            margin: 20px;
+        }
+
+        #btsvsc{
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            flex-direction: column;
+        }
+
+        .usermenusprofile{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
     }
 }

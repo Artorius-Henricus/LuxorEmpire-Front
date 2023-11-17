@@ -8,11 +8,12 @@
         flex-direction: row;
     }
 
-    .corp > article {
+    .geral {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 20px 40px;
+        margin: 10px 0px;
         flex-grow: 1;
     }
 
@@ -231,7 +232,7 @@
             display: block;
         }
 
-        article {
+        .geral {
             flex-direction: column;
             justify-content: center;  
             align-items: center;      
@@ -266,7 +267,7 @@
         
         }
         
-        .corp > article{
+        .geral{
             flex-direction: column;
             align-items: center;
 

@@ -2,7 +2,7 @@ import './index.scss';
 
 import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
-
+import CompUserMenuResp from '../../../components/site/resp-usermenu';
 import CompUserMenu from '../../../components/site/usermenu';
 
 import storage from "local-storage"
@@ -135,6 +135,7 @@ export default function PaginaTelaUsuario(){
 
             <section className='corp'>
                 <CompUserMenu />
+                <CompUserMenuResp />
                 
 
                 <article className='usermenusprofile'>
@@ -153,6 +154,20 @@ export default function PaginaTelaUsuario(){
                                 <InputMask mask='999.999.999-99' placeholder='CPF' value={userCpf} onChange={e => setUserCpf(onlyNumbers(e.target.value))}/>
                                 <input type='text' value={userEmail} onChange={e => setUserEmail(e.target.value)}/>
                                 <InputMask mask='(99) 99999-9999' placeholder='Número de Telefone' value={userTelefone} onChange={e => setUserTelefone(onlyNumbers(e.target.value))}/>
+                                <input type='date' value={userNascimento} onChange={e => setUserNascimento(e.target.value)}/>
+                            </div>
+                        </div>
+                        <div id='blocksresp'>
+                            <div>
+                                <p>Nome de Usuário</p>
+                                <input type='text' value={userName} onChange={e => setUserName(e.target.value)}/>
+                                <p>CPF</p>
+                                <InputMask mask='999.999.999-99' placeholder='CPF' value={userCpf} onChange={e => setUserCpf(onlyNumbers(e.target.value))}/>
+                                <p>Email</p>
+                                <input type='text' value={userEmail} onChange={e => setUserEmail(e.target.value)}/>
+                                <p>Número de Telefone</p>
+                                <InputMask mask='(99) 99999-9999' placeholder='Número de Telefone' value={userTelefone} onChange={e => setUserTelefone(onlyNumbers(e.target.value))}/>
+                                <p>Data de Nascimento</p>
                                 <input type='date' value={userNascimento} onChange={e => setUserNascimento(e.target.value)}/>
                             </div>
                         </div>

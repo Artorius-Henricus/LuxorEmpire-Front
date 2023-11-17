@@ -59,7 +59,7 @@ export default function PaginaCartoes() {
             <div className='corp'>
                 <CompUserMenu />
                 <CompUserMenuResp/>
-                <article>
+                <div className='geral'>
                     <section className='leftside'>
                         <h1>Seus Endereços</h1>
                         
@@ -84,7 +84,7 @@ export default function PaginaCartoes() {
                         <Link id='some' to='/enderecos/cadastro'>Adicionar Endereço</Link >
                         <Link id='aparecer' to='/enderecos/cadastro'>Adicionar Endereço</Link >
                     </section>
-                </article>
+                </div>
             </div>
             <CompRodape />
         </div>
