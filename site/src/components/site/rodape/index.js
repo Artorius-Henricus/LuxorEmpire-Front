@@ -10,23 +10,23 @@ export default function CompRodape() {
             <div>
                 <h1>Institucional</h1>
 
-                <Link to=''>Formas de Entrega</Link>
-                <Link to=''>Políticas de Segurança</Link>
-                <Link to=''>Políticas de Privacidade</Link>
-                <Link to=''>Termos de Uso</Link>
+                <Link to='/informacoes'>Formas de Entrega</Link>
+                <Link to='/informacoes'>Políticas de Segurança</Link>
+                <Link to='/informacoes'>Políticas de Privacidade</Link>
+                <Link to='/informacoes'>Termos de Uso</Link>
             </div>
 
             <div>
                 <h1>Atendimento</h1>
 
-                <Link to=''>Trocas e Devoluções</Link>
-                <Link to=''>Central de Atendimento</Link>
+                <Link to='/informacoes'>Trocas e Devoluções</Link>
+                <Link to='/informacoes'>Central de Atendimento</Link>
             </div>
 
             <div>
                 <h1>Perfil</h1>
 
-                <Link to=''>Meus Pedidos</Link>
+                <Link to='/pedidos'>Meus Pedidos</Link>
                 <Link to=''>Notificações</Link>
                 <Link to=''>Meu Carrinho</Link>
             </div>
