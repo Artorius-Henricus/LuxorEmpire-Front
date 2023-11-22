@@ -26,12 +26,6 @@
         flex-direction: row;
     }
 
-    .images section {
-        display: flex;
-        flex-direction: column;
-        gap: 17px;
-    }
-
     .images div {
         display: flex;
         flex-direction: row;
@@ -41,7 +35,6 @@
         width: 100px;
         height: 100px;
         border-radius: 5px;
-        padding: 20px;
     }
 
     .images img {

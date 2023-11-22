@@ -25,18 +25,6 @@ export default function AdmCadastroProduto() {
     const [capaProduto, setCapaProduto] = useState("");
     const [capaPreview, setCapaPreview] = useState("");
 
-    const [produtoImagem1, setProdutoImagem1] = useState("");
-    const [previewImagem1, setPreviewImagem1] = useState("");
-
-    const [produtoImagem2, setProdutoImagem2] = useState("");
-    const [previewImagem2, setPreviewImagem2] = useState("");
-
-    const [produtoImagem3, setProdutoImagem3] = useState("");
-    const [previewImagem3, setPreviewImagem3] = useState("");
-
-    const [produtoImagem4, setProdutoImagem4] = useState("");
-    const [previewImagem4, setPreviewImagem4] = useState("");
-
     // Selects:
     const [tipoProduto, setTipoProduto] = useState("");
     const [generoProduto, setGeneroProduto] = useState("");
@@ -86,10 +74,6 @@ export default function AdmCadastroProduto() {
 
             const idp = command.data;
             const imgsendcapa = enviarImagensProduto(idp.id, capaProduto, "Capa do Produto", 'ds_capa');
-            const imgsend1 = enviarImagensProduto(idp.id, produtoImagem1, "Imagem 1", 'ds_imagem1');
-            const imgsend2 = enviarImagensProduto(idp.id, produtoImagem2, "Imagem 2", 'ds_imagem2');
-            const imgsend3 = enviarImagensProduto(idp.id, produtoImagem3, "Imagem 3", 'ds_imagem3');
-            const imgsend4 = enviarImagensProduto(idp.id, produtoImagem4, "Imagem 4", 'ds_imagem4');
         }
         
         catch (err) {
@@ -201,30 +185,6 @@ export default function AdmCadastroProduto() {
                                 <label>Imagem Capa</label>
                                 <img src={capaPreview} alt="Capa" onClick={() => escolherFoto('capa')}/>
                                 <button onClick={() => limparImagem(setCapaPreview, setCapaProduto, 'capa')}>Remover</button>
-                            </div>
-                            <div>
-                                <input type="file" id='imagem1' onChange={e => imageSelecionada(e, setPreviewImagem1, setProdutoImagem1)} />
-                                <label>Imagem 1</label>
-                                <img src={previewImagem1} alt="Imagem1" onClick={() => escolherFoto('imagem1')}/>
-                                <button onClick={() => limparImagem(setPreviewImagem1, setProdutoImagem1, 'imagem1')}>Remover</button>
-                            </div>
-                            <div>
-                                <input type="file" id='imagem2' onChange={e => imageSelecionada(e, setPreviewImagem2, setProdutoImagem2)} />
-                                <label>Imagem 2</label>
-                                <img src={previewImagem2} alt="Imagem2" onClick={() => escolherFoto('imagem2')}/>
-                                <button onClick={() => limparImagem(setPreviewImagem2, setProdutoImagem2,'imagem2')}>Remover</button>
-                            </div>
-                            <div>
-                                <input type="file" id='imagem3' onChange={e => imageSelecionada(e, setPreviewImagem3, setProdutoImagem3)} />
-                                <label>Imagem 3</label>
-                                <img src={previewImagem3} alt="Imagem3"  onClick={() => escolherFoto('imagem3')}/>
-                                <button onClick={() => limparImagem(setPreviewImagem3, setProdutoImagem3,'imagem3')}>Remover</button>
-                            </div>
-                            <div>
-                                <input type="file" id='imagem4' onChange={e => imageSelecionada(e, setPreviewImagem4, setProdutoImagem4)} />
-                                <label>Imagem 4</label>
-                                <img src={previewImagem4} alt="Imagem4" onClick={() => escolherFoto('imagem4')} />
-                                <button onClick={() => limparImagem(setPreviewImagem4, setProdutoImagem4,'imagem4')}>Remover</button>
                             </div>
                         </div>
                     </div>

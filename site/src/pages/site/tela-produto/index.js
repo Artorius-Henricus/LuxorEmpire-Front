@@ -90,20 +90,6 @@ export default function Paginaproduto() {
                 <article className='sectionprodu'>
                     <section className='imgsinfo'>
                         <div className='images'>
-                            <section>
-                                <div>
-                                    <img src={`http://129.148.42.252:5019/${produtoImagem1}`} alt="" />
-                                </div>
-                                <div>
-                                    <img src={`http://129.148.42.252:5019/${produtoImagem2}`} alt="" />
-                                </div>
-                                <div>
-                                    <img src={`http://129.148.42.252:5019/${produtoImagem3}`} alt="" />
-                                </div>
-                                <div>
-                                    <img src={`http://129.148.42.252:5019/${produtoImagem4}`} alt="" />
-                                </div>
-                            </section>
                             <div id='mainimg'>
                                 <img src={`http://129.148.42.252:5019/${capaProduto}`} alt="" id='mainimgg' />
                             </div>

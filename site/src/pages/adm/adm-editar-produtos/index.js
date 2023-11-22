@@ -35,18 +35,6 @@ export default function AdmEditarProduto() {
 
     const [capaProduto, setCapaProduto] = useState("");
     const [capaPreview, setCapaPreview] = useState("");
-    
-    const [produtoImagem1, setProdutoImagem1] = useState("");
-    const [previewImagem1, setPreviewImagem1] = useState("");
-
-    const [produtoImagem2, setProdutoImagem2] = useState("");
-    const [previewImagem2, setPreviewImagem2] = useState("");
-
-    const [produtoImagem3, setProdutoImagem3] = useState("");
-    const [previewImagem3, setPreviewImagem3] = useState("");
-
-    const [produtoImagem4, setProdutoImagem4] = useState("");
-    const [previewImagem4, setPreviewImagem4] = useState("");
 
     function escolherFoto(identificador){
         document.getElementById(identificador).click();
@@ -66,27 +54,11 @@ export default function AdmEditarProduto() {
         const imagens = command.data;
         if (imagens || imagens.data) {
             setCapaProduto(imagens.Capa);
-            setProdutoImagem1(imagens.Imagem1);
-            setProdutoImagem2(imagens.Imagem2);
-            setProdutoImagem3(imagens.Imagem3);
-            setProdutoImagem4(imagens.Imagem4);
 
             setCapaPreview("http://129.148.42.252:5019/"+imagens.Capa);
-            setPreviewImagem1("http://129.148.42.252:5019/"+imagens.Imagem1);
-            setPreviewImagem2("http://129.148.42.252:5019/"+imagens.Imagem2);
-            setPreviewImagem3("http://129.148.42.252:5019/"+imagens.Imagem3);
-            setPreviewImagem4("http://129.148.42.252:5019/"+imagens.Imagem4);
         } else {
             setCapaProduto(null);
-            setProdutoImagem1(null);
-            setProdutoImagem2(null);
-            setProdutoImagem3(null);
-            setProdutoImagem4(null);
             setCapaPreview(null);
-            setPreviewImagem1(null);
-            setPreviewImagem2(null);
-            setPreviewImagem3(null);
-            setPreviewImagem4(null);
         }
     };
 
@@ -104,27 +76,11 @@ export default function AdmEditarProduto() {
 
         if (imagens || imagens.data) {
             setCapaProduto(imagens.Capa);
-            setProdutoImagem1(imagens.Imagem1);
-            setProdutoImagem2(imagens.Imagem2);
-            setProdutoImagem3(imagens.Imagem3);
-            setProdutoImagem4(imagens.Imagem4);
 
             setCapaPreview("http://129.148.42.252:5019/"+imagens.Capa);
-            setPreviewImagem1("http://129.148.42.252:5019/"+imagens.Imagem1);
-            setPreviewImagem2("http://129.148.42.252:5019/"+imagens.Imagem2);
-            setPreviewImagem3("http://129.148.42.252:5019/"+imagens.Imagem3);
-            setPreviewImagem4("http://129.148.42.252:5019/"+imagens.Imagem4);
         } else {
             setCapaProduto(null);
-            setProdutoImagem1(null);
-            setProdutoImagem2(null);
-            setProdutoImagem3(null);
-            setProdutoImagem4(null);
             setCapaPreview(null);
-            setPreviewImagem1(null);
-            setPreviewImagem2(null);
-            setPreviewImagem3(null);
-            setPreviewImagem4(null);
         }
     }
 
@@ -136,21 +92,17 @@ export default function AdmEditarProduto() {
                 material: materialProduto,
                 categoria: tipoProduto,
                 gema: gemaProduto,
-                preco: precoProduto.trim(),
+                preco: precoProduto,
                 descricao: descricaoProduto.trim()
             };
             const command = await axios.post(`http://129.148.42.252:5019/produto/atualizar/${id}`, produto);
             toast.success("Produto Cadastrado");
 
             const imgsendcapa = enviarImagensProduto(id, capaProduto, "Capa do Produto", 'ds_capa');
-            const imgsend1 = enviarImagensProduto(id, produtoImagem1, "Imagem 1", 'ds_imagem1');
-            const imgsend2 = enviarImagensProduto(id, produtoImagem2, "Imagem 2", 'ds_imagem2');
-            const imgsend3 = enviarImagensProduto(id, produtoImagem3, "Imagem 3", 'ds_imagem3');
-            const imgsend4 = enviarImagensProduto(id, produtoImagem4, "Imagem 4", 'ds_imagem4');
         }
         
-        catch (err) {
-            toast.error(err.response.data.erro)
+        catch (error) {
+            toast.error(error.message)
         }
     };
 
@@ -172,8 +124,13 @@ export default function AdmEditarProduto() {
                 toast.success("Imagem Cadastrada: "+`${texdt}`);
             }
         }
-        catch (err) {
-            toast.error(err.response.data.erro)
+        catch (error) {
+            if (error.message == "Request failed with status code 400") {
+                console.log("Imagem Não foi Cadastrada")
+            }
+            else {
+                toast.error(error.message)
+            }
         }
     }
 
@@ -264,28 +221,6 @@ export default function AdmEditarProduto() {
                         <label>Imagem Capa</label>
                         <img src={capaPreview} alt="Capa" onClick={() => escolherFoto('capa')} id='capa1'/>
                         <button onClick={limparImagem}>Limpar Imagens</button>
-                        <div id="imagens">
-                            <div>
-                                <input type="file" id='imagem1' onChange={e => imageSelecionada(e, setPreviewImagem1, setProdutoImagem1)} />
-                                <label>Imagem 1</label>
-                                <img src={previewImagem1} alt="Imagem1" onClick={() => escolherFoto('imagem1')}/>
-                            </div>
-                            <div>
-                                <input type="file" id='imagem2' onChange={e => imageSelecionada(e, setPreviewImagem2, setProdutoImagem2)} />
-                                <label>Imagem 2</label>
-                                <img src={previewImagem2} alt="Imagem2" onClick={() => escolherFoto('imagem2')}/>
-                            </div>
-                            <div>
-                                <input type="file" id='imagem3' onChange={e => imageSelecionada(e, setPreviewImagem3, setProdutoImagem3)} />
-                                <label>Imagem 3</label>
-                                <img src={previewImagem3} alt="Imagem3"  onClick={() => escolherFoto('imagem3')}/>
-                            </div>
-                            <div>
-                                <input type="file" id='imagem4' onChange={e => imageSelecionada(e, setPreviewImagem4, setProdutoImagem4)} />
-                                <label>Imagem 4</label>
-                                <img src={previewImagem4} alt="Imagem4" onClick={() => escolherFoto('imagem4')} />  
-                            </div>
-                        </div>
                     </section>
                 </article>
             </article>
