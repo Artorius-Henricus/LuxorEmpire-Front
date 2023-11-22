@@ -3,7 +3,7 @@ import CompCabecalho from '../../../components/site/cabecalho';
 import CompRodape from '../../../components/site/rodape';
 import CompIndicacoes from '../../../components/site/indicacoes-produto';
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import storage from "local-storage"
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -11,7 +11,19 @@ import { toast } from 'react-toastify';
 export default function Paginaproduto() {
     const [quantidade, setQuantidade] = useState(1);
 
-    const [userInfo, setUserInfo] = useState('')
+    const [userInfo, setUserInfo] = useState('');
+
+    const [produtos, setProdutos] = useState([]);
+
+    async function ListarProdutos() {
+        const command = await axios.get("http://129.148.42.252:5019/produtos/all");
+        setProdutos(command.data);
+    }
+
+    useEffect(() => {
+        ListarProdutos();
+    }, 
+    [])
 
     function QuantRemove() {
         if(quantidade == 1) {
@@ -23,10 +35,6 @@ export default function Paginaproduto() {
     }
 
     const [capaProduto, setCapaProduto] = useState("");
-    const [produtoImagem1, setProdutoImagem1] = useState("");
-    const [produtoImagem2, setProdutoImagem2] = useState("");
-    const [produtoImagem3, setProdutoImagem3] = useState("");
-    const [produtoImagem4, setProdutoImagem4] = useState("");
 
     // Selects:
     const [tipoProduto, setTipoProduto] = useState("");
@@ -52,10 +60,6 @@ export default function Paginaproduto() {
         setTipoProduto(data.Categoria)
 
         setCapaProduto(data.Capa)
-        setProdutoImagem1(data.Imagem1)
-        setProdutoImagem2(data.Imagem2)
-        setProdutoImagem3(data.Imagem3)
-        setProdutoImagem4(data.Imagem4)
     }
 
     useEffect(() => {
@@ -148,11 +152,15 @@ export default function Paginaproduto() {
                     </div>
 
                     <div className='items'>
-                        <CompIndicacoes />
-                        <CompIndicacoes />
-                        <CompIndicacoes />
-                        <CompIndicacoes />
-                        <CompIndicacoes />
+                    {produtos.slice(0, 5).map((item, index) => (
+                        <Link key={item.Id} to={`/produto/${item.Id}`}>
+                        <CompIndicacoes
+                        nome={item.Nome}
+                        preco={item.Preço}
+                        imagem={item.Capa}
+                        />
+                    </Link>
+                    ))}
                     </div>
                 </section>
             <CompRodape />
