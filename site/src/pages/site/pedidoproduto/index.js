@@ -234,7 +234,7 @@ export default function PedidoProduto() {
                                     <span className={`line ${confirmed ? 'green' : 'gray'}`}></span>
 
                                     <div>
-                                        <img src="/assets/images/produtos/compras.svg" alt="Sacola" />
+                                        <img src="/assets/images/produtos/Compras.svg" alt="Sacola" />
                                         {confirmed &&
                                             
                                             <img src="/assets/images/produtos/confirm.svg" alt="" id='img_confirm'/>
