@@ -170,10 +170,14 @@ export default function Pagamento() {
 
             setIdGerado(uuidv4());
 
+            let enderecoid = enderecoSelecionado.Id;
+
+            let cartaoid = cartaoSelecionado.Id;
+
             let infos = {
                 pedido: idgerado,
-                endereco: enderecoSelecionado.Id,
-                cartao: cartaoSelecionado.Id,
+                endereco: enderecoid,
+                cartao: cartaoid,
                 frmpagamento: 'Cartão de Crédito',
                 parcelas: parcelamento,
                 dtpedido: dataFormatadaString,

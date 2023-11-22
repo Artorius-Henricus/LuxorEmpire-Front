@@ -69,8 +69,12 @@ export default function Notificações(){
                             <p>Nenhuma Notificação por Aqui.</p>
                             )}
                         </div>
-
-                        <button id='apagar' onClick={Limpar}>Apagar</button>
+                        
+                        {notificacao.length > 0 ? (
+                            <button id='apagar' onClick={Limpar}>Apagar</button>
+                        ) : (
+                            <span></span>
+                        )}
                     </div>
                 </div>
             </div>

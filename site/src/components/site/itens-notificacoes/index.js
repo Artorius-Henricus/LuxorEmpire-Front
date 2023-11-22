@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 export default function ItensNotificacoes1(props){
@@ -7,7 +8,7 @@ export default function ItensNotificacoes1(props){
 
             <p>{props.notificacao}</p>
 
-            <b>Pedido: {props.pedido}</b>
+            <Link to={`/pedido/${props.pedido}`}><b>Pedido: {props.pedido}</b></Link>
         </div>
     )
 }

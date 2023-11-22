@@ -7,6 +7,24 @@
     width: 70vw;
     justify-content: space-between;
 
+    > h1 {
+        font: 20px "Inter";
+    }
+
+    > p {
+        font: 20px "Inter";
+    }
+
+    > a {
+        font: 15px "Inter";
+        color: #000;
+        text-decoration: none;
+    }
+
+    >:hover {
+        text-decoration: underline;
+    }
+
     @media (max-width: 500px) {
         flex-direction: column;
     }
