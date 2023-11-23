@@ -75,17 +75,22 @@ export default function Paginaproduto() {
 
     async function AdicionarCarrinho() {
         try {
-            let idprod = id;
-            let info = {
-                qtd: quantidade,
-                user: userInfo.id
+            if (!storage('user-info')) {
+                toast.error("Primeiro faça Login com a sua conta!");
             }
-            const url = `http://129.148.42.252:5019/produto/carrinho/add/${idprod}`
-            const command = await axios.post(url, info);
-            toast.success("Produto Adicionado ao Carrinho");
+            else {
+                let idprod = id;
+                let info = {
+                    qtd: quantidade,
+                    user: userInfo.id
+                }
+                const url = `http://129.148.42.252:5019/produto/carrinho/add/${idprod}`
+                const command = await axios.post(url, info);
+                toast.success("Produto Adicionado ao Carrinho");
+            }
         }
         catch (err) {
-            toast.success("Não foi possível adicionar ao Carrinho");
+            toast.error("Não foi possível adicionar ao Carrinho");
         }
     }
     return(
