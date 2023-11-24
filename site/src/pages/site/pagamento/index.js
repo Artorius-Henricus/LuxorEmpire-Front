@@ -338,7 +338,7 @@ export default function Pagamento() {
                             </select>
                         </div>
                         <div id='total'>
-                            <h4>Valor Parcela: R$ {(parseFloat(prodPrice/parcelamento)+70).toFixed(2)}</h4>
+                            <h4>Valor Parcela: R$ {(parseFloat(prodPrice/parcelamento)).toFixed(2)}</h4>
                             <h3><b>Total do Pedido: R$ {prodPrice+70}</b></h3>
                         </div>
                     </div>

@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 
 export default function Paginaproduto() {
     const [quantidade, setQuantidade] = useState(1);
+    const navigate = useNavigate();
 
     const [userInfo, setUserInfo] = useState('');
 
@@ -72,6 +73,14 @@ export default function Paginaproduto() {
         }
     }, []);
 
+    function handleNavigateAndRefresh(rota) {
+        // Substitua '/outra-pagina' pelo caminho da página para a qual você deseja navegar
+        navigate('/produto/'+rota);
+        
+        // Recarrega a página
+        window.location.reload();
+      };
+
 
     async function AdicionarCarrinho() {
         try {
@@ -93,6 +102,7 @@ export default function Paginaproduto() {
             toast.error("Não foi possível adicionar ao Carrinho");
         }
     }
+
     return(
         <div className='pagina-produto'>
             <CompCabecalho />
@@ -157,14 +167,14 @@ export default function Paginaproduto() {
                     </div>
 
                     <div className='items'>
-                    {produtos.slice(0, 5).map((item, index) => (
-                        <Link key={item.Id} to={`/produto/${item.Id}`}>
-                        <CompIndicacoes
-                        nome={item.Nome}
-                        preco={item.Preço}
-                        imagem={item.Capa}
-                        />
-                    </Link>
+                    {produtos.slice(0, 5).map((item) => (
+                        <Link onClick={() => handleNavigateAndRefresh(item.Id)}>
+                            <CompIndicacoes
+                            nome={item.Nome}
+                            preco={item.Preço}
+                            imagem={item.Capa}
+                            />
+                        </Link>
                     ))}
                     </div>
                 </section>

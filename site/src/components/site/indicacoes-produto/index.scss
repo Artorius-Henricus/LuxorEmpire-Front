@@ -6,33 +6,33 @@
     border: 1px solid #6c6c6c;
     padding: 12px 0px 0px 0px;
     overflow: hidden;
-}
 
-.sub {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 188px;
-    height: 188px;
-    border: 1px solid #d9d9d9;
-    align-self: center;
-    overflow: hidden;
+    .sub {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 188px;
+        height: 188px;
+        border: 1px solid #d9d9d9;
+        align-self: center;
+        overflow: hidden;
+    }
     
-}
-
-#height {
-    height: 35px;
-}
- 
-.main p {
-    margin-left: 12px;
-}
-
-#darktext {
-    font: 20px "Inter";
-}
-
-#text {
-    font: 12px "Inter";
+    #height {
+        height: 35px;
+        margin-bottom: 10px;
+    }
+     
+    p {
+        margin-left: 12px;
+    }
+    
+    #darktext {
+        font: 20px "Inter";
+    }
+    
+    #text {
+        font: 12px "Inter";
+    }
 }
