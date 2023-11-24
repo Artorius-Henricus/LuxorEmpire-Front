@@ -11,7 +11,7 @@ Fornecer produtos de alta qualidade e design exclusivo no segmento de joias, por
 *O Contrato Social é a base legal da Luxor Empire, estabelecendo os direitos e deveres dos sócios, endereço oficial da empresa, suas atividades principais, objetivos e demais informações relevantes.*
 
 ## Alvará de Funcionamento
-A Luxor Empire possui Alvará de Funcionamento emitido pela prefeitura de [Nome da Cidade], regularizando o imóvel utilizado para as atividades comerciais. O prazo de validade está de acordo com as normas municipais vigentes.
+A Luxor Empire possui Alvará de Funcionamento emitido pela prefeitura de São Paulo, regularizando o imóvel utilizado para as atividades comerciais. O prazo de validade está de acordo com as normas municipais vigentes.
 
 *O Alvará de Funcionamento é essencial para a legalidade das operações e funcionamento da empresa.*
 
