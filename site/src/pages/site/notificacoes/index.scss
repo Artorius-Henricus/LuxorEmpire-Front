@@ -30,6 +30,12 @@
         padding: 10px  5px;
         align-self: center;
         width: 15vw;
+        transition: 0.3s;
+        border-radius: 5px;
+        outline: none;
+        color: rgba(0, 0, 0, 0.658);
+        border: 2px solid rgba(0, 0, 0, 0.387);
+        cursor: pointer;
    }
 
    #apagar:hover{

@@ -18,7 +18,7 @@ export default function Produto({data}) {
 
     return(
         <div className='produto-compraspag'>
-            <img src='' alt='' />
+            <img src={'http://129.148.42.252:5019/'+prodinfo.Capa} alt='' />
             <div className='prod'>
                 <p>{prodinfo.Nome}</p>
 

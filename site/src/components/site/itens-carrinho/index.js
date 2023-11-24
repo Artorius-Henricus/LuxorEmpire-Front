@@ -51,8 +51,7 @@ export default function CompCarrinho({data, getTotal, deletecar}) {
     return (
         <div className='produto'>
             <div id='imgtotal'>
-
-                <div id='img'></div>
+                <img id='img'src={'http://129.148.42.252:5019/'+prodinfo.Capa} alt="" />
 
                 <p>{prodinfo.Nome}</p>
 

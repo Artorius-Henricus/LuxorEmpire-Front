@@ -108,8 +108,6 @@ export default function PaginaPedidos() {
                         {pedidoMap.length > 0 ? (
                         pedidoMap.map(item =>
                             <article className='pedidosbox'>
-                            <img src="" alt="Imagem" />
-
                             <div>
                                 <h2>Pedidos Realizado:</h2>
                                 <p>{formatarData(item.DTPED)}</p>

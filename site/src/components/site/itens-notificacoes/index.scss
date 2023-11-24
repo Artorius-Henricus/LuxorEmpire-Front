@@ -1,11 +1,12 @@
 .item{
     display: flex;
-    border: 2px black solid;
+    border: 2px rgb(77, 77, 77) solid;
     padding: 10px;
     margin: 10px 0px;
     align-items: center;
     width: 70vw;
     justify-content: space-between;
+    border-radius: 5px;
 
     > h1 {
         font: 20px "Inter";
@@ -21,7 +22,7 @@
         text-decoration: none;
     }
 
-    >:hover {
+    a>:hover {
         text-decoration: underline;
     }
 
