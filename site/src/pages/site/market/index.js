@@ -103,7 +103,7 @@ export default function Paginamarket () {
                                 <option value="Anel">Anel</option>
                                 <option value="Brinco">Brinco</option>
                                 <option value="Colar">Colar</option>
-                                <option value="Pingete">Pingente</option>
+                                <option value="Pingente">Pingente</option>
                                 <option value="Pulseira">Pulseira</option>
                                 <option value="Relógio">Relógio</option>
                             </select>
@@ -139,19 +139,6 @@ export default function Paginamarket () {
                 </div>
   
                 <div style={Mid}>
-                    <div className='dir'>
-                        <div className='filtragem'>
-                            <select>
-                                <option>Destaque</option> 
-                                <option>Preço: Menor ao Maior</option>
-                                <option>Preço: Maior ao Menor</option>
-                                <option>A - Z</option>
-                                <option>Z - A</option>
-                                <option>Mais Novo ao Mais Antigo</option>
-                                <option>Mais Antigo ao Mais Novo</option>
-                            </select>
-                        </div>
-                    </div>
 
                     {produtos.length === 0 ? (
                         <div className='content'>
